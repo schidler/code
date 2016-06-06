@@ -1,0 +1,86 @@
+\hypertarget{structSafetyPwdInfo}{\section{Safety\-Pwd\-Info Struct Reference}
+\label{structSafetyPwdInfo}\index{Safety\-Pwd\-Info@{Safety\-Pwd\-Info}}
+}
+
+
+{\ttfamily \#include $<$dbbase.\-h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{base_8h_a60cf7b3c038ce37a50796e8eaddf0b5f}{Uint32} \hyperlink{structSafetyPwdInfo_a8a63934b72944509aa82673a927cfc71}{hostadd}
+\begin{DoxyCompactList}\small\item\em 主机地址 \end{DoxyCompactList}\item 
+\hyperlink{base_8h_a60cf7b3c038ce37a50796e8eaddf0b5f}{Uint32} \hyperlink{structSafetyPwdInfo_a4ac6a0e4ac9b9b19a2c8d5f1b47b822c}{rtuadd}
+\begin{DoxyCompactList}\small\item\em 设备地址 \end{DoxyCompactList}\item 
+\hyperlink{base_8h_af84840501dec18061d18a68c162a8fa2}{Uint8} \hyperlink{structSafetyPwdInfo_a8938447ca6c73166e69798de5cca1547}{id}
+\begin{DoxyCompactList}\small\item\em 密码id 0-\/9 0表示 管理员密码，智能门锁在主机新注册时默认生成一个管理员密码为1234567890 \end{DoxyCompactList}\item 
+char \hyperlink{structSafetyPwdInfo_a0f10f1bb0eca709fc945b4aff9bbe262}{oldpwd} \mbox{[}16\mbox{]}
+\begin{DoxyCompactList}\small\item\em 表示旧密码 ，如果是添加新开锁密码 ，则为 空字符串 ,修改管理员密码时，不能为空 \end{DoxyCompactList}\item 
+char \hyperlink{structSafetyPwdInfo_a1fec5794b06d5a0f401593930d7254b5}{newpwd} \mbox{[}16\mbox{]}
+\begin{DoxyCompactList}\small\item\em 表示新密码 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+门锁密码结构体 
+
+\subsection{Field Documentation}
+\hypertarget{structSafetyPwdInfo_a8a63934b72944509aa82673a927cfc71}{\index{Safety\-Pwd\-Info@{Safety\-Pwd\-Info}!hostadd@{hostadd}}
+\index{hostadd@{hostadd}!SafetyPwdInfo@{Safety\-Pwd\-Info}}
+\subsubsection[{hostadd}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Uint32} Safety\-Pwd\-Info\-::hostadd}}\label{structSafetyPwdInfo_a8a63934b72944509aa82673a927cfc71}
+
+
+主机地址 
+
+
+
+Referenced by update\-\_\-db\-\_\-safetypwd().
+
+\hypertarget{structSafetyPwdInfo_a8938447ca6c73166e69798de5cca1547}{\index{Safety\-Pwd\-Info@{Safety\-Pwd\-Info}!id@{id}}
+\index{id@{id}!SafetyPwdInfo@{Safety\-Pwd\-Info}}
+\subsubsection[{id}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Uint8} Safety\-Pwd\-Info\-::id}}\label{structSafetyPwdInfo_a8938447ca6c73166e69798de5cca1547}
+
+
+密码id 0-\/9 0表示 管理员密码，智能门锁在主机新注册时默认生成一个管理员密码为1234567890 
+
+
+
+Referenced by update\-\_\-db\-\_\-safetypwd().
+
+\hypertarget{structSafetyPwdInfo_a1fec5794b06d5a0f401593930d7254b5}{\index{Safety\-Pwd\-Info@{Safety\-Pwd\-Info}!newpwd@{newpwd}}
+\index{newpwd@{newpwd}!SafetyPwdInfo@{Safety\-Pwd\-Info}}
+\subsubsection[{newpwd}]{\setlength{\rightskip}{0pt plus 5cm}char Safety\-Pwd\-Info\-::newpwd\mbox{[}16\mbox{]}}}\label{structSafetyPwdInfo_a1fec5794b06d5a0f401593930d7254b5}
+
+
+表示新密码 
+
+
+
+Referenced by update\-\_\-db\-\_\-safetypwd().
+
+\hypertarget{structSafetyPwdInfo_a0f10f1bb0eca709fc945b4aff9bbe262}{\index{Safety\-Pwd\-Info@{Safety\-Pwd\-Info}!oldpwd@{oldpwd}}
+\index{oldpwd@{oldpwd}!SafetyPwdInfo@{Safety\-Pwd\-Info}}
+\subsubsection[{oldpwd}]{\setlength{\rightskip}{0pt plus 5cm}char Safety\-Pwd\-Info\-::oldpwd\mbox{[}16\mbox{]}}}\label{structSafetyPwdInfo_a0f10f1bb0eca709fc945b4aff9bbe262}
+
+
+表示旧密码 ，如果是添加新开锁密码 ，则为 空字符串 ,修改管理员密码时，不能为空 
+
+
+
+Referenced by update\-\_\-db\-\_\-safetypwd().
+
+\hypertarget{structSafetyPwdInfo_a4ac6a0e4ac9b9b19a2c8d5f1b47b822c}{\index{Safety\-Pwd\-Info@{Safety\-Pwd\-Info}!rtuadd@{rtuadd}}
+\index{rtuadd@{rtuadd}!SafetyPwdInfo@{Safety\-Pwd\-Info}}
+\subsubsection[{rtuadd}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Uint32} Safety\-Pwd\-Info\-::rtuadd}}\label{structSafetyPwdInfo_a4ac6a0e4ac9b9b19a2c8d5f1b47b822c}
+
+
+设备地址 
+
+
+
+Referenced by update\-\_\-db\-\_\-safetypwd().
+
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{dbbase_8h}{dbbase.\-h}\end{DoxyCompactItemize}

@@ -1,0 +1,1563 @@
+\hypertarget{dbbase_8cpp}{\section{dbbase.\-cpp File Reference}
+\label{dbbase_8cpp}\index{dbbase.\-cpp@{dbbase.\-cpp}}
+}
+
+
+数据库接口实现  
+
+
+{\ttfamily \#include \char`\"{}dbbase.\-h\char`\"{}}\\*
+Include dependency graph for dbbase.\-cpp\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dbbase_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{dbbase_8cpp_a55f5cb081a0fc3774070718f283746d6}{Is\-Native\-Rtu} (\hyperlink{base_8h_af84840501dec18061d18a68c162a8fa2}{Uint8} type)
+\begin{DoxyCompactList}\small\item\em Is\-Native\-Rtu 查看某设备是否是常规设备 \end{DoxyCompactList}\item 
+bool \hyperlink{dbbase_8cpp_ae130c9ff11734f9b283c749b1c682659}{Is\-Safety\-Rtu} (\hyperlink{base_8h_af84840501dec18061d18a68c162a8fa2}{Uint8} type)
+\begin{DoxyCompactList}\small\item\em Is\-Safety\-Rtu 查看某设备是否是安防设备 \end{DoxyCompactList}\item 
+int \hyperlink{dbbase_8cpp_affefb171c935f2ae5832d0ca8091798f}{init\-\_\-mysql} (\hyperlink{structMysqlConInfo}{Mysql\-Con\-Info} $\ast$info)
+\begin{DoxyCompactList}\small\item\em init\-\_\-mysql 初始化mysql , 连接，指定数据库 \end{DoxyCompactList}\item 
+std\-::string \hyperlink{dbbase_8cpp_af89ddd8c208010e4477750f84849f9bf}{get\-\_\-table\-\_\-name} (\hyperlink{base_8h_af84840501dec18061d18a68c162a8fa2}{Uint8} type)
+\begin{DoxyCompactList}\small\item\em get\-\_\-table\-\_\-name 根据设备类型 拿到对应的表名 \end{DoxyCompactList}\item 
+static int \hyperlink{dbbase_8cpp_a45f3ac6076b939b77778a8d8a2aebde6}{check\-\_\-connect} ()
+\begin{DoxyCompactList}\small\item\em check\-\_\-connect 检查连接 \end{DoxyCompactList}\item 
+static int \hyperlink{dbbase_8cpp_afe0ea3530d4cbbbf870292d37df7ac9e}{insert\-\_\-mysql} (string sql\-\_\-cmd)
+\begin{DoxyCompactList}\small\item\em insert\-\_\-mysql 数据库基本插入操作 \end{DoxyCompactList}\item 
+static int \hyperlink{dbbase_8cpp_ae3ea82d0883ed39d63abe2f2e5cde42f}{db\-\_\-insert\-\_\-query} (const string \&colstr, const string \&valstr, const string \&tablename)
+\begin{DoxyCompactList}\small\item\em db\-\_\-insert\-\_\-query 数据库插入 \end{DoxyCompactList}\item 
+static int \hyperlink{dbbase_8cpp_ac9d1db67754ebd6ac53cd4ce185a22cd}{Dupicate\-Key\-Update\-Query} (const string \&colstr, const string \&valstr, const string \&updatestr, const string \&tablename)
+\begin{DoxyCompactList}\small\item\em Dupicate\-Key\-Update\-Query 更新、插入查询：存在则更新不存在则插入 \end{DoxyCompactList}\item 
+static int \hyperlink{dbbase_8cpp_acdefe48f4a7a750062898c54c5ecd356}{select\-\_\-query} (const string \&sql, string \&retstr)
+\begin{DoxyCompactList}\small\item\em select\-\_\-query 查找操作 \end{DoxyCompactList}\item 
+static \hyperlink{base_8h_a60cf7b3c038ce37a50796e8eaddf0b5f}{Uint32} \hyperlink{dbbase_8cpp_a7f355040a91d1275a6ac9a9490025717}{db\-\_\-select\-\_\-query} (const string \&colstr, const string \&wheresrt, const string \&tablename, string \&retstr)
+\begin{DoxyCompactList}\small\item\em db\-\_\-select\-\_\-query 查找操作 \end{DoxyCompactList}\item 
+static int \hyperlink{dbbase_8cpp_a09e73ba1c0460f0f548fffa8f8aa8ebb}{db\-\_\-update\-\_\-query} (const string \&setstr, const string \&wherestr, const string \&tablename)
+\begin{DoxyCompactList}\small\item\em db\-\_\-update\-\_\-query 更新查询 \end{DoxyCompactList}\item 
+static int \hyperlink{dbbase_8cpp_aec7bbc2b50281d325bd7e99661ef5c60}{find\-Rtuadd} (\hyperlink{base_8h_a60cf7b3c038ce37a50796e8eaddf0b5f}{Uint32} rtuadd, const string \&tablename)
+\item 
+int \hyperlink{dbbase_8cpp_a7748ddce59655cc11534b75d5e0956d4}{find\-Hostname} (char $\ast$hostname)
+\begin{DoxyCompactList}\small\item\em find\-Hostname 查找对应的主机名 \end{DoxyCompactList}\item 
+\hyperlink{base_8h_a60cf7b3c038ce37a50796e8eaddf0b5f}{Uint32} \hyperlink{dbbase_8cpp_a645417f4347afad166d95e919bf778de}{Get\-Host\-Id\-By\-Name} (char $\ast$hostname, \hyperlink{base_8h_a60cf7b3c038ce37a50796e8eaddf0b5f}{Uint32} \&hostid)
+\begin{DoxyCompactList}\small\item\em Get\-Host\-Id\-By\-Name 根据主机名查找对应的\-I\-D. \end{DoxyCompactList}\item 
+int \hyperlink{dbbase_8cpp_a45ba5638ae09b4ccca4dbe1bdb6bf89a}{Get\-Host\-Count} ()
+\begin{DoxyCompactList}\small\item\em Get\-Host\-Count 拿到 连接上来的主机个数 \end{DoxyCompactList}\item 
+int \hyperlink{dbbase_8cpp_a21f3b1ac4424fa0839c3182b0ab7cbd8}{insert\-\_\-db\-\_\-rtu} (\hyperlink{structRtuRegInfo}{Rtu\-Reg\-Info} \&rtuinfo)
+\begin{DoxyCompactList}\small\item\em insert\-\_\-db\-\_\-rtu 注册设备接口 ，将设备写入数据库 \end{DoxyCompactList}\item 
+int \hyperlink{dbbase_8cpp_a9acb52e4299badf813180da0f8214c37}{insert\-\_\-db\-\_\-host} (\hyperlink{structHostRegInfo}{Host\-Reg\-Info} \&hostinfo)
+\begin{DoxyCompactList}\small\item\em insert\-\_\-db\-\_\-host 主机注册接口 \end{DoxyCompactList}\item 
+int \hyperlink{dbbase_8cpp_ad9cd8d3ab8c7385eceb3280b5f910b2a}{insert\-\_\-db\-\_\-sceneinfo} (\hyperlink{structSceneInfo}{Scene\-Info} \&sceneinfo)
+\begin{DoxyCompactList}\small\item\em insert\-\_\-db\-\_\-sceneinfo 创建、修改情景 \end{DoxyCompactList}\item 
+int \hyperlink{dbbase_8cpp_a62123b0c0b89cfe644b8e040a4fe2a3b}{insert\-\_\-db\-\_\-apprtu} (\hyperlink{structAppRtuInfo}{App\-Rtu\-Info} \&rtuinfo)
+\begin{DoxyCompactList}\small\item\em insert\-\_\-db\-\_\-apprtu 添加，编辑 应用设备 \end{DoxyCompactList}\item 
+int \hyperlink{dbbase_8cpp_a0eb771b638f26a87a9cce0c7de472f0f}{insert\-\_\-db\-\_\-taskinfo} (\hyperlink{structTaskInfo}{Task\-Info} \&taskinfo)
+\begin{DoxyCompactList}\small\item\em insert\-\_\-db\-\_\-taskinfo 设置 编辑定时任务 \end{DoxyCompactList}\item 
+int \hyperlink{dbbase_8cpp_a83758c046728190fe1ac0a9eef34285b}{update\-\_\-db\-\_\-nativertu} (\hyperlink{structNativeRtuInfo}{Native\-Rtu\-Info} \&rtuinfo, \hyperlink{base_8h_af84840501dec18061d18a68c162a8fa2}{Uint8} mode)
+\begin{DoxyCompactList}\small\item\em update\-\_\-db\-\_\-nativertu 常规设备更新 \end{DoxyCompactList}\item 
+int \hyperlink{dbbase_8cpp_ae0e36aa1334e0b83d2e2edd95a89b5b2}{update\-\_\-db\-\_\-safetyrtu} (\hyperlink{structSafetyRtu}{Safety\-Rtu} \&rtuinfo)
+\begin{DoxyCompactList}\small\item\em update\-\_\-db\-\_\-safetyrtu 更新安防设备 \end{DoxyCompactList}\item 
+int \hyperlink{dbbase_8cpp_aedbae4394a0f4e1fc8f6eabee7e355c2}{update\-\_\-db\-\_\-sceneinfo} (\hyperlink{structSceneInfo}{Scene\-Info} \&rtuinfo)
+\begin{DoxyCompactList}\small\item\em update\-\_\-db\-\_\-sceneinfo 修改 情景 \end{DoxyCompactList}\item 
+int \hyperlink{dbbase_8cpp_a8b214bd5c7dbfef30ac417954cb0c5e2}{update\-\_\-db\-\_\-apprtu} (\hyperlink{structAppRtuInfo}{App\-Rtu\-Info} \&rtuinfo)
+\begin{DoxyCompactList}\small\item\em update\-\_\-db\-\_\-apprtu 修改应用设备 \end{DoxyCompactList}\item 
+int \hyperlink{dbbase_8cpp_a82757fe4298d8fdf297391a4e42e3293}{update\-\_\-db\-\_\-host} (\hyperlink{structHostRegInfo}{Host\-Reg\-Info} \&hostinfo)
+\begin{DoxyCompactList}\small\item\em update\-\_\-db\-\_\-host 更新主机信息表 \end{DoxyCompactList}\item 
+int \hyperlink{dbbase_8cpp_a5f38e8abcbb787b6fed1c8e1dce1c7c2}{update\-\_\-db\-\_\-hostname} (\hyperlink{structHostMan}{Host\-Man} \&hostinfo)
+\begin{DoxyCompactList}\small\item\em update\-\_\-db\-\_\-hostname 用户管理 \end{DoxyCompactList}\item 
+int \hyperlink{dbbase_8cpp_ad42e211ca6c04241e68331f73c74113c}{update\-\_\-db\-\_\-rtuinfo} (\hyperlink{structRtuUpdate}{Rtu\-Update} \&hostinfo)
+\begin{DoxyCompactList}\small\item\em update\-\_\-db\-\_\-rtuinfo 用户设备信息编辑 \end{DoxyCompactList}\item 
+int \hyperlink{dbbase_8cpp_aae594d8934a37c3a973e31432cd76c96}{update\-\_\-db\-\_\-scenertu} (\hyperlink{structSceneRtu}{Scene\-Rtu} \&rtuinfo)
+\begin{DoxyCompactList}\small\item\em update\-\_\-db\-\_\-scenertu 更新情景面板 \end{DoxyCompactList}\item 
+int \hyperlink{dbbase_8cpp_a81cfc05e7763f268740f8a27f85b77de}{update\-\_\-db\-\_\-exnativertu} (\hyperlink{structExNativeRtu}{Ex\-Native\-Rtu} \&rtuinfo)
+\begin{DoxyCompactList}\small\item\em update\-\_\-db\-\_\-exnativertu 更新智能床 \end{DoxyCompactList}\item 
+int \hyperlink{dbbase_8cpp_a659d4acf9f3d7a1b013867717905c198}{update\-\_\-db\-\_\-taskinfo} (\hyperlink{structTaskInfo}{Task\-Info} \&taskinfo)
+\begin{DoxyCompactList}\small\item\em update\-\_\-db\-\_\-taskinfo 编辑定时任务 \end{DoxyCompactList}\item 
+int \hyperlink{dbbase_8cpp_aa039ebdc57c1a8157a01c9a762f43bc6}{update\-\_\-db\-\_\-detectorrtu} (\hyperlink{structDetectorRtu}{Detector\-Rtu} \&rtuinfo, \hyperlink{base_8h_af84840501dec18061d18a68c162a8fa2}{Uint8} mode)
+\begin{DoxyCompactList}\small\item\em update\-\_\-db\-\_\-detectorrtu 更新传感器设备 \end{DoxyCompactList}\item 
+int \hyperlink{dbbase_8cpp_a35e1056e0f46576bda26dabc59ce0ded}{update\-\_\-db\-\_\-detectorbind} (\hyperlink{structDetectorBind}{Detector\-Bind} \&rtuinfo)
+\begin{DoxyCompactList}\small\item\em update\-\_\-db\-\_\-detectorbind 绑定联动接口 \end{DoxyCompactList}\item 
+int \hyperlink{dbbase_8cpp_afe8cc79a0b360aa2a371f266709451e8}{update\-\_\-db\-\_\-safetypwd} (\hyperlink{structSafetyPwdInfo}{Safety\-Pwd\-Info} \&rtuinfo)
+\begin{DoxyCompactList}\small\item\em update\-\_\-db\-\_\-safetypwd 门锁密码更新接口 包括新开锁密码添加，修改 管理员密码修改 \end{DoxyCompactList}\item 
+int \hyperlink{dbbase_8cpp_a334c4412fa09aab89d49cefdfd233b04}{select\-\_\-db\-\_\-hostinfo} (\hyperlink{structHostRegInfo}{Host\-Reg\-Info} $\ast$p\-Hostinfo, char $\ast$hostname)
+\begin{DoxyCompactList}\small\item\em select\-\_\-db\-\_\-hostinfo 根据主机名 查询主机信息 ，用于 A\-P\-P远程登陆 \end{DoxyCompactList}\item 
+int \hyperlink{dbbase_8cpp_a91ce6d4931baf0cca718619888e1412d}{delete\-\_\-db\-\_\-host} (char $\ast$hostname)
+\begin{DoxyCompactList}\small\item\em delete\-\_\-db\-\_\-host 删除主机设备 \end{DoxyCompactList}\item 
+int \hyperlink{dbbase_8cpp_adfa21954b5a414041dffb59dd549dcb8}{delete\-\_\-db\-\_\-rtu} (\hyperlink{structRtuRemoveInfo}{Rtu\-Remove\-Info} \&rtuinfo)
+\begin{DoxyCompactList}\small\item\em delete\-\_\-db\-\_\-rtu 删除设备 接口 不包括删除主机 \end{DoxyCompactList}\item 
+\hyperlink{base_8h_a60cf7b3c038ce37a50796e8eaddf0b5f}{Uint32} \hyperlink{dbbase_8cpp_aa1165b8a3c5a7d095576c678f94268f3}{Get\-Ip\-By\-Host\-Add} (\hyperlink{base_8h_a60cf7b3c038ce37a50796e8eaddf0b5f}{Uint32} hostadd, \hyperlink{base_8h_a60cf7b3c038ce37a50796e8eaddf0b5f}{Uint32} \&hostip)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+M\-Y\-S\-Q\-L \hyperlink{dbbase_8cpp_a513b454acfc51fb3100e5a8ad0535b50}{m\-\_\-mysqlfd}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+数据库接口实现 增删查改 \begin{DoxyAuthor}{Author}
+menqi -\/ \href{mailto:1083734876@qq.com}{\tt 1083734876@qq.\-com} 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2016-\/05-\/06 16\-:45 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+1.\-0 
+\end{DoxyVersion}
+\begin{DoxyParagraph}{Copyright (c)\-: menqi }
+
+\end{DoxyParagraph}
+
+
+\subsection{Function Documentation}
+\hypertarget{dbbase_8cpp_a45f3ac6076b939b77778a8d8a2aebde6}{\index{dbbase.\-cpp@{dbbase.\-cpp}!check\-\_\-connect@{check\-\_\-connect}}
+\index{check\-\_\-connect@{check\-\_\-connect}!dbbase.cpp@{dbbase.\-cpp}}
+\subsubsection[{check\-\_\-connect}]{\setlength{\rightskip}{0pt plus 5cm}static int check\-\_\-connect (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{dbbase_8cpp_a45f3ac6076b939b77778a8d8a2aebde6}
+
+
+check\-\_\-connect 检查连接 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+References m\-\_\-mysqlfd.
+
+
+
+Referenced by db\-\_\-insert\-\_\-query(), db\-\_\-update\-\_\-query(), delete\-\_\-db\-\_\-host(), delete\-\_\-db\-\_\-rtu(), Dupicate\-Key\-Update\-Query(), find\-Hostname(), find\-Rtuadd(), Get\-Host\-Count(), Get\-Host\-Id\-By\-Name(), Get\-Ip\-By\-Host\-Add(), and select\-\_\-query().
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dbbase_8cpp_a45f3ac6076b939b77778a8d8a2aebde6_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{dbbase_8cpp_ae3ea82d0883ed39d63abe2f2e5cde42f}{\index{dbbase.\-cpp@{dbbase.\-cpp}!db\-\_\-insert\-\_\-query@{db\-\_\-insert\-\_\-query}}
+\index{db\-\_\-insert\-\_\-query@{db\-\_\-insert\-\_\-query}!dbbase.cpp@{dbbase.\-cpp}}
+\subsubsection[{db\-\_\-insert\-\_\-query}]{\setlength{\rightskip}{0pt plus 5cm}static int db\-\_\-insert\-\_\-query (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{colstr, }
+\item[{const string \&}]{valstr, }
+\item[{const string \&}]{tablename}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{dbbase_8cpp_ae3ea82d0883ed39d63abe2f2e5cde42f}
+
+
+db\-\_\-insert\-\_\-query 数据库插入 
+
+
+\begin{DoxyParams}{Parameters}
+{\em colstr} & 列字段 \\
+\hline
+{\em valstr} & 值字段 \\
+\hline
+{\em tablename} & 数据表名\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+References check\-\_\-connect(), insert\-\_\-mysql(), L\-O\-G\-\_\-\-D\-E\-B\-U\-G, and L\-O\-G\-\_\-\-E\-R\-R\-O\-R.
+
+
+
+Referenced by insert\-\_\-db\-\_\-host(), and insert\-\_\-db\-\_\-rtu().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{dbbase_8cpp_ae3ea82d0883ed39d63abe2f2e5cde42f_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=282pt]{dbbase_8cpp_ae3ea82d0883ed39d63abe2f2e5cde42f_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{dbbase_8cpp_a7f355040a91d1275a6ac9a9490025717}{\index{dbbase.\-cpp@{dbbase.\-cpp}!db\-\_\-select\-\_\-query@{db\-\_\-select\-\_\-query}}
+\index{db\-\_\-select\-\_\-query@{db\-\_\-select\-\_\-query}!dbbase.cpp@{dbbase.\-cpp}}
+\subsubsection[{db\-\_\-select\-\_\-query}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Uint32} db\-\_\-select\-\_\-query (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{colstr, }
+\item[{const string \&}]{wheresrt, }
+\item[{const string \&}]{tablename, }
+\item[{string \&}]{retstr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{dbbase_8cpp_a7f355040a91d1275a6ac9a9490025717}
+
+
+db\-\_\-select\-\_\-query 查找操作 
+
+
+\begin{DoxyParams}{Parameters}
+{\em colstr} & 列字段 \\
+\hline
+{\em wheresrt} & 过滤字段 \\
+\hline
+{\em tablename} & 表名 \\
+\hline
+{\em retstr} & 查找结果\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+References L\-O\-G\-\_\-\-D\-E\-B\-U\-G, L\-O\-G\-\_\-\-E\-R\-R\-O\-R, and select\-\_\-query().
+
+
+
+Referenced by select\-\_\-db\-\_\-hostinfo(), update\-\_\-db\-\_\-hostname(), and update\-\_\-db\-\_\-safetypwd().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dbbase_8cpp_a7f355040a91d1275a6ac9a9490025717_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=316pt]{dbbase_8cpp_a7f355040a91d1275a6ac9a9490025717_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{dbbase_8cpp_a09e73ba1c0460f0f548fffa8f8aa8ebb}{\index{dbbase.\-cpp@{dbbase.\-cpp}!db\-\_\-update\-\_\-query@{db\-\_\-update\-\_\-query}}
+\index{db\-\_\-update\-\_\-query@{db\-\_\-update\-\_\-query}!dbbase.cpp@{dbbase.\-cpp}}
+\subsubsection[{db\-\_\-update\-\_\-query}]{\setlength{\rightskip}{0pt plus 5cm}static int db\-\_\-update\-\_\-query (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{setstr, }
+\item[{const string \&}]{wherestr, }
+\item[{const string \&}]{tablename}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{dbbase_8cpp_a09e73ba1c0460f0f548fffa8f8aa8ebb}
+
+
+db\-\_\-update\-\_\-query 更新查询 
+
+
+\begin{DoxyParams}{Parameters}
+{\em setstr} & 设置字符串 \\
+\hline
+{\em wherestr} & 条件字符串 \\
+\hline
+{\em tablename} & 表名\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+References check\-\_\-connect(), L\-O\-G\-\_\-\-D\-E\-B\-U\-G, and m\-\_\-mysqlfd.
+
+
+
+Referenced by update\-\_\-db\-\_\-detectorbind(), update\-\_\-db\-\_\-detectorrtu(), update\-\_\-db\-\_\-exnativertu(), update\-\_\-db\-\_\-host(), update\-\_\-db\-\_\-hostname(), update\-\_\-db\-\_\-nativertu(), update\-\_\-db\-\_\-rtuinfo(), update\-\_\-db\-\_\-safetypwd(), update\-\_\-db\-\_\-safetyrtu(), and update\-\_\-db\-\_\-scenertu().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=292pt]{dbbase_8cpp_a09e73ba1c0460f0f548fffa8f8aa8ebb_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{dbbase_8cpp_a09e73ba1c0460f0f548fffa8f8aa8ebb_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{dbbase_8cpp_a91ce6d4931baf0cca718619888e1412d}{\index{dbbase.\-cpp@{dbbase.\-cpp}!delete\-\_\-db\-\_\-host@{delete\-\_\-db\-\_\-host}}
+\index{delete\-\_\-db\-\_\-host@{delete\-\_\-db\-\_\-host}!dbbase.cpp@{dbbase.\-cpp}}
+\subsubsection[{delete\-\_\-db\-\_\-host}]{\setlength{\rightskip}{0pt plus 5cm}int delete\-\_\-db\-\_\-host (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{hostname}
+\end{DoxyParamCaption}
+)}}\label{dbbase_8cpp_a91ce6d4931baf0cca718619888e1412d}
+
+
+delete\-\_\-db\-\_\-host 删除主机设备 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hostname} & 主机名 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+References check\-\_\-connect(), D\-B\-\_\-\-T\-A\-B\-L\-E\-\_\-\-N\-A\-M\-E\-L\-I\-S\-T, L\-O\-G\-\_\-\-D\-E\-B\-U\-G, L\-O\-G\-\_\-\-E\-R\-R\-O\-R, m\-\_\-mysqlfd, and M\-A\-X\-\_\-\-D\-B\-\_\-\-T\-Y\-P\-E.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=284pt]{dbbase_8cpp_a91ce6d4931baf0cca718619888e1412d_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{dbbase_8cpp_adfa21954b5a414041dffb59dd549dcb8}{\index{dbbase.\-cpp@{dbbase.\-cpp}!delete\-\_\-db\-\_\-rtu@{delete\-\_\-db\-\_\-rtu}}
+\index{delete\-\_\-db\-\_\-rtu@{delete\-\_\-db\-\_\-rtu}!dbbase.cpp@{dbbase.\-cpp}}
+\subsubsection[{delete\-\_\-db\-\_\-rtu}]{\setlength{\rightskip}{0pt plus 5cm}int delete\-\_\-db\-\_\-rtu (
+\begin{DoxyParamCaption}
+\item[{{\bf Rtu\-Remove\-Info} \&}]{rtuinfo}
+\end{DoxyParamCaption}
+)}}\label{dbbase_8cpp_adfa21954b5a414041dffb59dd549dcb8}
+
+
+delete\-\_\-db\-\_\-rtu 删除设备 接口 不包括删除主机 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rtuinfo} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/1 删除出错 0 删除成功 或者 没有删除项 
+\end{DoxyReturn}
+
+
+References check\-\_\-connect(), get\-\_\-table\-\_\-name(), Rtu\-Remove\-Info\-::hostadd, L\-O\-G\-\_\-\-D\-E\-B\-U\-G, L\-O\-G\-\_\-\-E\-R\-R\-O\-R, m\-\_\-mysqlfd, Rtu\-Remove\-Info\-::rtuadd, and Rtu\-Remove\-Info\-::rtutype.
+
+
+
+Referenced by main().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=278pt]{dbbase_8cpp_adfa21954b5a414041dffb59dd549dcb8_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{dbbase_8cpp_adfa21954b5a414041dffb59dd549dcb8_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{dbbase_8cpp_ac9d1db67754ebd6ac53cd4ce185a22cd}{\index{dbbase.\-cpp@{dbbase.\-cpp}!Dupicate\-Key\-Update\-Query@{Dupicate\-Key\-Update\-Query}}
+\index{Dupicate\-Key\-Update\-Query@{Dupicate\-Key\-Update\-Query}!dbbase.cpp@{dbbase.\-cpp}}
+\subsubsection[{Dupicate\-Key\-Update\-Query}]{\setlength{\rightskip}{0pt plus 5cm}static int Dupicate\-Key\-Update\-Query (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{colstr, }
+\item[{const string \&}]{valstr, }
+\item[{const string \&}]{updatestr, }
+\item[{const string \&}]{tablename}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{dbbase_8cpp_ac9d1db67754ebd6ac53cd4ce185a22cd}
+
+
+Dupicate\-Key\-Update\-Query 更新、插入查询：存在则更新不存在则插入 
+
+
+\begin{DoxyParams}{Parameters}
+{\em colstr} & 列 \\
+\hline
+{\em valstr} & 值 \\
+\hline
+{\em updatestr} & 要更新的列 \\
+\hline
+{\em tablename} & 表名\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+References check\-\_\-connect(), L\-O\-G\-\_\-\-D\-E\-B\-U\-G, and m\-\_\-mysqlfd.
+
+
+
+Referenced by insert\-\_\-db\-\_\-apprtu(), insert\-\_\-db\-\_\-sceneinfo(), and insert\-\_\-db\-\_\-taskinfo().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{dbbase_8cpp_ac9d1db67754ebd6ac53cd4ce185a22cd_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dbbase_8cpp_ac9d1db67754ebd6ac53cd4ce185a22cd_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{dbbase_8cpp_a7748ddce59655cc11534b75d5e0956d4}{\index{dbbase.\-cpp@{dbbase.\-cpp}!find\-Hostname@{find\-Hostname}}
+\index{find\-Hostname@{find\-Hostname}!dbbase.cpp@{dbbase.\-cpp}}
+\subsubsection[{find\-Hostname}]{\setlength{\rightskip}{0pt plus 5cm}int find\-Hostname (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{hostname}
+\end{DoxyParamCaption}
+)}}\label{dbbase_8cpp_a7748ddce59655cc11534b75d5e0956d4}
+
+
+find\-Hostname 查找对应的主机名 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hostname} & 主机名\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+返回值 -\/1 错误 0 没有找到对应的 $>$0 找到的主机个数 
+\end{DoxyReturn}
+
+
+References check\-\_\-connect(), L\-O\-G\-\_\-\-E\-R\-R\-O\-R, and m\-\_\-mysqlfd.
+
+
+
+Referenced by insert\-\_\-db\-\_\-host(), and update\-\_\-db\-\_\-host().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=278pt]{dbbase_8cpp_a7748ddce59655cc11534b75d5e0956d4_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=280pt]{dbbase_8cpp_a7748ddce59655cc11534b75d5e0956d4_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{dbbase_8cpp_aec7bbc2b50281d325bd7e99661ef5c60}{\index{dbbase.\-cpp@{dbbase.\-cpp}!find\-Rtuadd@{find\-Rtuadd}}
+\index{find\-Rtuadd@{find\-Rtuadd}!dbbase.cpp@{dbbase.\-cpp}}
+\subsubsection[{find\-Rtuadd}]{\setlength{\rightskip}{0pt plus 5cm}static int find\-Rtuadd (
+\begin{DoxyParamCaption}
+\item[{{\bf Uint32}}]{rtuadd, }
+\item[{const string \&}]{tablename}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{dbbase_8cpp_aec7bbc2b50281d325bd7e99661ef5c60}
+查看对应的设备是否已经存在 
+
+References check\-\_\-connect(), L\-O\-G\-\_\-\-E\-R\-R\-O\-R, and m\-\_\-mysqlfd.
+
+
+
+Referenced by insert\-\_\-db\-\_\-rtu().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{dbbase_8cpp_aec7bbc2b50281d325bd7e99661ef5c60_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=254pt]{dbbase_8cpp_aec7bbc2b50281d325bd7e99661ef5c60_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{dbbase_8cpp_af89ddd8c208010e4477750f84849f9bf}{\index{dbbase.\-cpp@{dbbase.\-cpp}!get\-\_\-table\-\_\-name@{get\-\_\-table\-\_\-name}}
+\index{get\-\_\-table\-\_\-name@{get\-\_\-table\-\_\-name}!dbbase.cpp@{dbbase.\-cpp}}
+\subsubsection[{get\-\_\-table\-\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string get\-\_\-table\-\_\-name (
+\begin{DoxyParamCaption}
+\item[{{\bf Uint8}}]{type}
+\end{DoxyParamCaption}
+)}}\label{dbbase_8cpp_af89ddd8c208010e4477750f84849f9bf}
+
+
+get\-\_\-table\-\_\-name 根据设备类型 拿到对应的表名 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & 设备类型 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+表名 为 string 类型 
+\end{DoxyReturn}
+
+
+References g\-Type\-Info\-List, and D\-B\-Type\-Info\-::tablename.
+
+
+
+Referenced by delete\-\_\-db\-\_\-rtu(), insert\-\_\-db\-\_\-rtu(), update\-\_\-db\-\_\-exnativertu(), update\-\_\-db\-\_\-host(), update\-\_\-db\-\_\-rtuinfo(), and update\-\_\-db\-\_\-safetyrtu().
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dbbase_8cpp_af89ddd8c208010e4477750f84849f9bf_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{dbbase_8cpp_a45ba5638ae09b4ccca4dbe1bdb6bf89a}{\index{dbbase.\-cpp@{dbbase.\-cpp}!Get\-Host\-Count@{Get\-Host\-Count}}
+\index{Get\-Host\-Count@{Get\-Host\-Count}!dbbase.cpp@{dbbase.\-cpp}}
+\subsubsection[{Get\-Host\-Count}]{\setlength{\rightskip}{0pt plus 5cm}int Get\-Host\-Count (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{dbbase_8cpp_a45ba5638ae09b4ccca4dbe1bdb6bf89a}
+
+
+Get\-Host\-Count 拿到 连接上来的主机个数 
+
+\begin{DoxyReturn}{Returns}
+主机个数 
+\end{DoxyReturn}
+
+
+References check\-\_\-connect(), L\-O\-G\-\_\-\-D\-E\-B\-U\-G, L\-O\-G\-\_\-\-E\-R\-R\-O\-R, and m\-\_\-mysqlfd.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=280pt]{dbbase_8cpp_a45ba5638ae09b4ccca4dbe1bdb6bf89a_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{dbbase_8cpp_a645417f4347afad166d95e919bf778de}{\index{dbbase.\-cpp@{dbbase.\-cpp}!Get\-Host\-Id\-By\-Name@{Get\-Host\-Id\-By\-Name}}
+\index{Get\-Host\-Id\-By\-Name@{Get\-Host\-Id\-By\-Name}!dbbase.cpp@{dbbase.\-cpp}}
+\subsubsection[{Get\-Host\-Id\-By\-Name}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Uint32} Get\-Host\-Id\-By\-Name (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{hostname, }
+\item[{{\bf Uint32} \&}]{hostid}
+\end{DoxyParamCaption}
+)}}\label{dbbase_8cpp_a645417f4347afad166d95e919bf778de}
+
+
+Get\-Host\-Id\-By\-Name 根据主机名查找对应的\-I\-D. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hostname} & 主机名 \\
+\hline
+{\em hostid} & 找到的hostadd放入该参数\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/1 查找错误 0 查找正确 
+\end{DoxyReturn}
+
+
+References check\-\_\-connect(), L\-O\-G\-\_\-\-D\-E\-B\-U\-G, L\-O\-G\-\_\-\-E\-R\-R\-O\-R, and m\-\_\-mysqlfd.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{dbbase_8cpp_a645417f4347afad166d95e919bf778de_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{dbbase_8cpp_aa1165b8a3c5a7d095576c678f94268f3}{\index{dbbase.\-cpp@{dbbase.\-cpp}!Get\-Ip\-By\-Host\-Add@{Get\-Ip\-By\-Host\-Add}}
+\index{Get\-Ip\-By\-Host\-Add@{Get\-Ip\-By\-Host\-Add}!dbbase.cpp@{dbbase.\-cpp}}
+\subsubsection[{Get\-Ip\-By\-Host\-Add}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Uint32} Get\-Ip\-By\-Host\-Add (
+\begin{DoxyParamCaption}
+\item[{{\bf Uint32}}]{hostadd, }
+\item[{{\bf Uint32} \&}]{hostip}
+\end{DoxyParamCaption}
+)}}\label{dbbase_8cpp_aa1165b8a3c5a7d095576c678f94268f3}
+根据 hostadd 拿到 ip 
+
+References check\-\_\-connect(), L\-O\-G\-\_\-\-D\-E\-B\-U\-G, L\-O\-G\-\_\-\-E\-R\-R\-O\-R, and m\-\_\-mysqlfd.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=292pt]{dbbase_8cpp_aa1165b8a3c5a7d095576c678f94268f3_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{dbbase_8cpp_affefb171c935f2ae5832d0ca8091798f}{\index{dbbase.\-cpp@{dbbase.\-cpp}!init\-\_\-mysql@{init\-\_\-mysql}}
+\index{init\-\_\-mysql@{init\-\_\-mysql}!dbbase.cpp@{dbbase.\-cpp}}
+\subsubsection[{init\-\_\-mysql}]{\setlength{\rightskip}{0pt plus 5cm}int init\-\_\-mysql (
+\begin{DoxyParamCaption}
+\item[{{\bf Mysql\-Con\-Info} $\ast$}]{info}
+\end{DoxyParamCaption}
+)}}\label{dbbase_8cpp_affefb171c935f2ae5832d0ca8091798f}
+
+
+init\-\_\-mysql 初始化mysql , 连接，指定数据库 
+
+
+\begin{DoxyParams}{Parameters}
+{\em info} & 连接mysql时，mysql相关信息结构体\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 成功 -\/1 失败 
+\end{DoxyReturn}
+
+
+References Mysql\-Con\-Info\-::dbname, Mysql\-Con\-Info\-::hostname, m\-\_\-mysqlfd, Mysql\-Con\-Info\-::password, and Mysql\-Con\-Info\-::username.
+
+
+
+Referenced by main().
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=216pt]{dbbase_8cpp_affefb171c935f2ae5832d0ca8091798f_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{dbbase_8cpp_a62123b0c0b89cfe644b8e040a4fe2a3b}{\index{dbbase.\-cpp@{dbbase.\-cpp}!insert\-\_\-db\-\_\-apprtu@{insert\-\_\-db\-\_\-apprtu}}
+\index{insert\-\_\-db\-\_\-apprtu@{insert\-\_\-db\-\_\-apprtu}!dbbase.cpp@{dbbase.\-cpp}}
+\subsubsection[{insert\-\_\-db\-\_\-apprtu}]{\setlength{\rightskip}{0pt plus 5cm}int insert\-\_\-db\-\_\-apprtu (
+\begin{DoxyParamCaption}
+\item[{{\bf App\-Rtu\-Info} \&}]{rtuinfo}
+\end{DoxyParamCaption}
+)}}\label{dbbase_8cpp_a62123b0c0b89cfe644b8e040a4fe2a3b}
+
+
+insert\-\_\-db\-\_\-apprtu 添加，编辑 应用设备 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rtuinfo} & 应用设备结构体\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+References D\-B\-\_\-\-T\-A\-B\-L\-E\-\_\-\-N\-A\-M\-E\-L\-I\-S\-T, Dupicate\-Key\-Update\-Query(), App\-Rtu\-Info\-::hostadd, App\-Rtu\-Info\-::irrtuadd, L\-O\-G\-\_\-\-E\-R\-R\-O\-R, R\-T\-U\-\_\-\-S\-T\-A\-T\-E\-\_\-\-V\-A\-L\-I\-D, App\-Rtu\-Info\-::rtuadd, App\-Rtu\-Info\-::rtuname, App\-Rtu\-Info\-::rturegtime, and App\-Rtu\-Info\-::rtutype.
+
+
+
+Referenced by update\-\_\-db\-\_\-apprtu().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dbbase_8cpp_a62123b0c0b89cfe644b8e040a4fe2a3b_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{dbbase_8cpp_a62123b0c0b89cfe644b8e040a4fe2a3b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{dbbase_8cpp_a9acb52e4299badf813180da0f8214c37}{\index{dbbase.\-cpp@{dbbase.\-cpp}!insert\-\_\-db\-\_\-host@{insert\-\_\-db\-\_\-host}}
+\index{insert\-\_\-db\-\_\-host@{insert\-\_\-db\-\_\-host}!dbbase.cpp@{dbbase.\-cpp}}
+\subsubsection[{insert\-\_\-db\-\_\-host}]{\setlength{\rightskip}{0pt plus 5cm}int insert\-\_\-db\-\_\-host (
+\begin{DoxyParamCaption}
+\item[{{\bf Host\-Reg\-Info} \&}]{hostinfo}
+\end{DoxyParamCaption}
+)}}\label{dbbase_8cpp_a9acb52e4299badf813180da0f8214c37}
+
+
+insert\-\_\-db\-\_\-host 主机注册接口 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hostinfo} & 主机信息结构体\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/1 插入失败 0 插入成功 $>$0 主机名字已经存在 
+\end{DoxyReturn}
+
+
+References db\-\_\-insert\-\_\-query(), D\-B\-\_\-\-T\-A\-B\-L\-E\-\_\-\-N\-A\-M\-E\-L\-I\-S\-T, find\-Hostname(), Host\-Reg\-Info\-::hostadd, Host\-Reg\-Info\-::hostip, Host\-Reg\-Info\-::hostname, Host\-Reg\-Info\-::hostpwd, Host\-Reg\-Info\-::hostregtime, Host\-Reg\-Info\-::lastcomtime, L\-O\-G\-\_\-\-E\-R\-R\-O\-R, L\-O\-G\-\_\-\-P\-R\-I\-N\-T, and R\-T\-U\-\_\-\-S\-T\-A\-T\-E\-\_\-\-V\-A\-L\-I\-D.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dbbase_8cpp_a9acb52e4299badf813180da0f8214c37_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{dbbase_8cpp_a21f3b1ac4424fa0839c3182b0ab7cbd8}{\index{dbbase.\-cpp@{dbbase.\-cpp}!insert\-\_\-db\-\_\-rtu@{insert\-\_\-db\-\_\-rtu}}
+\index{insert\-\_\-db\-\_\-rtu@{insert\-\_\-db\-\_\-rtu}!dbbase.cpp@{dbbase.\-cpp}}
+\subsubsection[{insert\-\_\-db\-\_\-rtu}]{\setlength{\rightskip}{0pt plus 5cm}int insert\-\_\-db\-\_\-rtu (
+\begin{DoxyParamCaption}
+\item[{{\bf Rtu\-Reg\-Info} \&}]{rtuinfo}
+\end{DoxyParamCaption}
+)}}\label{dbbase_8cpp_a21f3b1ac4424fa0839c3182b0ab7cbd8}
+
+
+insert\-\_\-db\-\_\-rtu 注册设备接口 ，将设备写入数据库 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rtuinfo} & 插入设备结构体\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/1 插入失败 0 插入成功 
+\end{DoxyReturn}
+
+
+References db\-\_\-insert\-\_\-query(), D\-B\-\_\-\-T\-A\-B\-L\-E\-\_\-\-N\-A\-M\-E\-L\-I\-S\-T, find\-Rtuadd(), get\-\_\-table\-\_\-name(), Rtu\-Reg\-Info\-::hostadd, L\-O\-G\-\_\-\-E\-R\-R\-O\-R, m\-\_\-mysqlfd, Rtu\-Reg\-Info\-::rtuadd, Rtu\-Reg\-Info\-::rturegtime, Rtu\-Reg\-Info\-::rtustate, and Rtu\-Reg\-Info\-::rtutype.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dbbase_8cpp_a21f3b1ac4424fa0839c3182b0ab7cbd8_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{dbbase_8cpp_ad9cd8d3ab8c7385eceb3280b5f910b2a}{\index{dbbase.\-cpp@{dbbase.\-cpp}!insert\-\_\-db\-\_\-sceneinfo@{insert\-\_\-db\-\_\-sceneinfo}}
+\index{insert\-\_\-db\-\_\-sceneinfo@{insert\-\_\-db\-\_\-sceneinfo}!dbbase.cpp@{dbbase.\-cpp}}
+\subsubsection[{insert\-\_\-db\-\_\-sceneinfo}]{\setlength{\rightskip}{0pt plus 5cm}int insert\-\_\-db\-\_\-sceneinfo (
+\begin{DoxyParamCaption}
+\item[{{\bf Scene\-Info} \&}]{sceneinfo}
+\end{DoxyParamCaption}
+)}}\label{dbbase_8cpp_ad9cd8d3ab8c7385eceb3280b5f910b2a}
+
+
+insert\-\_\-db\-\_\-sceneinfo 创建、修改情景 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sceneinfo} & 情景信息结构体 绑定的设备信息需要malloc后传入\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+References Rtu\-Bind\-::add, D\-B\-\_\-\-T\-A\-B\-L\-E\-\_\-\-N\-A\-M\-E\-L\-I\-S\-T, Rtu\-Bind\-::delay, Dupicate\-Key\-Update\-Query(), Scene\-Info\-::hostadd, L\-O\-G\-\_\-\-E\-R\-R\-O\-R, Rtu\-Bind\-::oper, Scene\-Info\-::rtubind, Scene\-Info\-::rturegtime, Scene\-Info\-::sceneid, Scene\-Info\-::scenename, Scene\-Info\-::scenepicid, Scene\-Info\-::scenertunum, and Rtu\-Bind\-::type.
+
+
+
+Referenced by update\-\_\-db\-\_\-sceneinfo().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dbbase_8cpp_ad9cd8d3ab8c7385eceb3280b5f910b2a_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dbbase_8cpp_ad9cd8d3ab8c7385eceb3280b5f910b2a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{dbbase_8cpp_a0eb771b638f26a87a9cce0c7de472f0f}{\index{dbbase.\-cpp@{dbbase.\-cpp}!insert\-\_\-db\-\_\-taskinfo@{insert\-\_\-db\-\_\-taskinfo}}
+\index{insert\-\_\-db\-\_\-taskinfo@{insert\-\_\-db\-\_\-taskinfo}!dbbase.cpp@{dbbase.\-cpp}}
+\subsubsection[{insert\-\_\-db\-\_\-taskinfo}]{\setlength{\rightskip}{0pt plus 5cm}int insert\-\_\-db\-\_\-taskinfo (
+\begin{DoxyParamCaption}
+\item[{{\bf Task\-Info} \&}]{taskinfo}
+\end{DoxyParamCaption}
+)}}\label{dbbase_8cpp_a0eb771b638f26a87a9cce0c7de472f0f}
+
+
+insert\-\_\-db\-\_\-taskinfo 设置 编辑定时任务 
+
+
+\begin{DoxyParams}{Parameters}
+{\em taskinfo} & 任务信息 绑定的设备信息需要malloc后传入 \\
+\hline
+\end{DoxyParams}
+
+
+References Rtu\-Bind\-::add, D\-B\-\_\-\-T\-A\-B\-L\-E\-\_\-\-N\-A\-M\-E\-L\-I\-S\-T, Rtu\-Bind\-::delay, Dupicate\-Key\-Update\-Query(), Task\-Info\-::hostadd, L\-O\-G\-\_\-\-E\-R\-R\-O\-R, Rtu\-Bind\-::oper, Task\-Info\-::rtubind, Task\-Info\-::taskcycle, Task\-Info\-::taskid, Task\-Info\-::taskname, Task\-Info\-::taskpicid, Task\-Info\-::taskregtime, Task\-Info\-::taskrtunum, Task\-Info\-::taskstdtime, and Rtu\-Bind\-::type.
+
+
+
+Referenced by update\-\_\-db\-\_\-taskinfo().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dbbase_8cpp_a0eb771b638f26a87a9cce0c7de472f0f_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dbbase_8cpp_a0eb771b638f26a87a9cce0c7de472f0f_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{dbbase_8cpp_afe0ea3530d4cbbbf870292d37df7ac9e}{\index{dbbase.\-cpp@{dbbase.\-cpp}!insert\-\_\-mysql@{insert\-\_\-mysql}}
+\index{insert\-\_\-mysql@{insert\-\_\-mysql}!dbbase.cpp@{dbbase.\-cpp}}
+\subsubsection[{insert\-\_\-mysql}]{\setlength{\rightskip}{0pt plus 5cm}static int insert\-\_\-mysql (
+\begin{DoxyParamCaption}
+\item[{string}]{sql\-\_\-cmd}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{dbbase_8cpp_afe0ea3530d4cbbbf870292d37df7ac9e}
+
+
+insert\-\_\-mysql 数据库基本插入操作 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sql\-\_\-cmd} & 插入命令 为string 类型 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+References L\-O\-G\-\_\-\-E\-R\-R\-O\-R, and m\-\_\-mysqlfd.
+
+
+
+Referenced by db\-\_\-insert\-\_\-query().
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dbbase_8cpp_afe0ea3530d4cbbbf870292d37df7ac9e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{dbbase_8cpp_a55f5cb081a0fc3774070718f283746d6}{\index{dbbase.\-cpp@{dbbase.\-cpp}!Is\-Native\-Rtu@{Is\-Native\-Rtu}}
+\index{Is\-Native\-Rtu@{Is\-Native\-Rtu}!dbbase.cpp@{dbbase.\-cpp}}
+\subsubsection[{Is\-Native\-Rtu}]{\setlength{\rightskip}{0pt plus 5cm}bool Is\-Native\-Rtu (
+\begin{DoxyParamCaption}
+\item[{{\bf Uint8}}]{type}
+\end{DoxyParamCaption}
+)}}\label{dbbase_8cpp_a55f5cb081a0fc3774070718f283746d6}
+
+
+Is\-Native\-Rtu 查看某设备是否是常规设备 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & 设备类型\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true or false 
+\end{DoxyReturn}
+
+
+References R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-C\-T\-R\-L\-B\-O\-X, R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-C\-U\-R\-T\-A\-I\-N, R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-P\-L\-U\-G, R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-R\-G\-B, R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-R\-O\-B\-T\-I\-C, and R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-W\-I\-T\-C\-H.
+
+
+
+Referenced by update\-\_\-db\-\_\-rtuinfo().
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=280pt]{dbbase_8cpp_a55f5cb081a0fc3774070718f283746d6_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{dbbase_8cpp_ae130c9ff11734f9b283c749b1c682659}{\index{dbbase.\-cpp@{dbbase.\-cpp}!Is\-Safety\-Rtu@{Is\-Safety\-Rtu}}
+\index{Is\-Safety\-Rtu@{Is\-Safety\-Rtu}!dbbase.cpp@{dbbase.\-cpp}}
+\subsubsection[{Is\-Safety\-Rtu}]{\setlength{\rightskip}{0pt plus 5cm}bool Is\-Safety\-Rtu (
+\begin{DoxyParamCaption}
+\item[{{\bf Uint8}}]{type}
+\end{DoxyParamCaption}
+)}}\label{dbbase_8cpp_ae130c9ff11734f9b283c749b1c682659}
+
+
+Is\-Safety\-Rtu 查看某设备是否是安防设备 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & 设备类型\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true or false 
+\end{DoxyReturn}
+
+
+References R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-D\-O\-O\-R\-B\-E\-L\-L, R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-D\-O\-O\-R\-C\-O\-N\-T\-A\-C\-T, R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-D\-O\-O\-R\-L\-O\-C\-K, and R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-I\-R\-P\-R\-O\-B\-E.
+
+\hypertarget{dbbase_8cpp_a334c4412fa09aab89d49cefdfd233b04}{\index{dbbase.\-cpp@{dbbase.\-cpp}!select\-\_\-db\-\_\-hostinfo@{select\-\_\-db\-\_\-hostinfo}}
+\index{select\-\_\-db\-\_\-hostinfo@{select\-\_\-db\-\_\-hostinfo}!dbbase.cpp@{dbbase.\-cpp}}
+\subsubsection[{select\-\_\-db\-\_\-hostinfo}]{\setlength{\rightskip}{0pt plus 5cm}int select\-\_\-db\-\_\-hostinfo (
+\begin{DoxyParamCaption}
+\item[{{\bf Host\-Reg\-Info} $\ast$}]{p\-Hostinfo, }
+\item[{char $\ast$}]{hostname}
+\end{DoxyParamCaption}
+)}}\label{dbbase_8cpp_a334c4412fa09aab89d49cefdfd233b04}
+
+
+select\-\_\-db\-\_\-hostinfo 根据主机名 查询主机信息 ，用于 A\-P\-P远程登陆 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\-Hostinfo} & \\
+\hline
+{\em hostname} & Host\-Add,Host\-Pwd,Host\-Ip,Host\-State,Last\-Com\-Time \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+返回值 -\/1 错误 0 正确 1 没有数据 
+\end{DoxyReturn}
+
+
+References db\-\_\-select\-\_\-query(), D\-B\-\_\-\-T\-A\-B\-L\-E\-\_\-\-N\-A\-M\-E\-L\-I\-S\-T, Host\-Reg\-Info\-::hostadd, Host\-Reg\-Info\-::hostip, Host\-Reg\-Info\-::hostpwd, Host\-Reg\-Info\-::hoststate, Host\-Reg\-Info\-::lastcomtime, L\-O\-G\-\_\-\-D\-E\-B\-U\-G, and L\-O\-G\-\_\-\-E\-R\-R\-O\-R.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dbbase_8cpp_a334c4412fa09aab89d49cefdfd233b04_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{dbbase_8cpp_acdefe48f4a7a750062898c54c5ecd356}{\index{dbbase.\-cpp@{dbbase.\-cpp}!select\-\_\-query@{select\-\_\-query}}
+\index{select\-\_\-query@{select\-\_\-query}!dbbase.cpp@{dbbase.\-cpp}}
+\subsubsection[{select\-\_\-query}]{\setlength{\rightskip}{0pt plus 5cm}static int select\-\_\-query (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{sql, }
+\item[{string \&}]{retstr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{dbbase_8cpp_acdefe48f4a7a750062898c54c5ecd356}
+
+
+select\-\_\-query 查找操作 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sql} & 查找sql 命令 \\
+\hline
+{\em retstr} & 返回列字段，以逗号隔开\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+References check\-\_\-connect(), L\-O\-G\-\_\-\-D\-E\-B\-U\-G, L\-O\-G\-\_\-\-E\-R\-R\-O\-R, and m\-\_\-mysqlfd.
+
+
+
+Referenced by db\-\_\-select\-\_\-query().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=272pt]{dbbase_8cpp_acdefe48f4a7a750062898c54c5ecd356_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dbbase_8cpp_acdefe48f4a7a750062898c54c5ecd356_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{dbbase_8cpp_a8b214bd5c7dbfef30ac417954cb0c5e2}{\index{dbbase.\-cpp@{dbbase.\-cpp}!update\-\_\-db\-\_\-apprtu@{update\-\_\-db\-\_\-apprtu}}
+\index{update\-\_\-db\-\_\-apprtu@{update\-\_\-db\-\_\-apprtu}!dbbase.cpp@{dbbase.\-cpp}}
+\subsubsection[{update\-\_\-db\-\_\-apprtu}]{\setlength{\rightskip}{0pt plus 5cm}int update\-\_\-db\-\_\-apprtu (
+\begin{DoxyParamCaption}
+\item[{{\bf App\-Rtu\-Info} \&}]{rtuinfo}
+\end{DoxyParamCaption}
+)}}\label{dbbase_8cpp_a8b214bd5c7dbfef30ac417954cb0c5e2}
+
+
+update\-\_\-db\-\_\-apprtu 修改应用设备 
+
+
+
+References insert\-\_\-db\-\_\-apprtu().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dbbase_8cpp_a8b214bd5c7dbfef30ac417954cb0c5e2_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{dbbase_8cpp_a35e1056e0f46576bda26dabc59ce0ded}{\index{dbbase.\-cpp@{dbbase.\-cpp}!update\-\_\-db\-\_\-detectorbind@{update\-\_\-db\-\_\-detectorbind}}
+\index{update\-\_\-db\-\_\-detectorbind@{update\-\_\-db\-\_\-detectorbind}!dbbase.cpp@{dbbase.\-cpp}}
+\subsubsection[{update\-\_\-db\-\_\-detectorbind}]{\setlength{\rightskip}{0pt plus 5cm}int update\-\_\-db\-\_\-detectorbind (
+\begin{DoxyParamCaption}
+\item[{{\bf Detector\-Bind} \&}]{rtuinfo}
+\end{DoxyParamCaption}
+)}}\label{dbbase_8cpp_a35e1056e0f46576bda26dabc59ce0ded}
+
+
+update\-\_\-db\-\_\-detectorbind 绑定联动接口 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rtuinfo} & 绑定的设备信息需要malloc后传入 \\
+\hline
+\end{DoxyParams}
+
+
+References Rtu\-Bind\-::add, Detector\-Bind\-::bind\-\_\-num, db\-\_\-update\-\_\-query(), Rtu\-Bind\-::delay, Detector\-Bind\-::hostadd, Detector\-Bind\-::level, Rtu\-Bind\-::oper, Detector\-Bind\-::rtuadd, Detector\-Bind\-::rtubind, and Rtu\-Bind\-::type.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dbbase_8cpp_a35e1056e0f46576bda26dabc59ce0ded_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{dbbase_8cpp_aa039ebdc57c1a8157a01c9a762f43bc6}{\index{dbbase.\-cpp@{dbbase.\-cpp}!update\-\_\-db\-\_\-detectorrtu@{update\-\_\-db\-\_\-detectorrtu}}
+\index{update\-\_\-db\-\_\-detectorrtu@{update\-\_\-db\-\_\-detectorrtu}!dbbase.cpp@{dbbase.\-cpp}}
+\subsubsection[{update\-\_\-db\-\_\-detectorrtu}]{\setlength{\rightskip}{0pt plus 5cm}int update\-\_\-db\-\_\-detectorrtu (
+\begin{DoxyParamCaption}
+\item[{{\bf Detector\-Rtu} \&}]{rtuinfo, }
+\item[{{\bf Uint8}}]{mode}
+\end{DoxyParamCaption}
+)}}\label{dbbase_8cpp_aa039ebdc57c1a8157a01c9a762f43bc6}
+
+
+update\-\_\-db\-\_\-detectorrtu 更新传感器设备 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rtuinfo} & \\
+\hline
+{\em mode} & 模式 0 更新 val 值 1 更新联动标志，阈值 更新val \-: 传入 val数组值 ,默认为0 更新联动标志： 传入 flag ,downval ,upval \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+References db\-\_\-update\-\_\-query(), Detector\-Rtu\-::detectorinfo, Detector\-Info\-::downval, Detector\-Info\-::flag, Rtu\-Reg\-Info\-::hostadd, L\-O\-G\-\_\-\-E\-R\-R\-O\-R, Rtu\-Reg\-Info\-::rtuadd, Detector\-Rtu\-::rtuinfo, Detector\-Info\-::upval, Detector\-Info\-::val, and Detector\-Rtu\-::valtype.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dbbase_8cpp_aa039ebdc57c1a8157a01c9a762f43bc6_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{dbbase_8cpp_a81cfc05e7763f268740f8a27f85b77de}{\index{dbbase.\-cpp@{dbbase.\-cpp}!update\-\_\-db\-\_\-exnativertu@{update\-\_\-db\-\_\-exnativertu}}
+\index{update\-\_\-db\-\_\-exnativertu@{update\-\_\-db\-\_\-exnativertu}!dbbase.cpp@{dbbase.\-cpp}}
+\subsubsection[{update\-\_\-db\-\_\-exnativertu}]{\setlength{\rightskip}{0pt plus 5cm}int update\-\_\-db\-\_\-exnativertu (
+\begin{DoxyParamCaption}
+\item[{{\bf Ex\-Native\-Rtu} \&}]{rtuinfo}
+\end{DoxyParamCaption}
+)}}\label{dbbase_8cpp_a81cfc05e7763f268740f8a27f85b77de}
+
+
+update\-\_\-db\-\_\-exnativertu 更新智能床 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rtuinfo} & 控制 ： relayinfo 数组 中val值传入 床头位置（1） 床尾位置（1） 床头振动（1） 床尾振动（1） 灯状态（1）：0x00表示关灯，0x01表示开灯 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+References db\-\_\-update\-\_\-query(), get\-\_\-table\-\_\-name(), Rtu\-Reg\-Info\-::hostadd, Ex\-Native\-Rtu\-::relayinfo, R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-B\-E\-D, Rtu\-Reg\-Info\-::rtuadd, Ex\-Native\-Rtu\-::rtuinfo, and Relay\-Info\-::val.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dbbase_8cpp_a81cfc05e7763f268740f8a27f85b77de_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{dbbase_8cpp_a82757fe4298d8fdf297391a4e42e3293}{\index{dbbase.\-cpp@{dbbase.\-cpp}!update\-\_\-db\-\_\-host@{update\-\_\-db\-\_\-host}}
+\index{update\-\_\-db\-\_\-host@{update\-\_\-db\-\_\-host}!dbbase.cpp@{dbbase.\-cpp}}
+\subsubsection[{update\-\_\-db\-\_\-host}]{\setlength{\rightskip}{0pt plus 5cm}int update\-\_\-db\-\_\-host (
+\begin{DoxyParamCaption}
+\item[{{\bf Host\-Reg\-Info} \&}]{hostinfo}
+\end{DoxyParamCaption}
+)}}\label{dbbase_8cpp_a82757fe4298d8fdf297391a4e42e3293}
+
+
+update\-\_\-db\-\_\-host 更新主机信息表 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hostinfo} & 更新信息： 传入 hostname ,hostip \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+References db\-\_\-update\-\_\-query(), find\-Hostname(), get\-\_\-sys\-\_\-time(), get\-\_\-table\-\_\-name(), Host\-Reg\-Info\-::hostip, Host\-Reg\-Info\-::hostname, L\-O\-G\-\_\-\-E\-R\-R\-O\-R, and R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-H\-O\-S\-T.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dbbase_8cpp_a82757fe4298d8fdf297391a4e42e3293_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{dbbase_8cpp_a5f38e8abcbb787b6fed1c8e1dce1c7c2}{\index{dbbase.\-cpp@{dbbase.\-cpp}!update\-\_\-db\-\_\-hostname@{update\-\_\-db\-\_\-hostname}}
+\index{update\-\_\-db\-\_\-hostname@{update\-\_\-db\-\_\-hostname}!dbbase.cpp@{dbbase.\-cpp}}
+\subsubsection[{update\-\_\-db\-\_\-hostname}]{\setlength{\rightskip}{0pt plus 5cm}int update\-\_\-db\-\_\-hostname (
+\begin{DoxyParamCaption}
+\item[{{\bf Host\-Man} \&}]{hostinfo}
+\end{DoxyParamCaption}
+)}}\label{dbbase_8cpp_a5f38e8abcbb787b6fed1c8e1dce1c7c2}
+
+
+update\-\_\-db\-\_\-hostname 用户管理 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hostinfo} & 更新信息： 传入 原 新 主机名 密码 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+References db\-\_\-select\-\_\-query(), db\-\_\-update\-\_\-query(), M\-A\-X\-\_\-\-P\-A\-S\-S\-W\-O\-R\-D\-\_\-\-L\-E\-N, Host\-Man\-::newname, Host\-Man\-::newpwd, Host\-Man\-::oldname, and Host\-Man\-::oldpwd.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dbbase_8cpp_a5f38e8abcbb787b6fed1c8e1dce1c7c2_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{dbbase_8cpp_a83758c046728190fe1ac0a9eef34285b}{\index{dbbase.\-cpp@{dbbase.\-cpp}!update\-\_\-db\-\_\-nativertu@{update\-\_\-db\-\_\-nativertu}}
+\index{update\-\_\-db\-\_\-nativertu@{update\-\_\-db\-\_\-nativertu}!dbbase.cpp@{dbbase.\-cpp}}
+\subsubsection[{update\-\_\-db\-\_\-nativertu}]{\setlength{\rightskip}{0pt plus 5cm}int update\-\_\-db\-\_\-nativertu (
+\begin{DoxyParamCaption}
+\item[{{\bf Native\-Rtu\-Info} \&}]{rtuinfo, }
+\item[{{\bf Uint8}}]{mode}
+\end{DoxyParamCaption}
+)}}\label{dbbase_8cpp_a83758c046728190fe1ac0a9eef34285b}
+
+
+update\-\_\-db\-\_\-nativertu 常规设备更新 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rtuinfo} & \\
+\hline
+{\em mode} & 模式 0 控制 1 绑定负载 控制 ： 传入 \hyperlink{structRelayInfo}{Relay\-Info} 数组中 val 绑定负载： 传入 bind\-\_\-num , \hyperlink{structRelayInfo}{Relay\-Info} 数组中 id,type,name\mbox{[}\mbox{]} ,path\mbox{[}\mbox{]} 设备头信息 \hyperlink{structRtuRegInfo}{Rtu\-Reg\-Info} 中的hostadd,rtuadd 必须传入 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 更新成功 -\/1 更新失败 
+\end{DoxyReturn}
+
+
+References Native\-Rtu\-Info\-::bind\-\_\-num, db\-\_\-update\-\_\-query(), Rtu\-Reg\-Info\-::hostadd, Relay\-Info\-::id, L\-O\-G\-\_\-\-D\-E\-B\-U\-G, L\-O\-G\-\_\-\-E\-R\-R\-O\-R, Relay\-Info\-::name, Relay\-Info\-::path, Native\-Rtu\-Info\-::relayinfo, Rtu\-Reg\-Info\-::rtuadd, Native\-Rtu\-Info\-::rtuinfo, Relay\-Info\-::type, and Relay\-Info\-::val.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dbbase_8cpp_a83758c046728190fe1ac0a9eef34285b_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{dbbase_8cpp_ad42e211ca6c04241e68331f73c74113c}{\index{dbbase.\-cpp@{dbbase.\-cpp}!update\-\_\-db\-\_\-rtuinfo@{update\-\_\-db\-\_\-rtuinfo}}
+\index{update\-\_\-db\-\_\-rtuinfo@{update\-\_\-db\-\_\-rtuinfo}!dbbase.cpp@{dbbase.\-cpp}}
+\subsubsection[{update\-\_\-db\-\_\-rtuinfo}]{\setlength{\rightskip}{0pt plus 5cm}int update\-\_\-db\-\_\-rtuinfo (
+\begin{DoxyParamCaption}
+\item[{{\bf Rtu\-Update} \&}]{hostinfo}
+\end{DoxyParamCaption}
+)}}\label{dbbase_8cpp_ad42e211ca6c04241e68331f73c74113c}
+
+
+update\-\_\-db\-\_\-rtuinfo 用户设备信息编辑 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hostinfo} & 该结构体所有字段必须传入 更新 设备名称和路径 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+References db\-\_\-update\-\_\-query(), get\-\_\-table\-\_\-name(), Rtu\-Update\-::hostadd, Is\-Native\-Rtu(), Rtu\-Update\-::opertype, R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-B\-E\-D, R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-C\-E\-N\-E\-I\-N\-F\-O, R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-T\-A\-S\-K\-I\-N\-F\-O, Rtu\-Update\-::rtuadd, Rtu\-Update\-::rtuname, Rtu\-Update\-::rtupath, and Rtu\-Update\-::rtutype.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dbbase_8cpp_ad42e211ca6c04241e68331f73c74113c_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{dbbase_8cpp_afe8cc79a0b360aa2a371f266709451e8}{\index{dbbase.\-cpp@{dbbase.\-cpp}!update\-\_\-db\-\_\-safetypwd@{update\-\_\-db\-\_\-safetypwd}}
+\index{update\-\_\-db\-\_\-safetypwd@{update\-\_\-db\-\_\-safetypwd}!dbbase.cpp@{dbbase.\-cpp}}
+\subsubsection[{update\-\_\-db\-\_\-safetypwd}]{\setlength{\rightskip}{0pt plus 5cm}int update\-\_\-db\-\_\-safetypwd (
+\begin{DoxyParamCaption}
+\item[{{\bf Safety\-Pwd\-Info} \&}]{rtuinfo}
+\end{DoxyParamCaption}
+)}}\label{dbbase_8cpp_afe8cc79a0b360aa2a371f266709451e8}
+
+
+update\-\_\-db\-\_\-safetypwd 门锁密码更新接口 包括新开锁密码添加，修改 管理员密码修改 
+
+
+
+References db\-\_\-select\-\_\-query(), db\-\_\-update\-\_\-query(), Safety\-Pwd\-Info\-::hostadd, Safety\-Pwd\-Info\-::id, L\-O\-G\-\_\-\-E\-R\-R\-O\-R, M\-A\-X\-\_\-\-P\-A\-S\-S\-W\-O\-R\-D\-\_\-\-L\-E\-N, Safety\-Pwd\-Info\-::newpwd, Safety\-Pwd\-Info\-::oldpwd, and Safety\-Pwd\-Info\-::rtuadd.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dbbase_8cpp_afe8cc79a0b360aa2a371f266709451e8_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{dbbase_8cpp_ae0e36aa1334e0b83d2e2edd95a89b5b2}{\index{dbbase.\-cpp@{dbbase.\-cpp}!update\-\_\-db\-\_\-safetyrtu@{update\-\_\-db\-\_\-safetyrtu}}
+\index{update\-\_\-db\-\_\-safetyrtu@{update\-\_\-db\-\_\-safetyrtu}!dbbase.cpp@{dbbase.\-cpp}}
+\subsubsection[{update\-\_\-db\-\_\-safetyrtu}]{\setlength{\rightskip}{0pt plus 5cm}int update\-\_\-db\-\_\-safetyrtu (
+\begin{DoxyParamCaption}
+\item[{{\bf Safety\-Rtu} \&}]{rtuinfo}
+\end{DoxyParamCaption}
+)}}\label{dbbase_8cpp_ae0e36aa1334e0b83d2e2edd95a89b5b2}
+
+
+update\-\_\-db\-\_\-safetyrtu 更新安防设备 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rtuinfo} & 控制： 传入 布防状态 ， 动作状态 hostadd ,rtuadd 必须 传入 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+References db\-\_\-update\-\_\-query(), get\-\_\-table\-\_\-name(), Rtu\-Reg\-Info\-::hostadd, Safety\-Rtu\-::rtuactstate, Rtu\-Reg\-Info\-::rtuadd, Safety\-Rtu\-::rtuinfo, Safety\-Rtu\-::rtuplace, and Rtu\-Reg\-Info\-::rtutype.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dbbase_8cpp_ae0e36aa1334e0b83d2e2edd95a89b5b2_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{dbbase_8cpp_aedbae4394a0f4e1fc8f6eabee7e355c2}{\index{dbbase.\-cpp@{dbbase.\-cpp}!update\-\_\-db\-\_\-sceneinfo@{update\-\_\-db\-\_\-sceneinfo}}
+\index{update\-\_\-db\-\_\-sceneinfo@{update\-\_\-db\-\_\-sceneinfo}!dbbase.cpp@{dbbase.\-cpp}}
+\subsubsection[{update\-\_\-db\-\_\-sceneinfo}]{\setlength{\rightskip}{0pt plus 5cm}int update\-\_\-db\-\_\-sceneinfo (
+\begin{DoxyParamCaption}
+\item[{{\bf Scene\-Info} \&}]{rtuinfo}
+\end{DoxyParamCaption}
+)}}\label{dbbase_8cpp_aedbae4394a0f4e1fc8f6eabee7e355c2}
+
+
+update\-\_\-db\-\_\-sceneinfo 修改 情景 
+
+
+
+References insert\-\_\-db\-\_\-sceneinfo().
+
+
+
+Referenced by main().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dbbase_8cpp_aedbae4394a0f4e1fc8f6eabee7e355c2_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{dbbase_8cpp_aedbae4394a0f4e1fc8f6eabee7e355c2_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{dbbase_8cpp_aae594d8934a37c3a973e31432cd76c96}{\index{dbbase.\-cpp@{dbbase.\-cpp}!update\-\_\-db\-\_\-scenertu@{update\-\_\-db\-\_\-scenertu}}
+\index{update\-\_\-db\-\_\-scenertu@{update\-\_\-db\-\_\-scenertu}!dbbase.cpp@{dbbase.\-cpp}}
+\subsubsection[{update\-\_\-db\-\_\-scenertu}]{\setlength{\rightskip}{0pt plus 5cm}int update\-\_\-db\-\_\-scenertu (
+\begin{DoxyParamCaption}
+\item[{{\bf Scene\-Rtu} \&}]{rtuinfo}
+\end{DoxyParamCaption}
+)}}\label{dbbase_8cpp_aae594d8934a37c3a973e31432cd76c96}
+
+
+update\-\_\-db\-\_\-scenertu 更新情景面板 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rtuinfo} & 修改绑定： bind\-\_\-num , 每个button的信息 ，包括id ,type,add,oper \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+References Scene\-Bind\-::add, Scene\-Rtu\-::bind\-\_\-num, db\-\_\-update\-\_\-query(), Rtu\-Reg\-Info\-::hostadd, Scene\-Bind\-::id, Scene\-Bind\-::oper, Rtu\-Reg\-Info\-::rtuadd, Scene\-Rtu\-::rtuinfo, Scene\-Rtu\-::scene\-\_\-bind, and Scene\-Bind\-::type.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dbbase_8cpp_aae594d8934a37c3a973e31432cd76c96_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{dbbase_8cpp_a659d4acf9f3d7a1b013867717905c198}{\index{dbbase.\-cpp@{dbbase.\-cpp}!update\-\_\-db\-\_\-taskinfo@{update\-\_\-db\-\_\-taskinfo}}
+\index{update\-\_\-db\-\_\-taskinfo@{update\-\_\-db\-\_\-taskinfo}!dbbase.cpp@{dbbase.\-cpp}}
+\subsubsection[{update\-\_\-db\-\_\-taskinfo}]{\setlength{\rightskip}{0pt plus 5cm}int update\-\_\-db\-\_\-taskinfo (
+\begin{DoxyParamCaption}
+\item[{{\bf Task\-Info} \&}]{taskinfo}
+\end{DoxyParamCaption}
+)}}\label{dbbase_8cpp_a659d4acf9f3d7a1b013867717905c198}
+
+
+update\-\_\-db\-\_\-taskinfo 编辑定时任务 
+
+
+
+References insert\-\_\-db\-\_\-taskinfo().
+
+
+
+Referenced by main().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dbbase_8cpp_a659d4acf9f3d7a1b013867717905c198_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=256pt]{dbbase_8cpp_a659d4acf9f3d7a1b013867717905c198_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{dbbase_8cpp_a513b454acfc51fb3100e5a8ad0535b50}{\index{dbbase.\-cpp@{dbbase.\-cpp}!m\-\_\-mysqlfd@{m\-\_\-mysqlfd}}
+\index{m\-\_\-mysqlfd@{m\-\_\-mysqlfd}!dbbase.cpp@{dbbase.\-cpp}}
+\subsubsection[{m\-\_\-mysqlfd}]{\setlength{\rightskip}{0pt plus 5cm}M\-Y\-S\-Q\-L m\-\_\-mysqlfd}}\label{dbbase_8cpp_a513b454acfc51fb3100e5a8ad0535b50}
+数据库连接描述符 
+
+Referenced by check\-\_\-connect(), db\-\_\-update\-\_\-query(), delete\-\_\-db\-\_\-host(), delete\-\_\-db\-\_\-rtu(), Dupicate\-Key\-Update\-Query(), find\-Hostname(), find\-Rtuadd(), Get\-Host\-Count(), Get\-Host\-Id\-By\-Name(), Get\-Ip\-By\-Host\-Add(), init\-\_\-mysql(), insert\-\_\-db\-\_\-rtu(), insert\-\_\-mysql(), and select\-\_\-query().
+

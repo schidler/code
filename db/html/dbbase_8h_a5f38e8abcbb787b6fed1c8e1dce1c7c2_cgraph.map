@@ -1,0 +1,6 @@
+<map id="update_db_hostname" name="update_db_hostname">
+<area shape="rect" id="node3" href="$dbbase_8cpp.html#a7f355040a91d1275a6ac9a9490025717" title="db_select_query 查找操作" alt="" coords="200,7,317,36"/>
+<area shape="rect" id="node9" href="$dbbase_8cpp.html#a09e73ba1c0460f0f548fffa8f8aa8ebb" title="db_update_query 更新查询" alt="" coords="367,59,487,88"/>
+<area shape="rect" id="node5" href="$dbbase_8cpp.html#acdefe48f4a7a750062898c54c5ecd356" title="select_query 查找操作" alt="" coords="379,5,475,35"/>
+<area shape="rect" id="node7" href="$dbbase_8cpp.html#a45f3ac6076b939b77778a8d8a2aebde6" title="check_connect 检查连接" alt="" coords="537,32,647,61"/>
+</map>

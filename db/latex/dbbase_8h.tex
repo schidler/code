@@ -1,0 +1,1770 @@
+\hypertarget{dbbase_8h}{\section{dbbase.\-h File Reference}
+\label{dbbase_8h}\index{dbbase.\-h@{dbbase.\-h}}
+}
+
+
+mysql 数据库接口实现  
+
+
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$mysql/mysql.\-h$>$}\\*
+{\ttfamily \#include $<$sstream$>$}\\*
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}base.\-h\char`\"{}}\\*
+Include dependency graph for dbbase.\-h\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dbbase_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=212pt]{dbbase_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structDBTypeInfo}{D\-B\-Type\-Info}
+\item 
+struct \hyperlink{structMysqlConInfo}{Mysql\-Con\-Info}
+\item 
+struct \hyperlink{structRtuRegInfo}{Rtu\-Reg\-Info}
+\item 
+struct \hyperlink{structRtuRemoveInfo}{Rtu\-Remove\-Info}
+\item 
+struct \hyperlink{structHostRegInfo}{Host\-Reg\-Info}
+\item 
+struct \hyperlink{structAppRtuInfo}{App\-Rtu\-Info}
+\item 
+struct \hyperlink{structRelayInfo}{Relay\-Info}
+\item 
+struct \hyperlink{structNativeRtuInfo}{Native\-Rtu\-Info}
+\item 
+struct \hyperlink{structSafetyRtu}{Safety\-Rtu}
+\item 
+struct \hyperlink{structSceneBind}{Scene\-Bind}
+\item 
+struct \hyperlink{structSceneRtu}{Scene\-Rtu}
+\item 
+struct \hyperlink{structExNativeRtu}{Ex\-Native\-Rtu}
+\item 
+struct \hyperlink{structDetectorInfo}{Detector\-Info}
+\item 
+struct \hyperlink{structDetectorRtu}{Detector\-Rtu}
+\item 
+struct \hyperlink{structRtuBind}{Rtu\-Bind}
+\item 
+struct \hyperlink{structDetectorBind}{Detector\-Bind}
+\item 
+struct \hyperlink{structTaskInfo}{Task\-Info}
+\item 
+struct \hyperlink{structSceneInfo}{Scene\-Info}
+\item 
+struct \hyperlink{structHostMan}{Host\-Man}
+\item 
+struct \hyperlink{structRtuUpdate}{Rtu\-Update}
+\item 
+struct \hyperlink{structSafetyPwdInfo}{Safety\-Pwd\-Info}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{dbbase_8h_a06a9cf374e83dcac0620e5095f79234e}{M\-A\-X\-\_\-\-S\-Q\-L\-N\-A\-M\-E\-\_\-\-L\-E\-N}~256
+\begin{DoxyCompactList}\small\item\em 数据库主机长度 \end{DoxyCompactList}\item 
+\#define \hyperlink{dbbase_8h_a6c4647395896246d6710ba980c31666c}{M\-A\-X\-\_\-\-U\-S\-E\-R\-N\-A\-M\-E\-\_\-\-L\-E\-N}~32
+\begin{DoxyCompactList}\small\item\em 用户名长度 \end{DoxyCompactList}\item 
+\#define \hyperlink{dbbase_8h_ae9169c3fda2dfecbb7a13e394a69e5be}{M\-A\-X\-\_\-\-P\-A\-S\-S\-W\-O\-R\-D\-\_\-\-L\-E\-N}~16
+\begin{DoxyCompactList}\small\item\em 用户密码长度 \end{DoxyCompactList}\item 
+\#define \hyperlink{dbbase_8h_a998c6ce37817a02bf23a1a2c6fd15cb0}{M\-A\-X\-\_\-\-S\-Q\-L\-U\-S\-E\-R\-N\-A\-M\-E\-\_\-\-L\-E\-N}~16
+\begin{DoxyCompactList}\small\item\em 数据库用户名长度 \end{DoxyCompactList}\item 
+\#define \hyperlink{dbbase_8h_ae5cf418bda87e648ae461cfbca7e2f8e}{M\-A\-X\-\_\-\-S\-Q\-L\-P\-A\-S\-S\-W\-D\-\_\-\-L\-E\-N}~32
+\begin{DoxyCompactList}\small\item\em 数据库密码 \end{DoxyCompactList}\item 
+\#define \hyperlink{dbbase_8h_a7a31b64ea7a37ca824e574b1ac483c4e}{M\-I\-N\-\_\-\-P\-A\-T\-H\-\_\-\-L\-E\-N}~32
+\begin{DoxyCompactList}\small\item\em 最小路径名长度 \end{DoxyCompactList}\item 
+\#define \hyperlink{dbbase_8h_afd709f201d7643c3909621f620ea648a}{M\-A\-X\-\_\-\-N\-A\-M\-E\-\_\-\-L\-E\-N}~32
+\begin{DoxyCompactList}\small\item\em 最大名称描述长度 \end{DoxyCompactList}\item 
+\#define \hyperlink{dbbase_8h_a996a9eb45ccaa6031bb6c2756982574e}{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-H\-O\-S\-T\-I\-N\-F\-O}~0
+\begin{DoxyCompactList}\small\item\em 主机信息 \end{DoxyCompactList}\item 
+\#define \hyperlink{dbbase_8h_a41cec6fbd71ae961f90e82426069de0d}{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-N\-A\-T\-I\-V\-E\-R\-T\-U}~1
+\begin{DoxyCompactList}\small\item\em 常规设备数据对象类型，即对应设备类型中的智能开关、智能插座、继电器控制盒、\-R\-G\-B灯、窗帘控制器 \end{DoxyCompactList}\item 
+\#define \hyperlink{dbbase_8h_ad4f12324caffd9b4f08873fab1e000ec}{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-C\-E\-N\-E\-R\-T\-U}~2
+\begin{DoxyCompactList}\small\item\em 情景面板数据对象类型，即对应设备类型中的情景面板 \end{DoxyCompactList}\item 
+\#define \hyperlink{dbbase_8h_a41a148f7a529e4db02e65558c4e8bd2a}{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-C\-E\-N\-E\-I\-N\-F\-O}~3
+\begin{DoxyCompactList}\small\item\em 情景信息数据对象类型，与设备类型无关 \end{DoxyCompactList}\item 
+\#define \hyperlink{dbbase_8h_a7eb9f10805359d86e3bc2f3db4f637a0}{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-T\-R\-A\-N\-S\-P\-O\-N\-D}~4
+\begin{DoxyCompactList}\small\item\em 转发设备数据对象类型，即对应设备类型中的蓝牙遥控器、红外转发器 \end{DoxyCompactList}\item 
+\#define \hyperlink{dbbase_8h_ae55710d69649f16efe243531ff2a81bf}{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-U\-S\-E\-D\-E\-V\-I\-C\-E}~5
+\begin{DoxyCompactList}\small\item\em 应用设备对象类型，即对应设备类型中的应用设备 \end{DoxyCompactList}\item 
+\#define \hyperlink{dbbase_8h_aa5fd110ec2d2154dd1551fd95e067656}{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-A\-F\-E\-T\-Y}~6
+\begin{DoxyCompactList}\small\item\em 安防设备数据对象类型，即对应设备类型中的红外入侵探测器、智能门磁、智能门锁、智能门铃 \end{DoxyCompactList}\item 
+\#define \hyperlink{dbbase_8h_a61d59a6754031f39ebda58da8b952ba1}{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-A\-F\-E\-T\-Y\-\_\-\-P\-W\-D}~7
+\begin{DoxyCompactList}\small\item\em 安防设备数据的密码 \end{DoxyCompactList}\item 
+\#define \hyperlink{dbbase_8h_aec430d5db9094084b6e15d22ed4819a5}{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-A\-F\-E\-T\-Y\-\_\-\-S\-E\-T}~8
+\begin{DoxyCompactList}\small\item\em 安防设备数据的设防联动 \end{DoxyCompactList}\item 
+\#define \hyperlink{dbbase_8h_a5e6cbdcc4f0d7de1fea79c99558b360f}{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-A\-F\-E\-T\-Y\-\_\-\-R\-E\-M\-O\-V\-E}~9
+\begin{DoxyCompactList}\small\item\em 安防设备数据的撤防联动 \end{DoxyCompactList}\item 
+\#define \hyperlink{dbbase_8h_a5f8a196b1bd807b23e6f2cfd4e19de85}{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-C\-E\-N\-E\-I\-N\-F\-O\-\_\-\-C\-O\-N}~10
+\begin{DoxyCompactList}\small\item\em 情景信息续表 \end{DoxyCompactList}\item 
+\#define \hyperlink{dbbase_8h_a3fb36a0a73a2cfe354d3b92d685486fb}{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-D\-E\-T\-E\-C\-T\-O\-R\-R\-T\-U}~11
+\begin{DoxyCompactList}\small\item\em 传感器设备数据对象类型 \end{DoxyCompactList}\item 
+\#define \hyperlink{dbbase_8h_a916a559281a114bcb4d1eab8037e3b83}{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-D\-E\-T\-E\-C\-T\-O\-R\-B\-I\-N\-D}~12
+\begin{DoxyCompactList}\small\item\em 传感器设备联动 \end{DoxyCompactList}\item 
+\#define \hyperlink{dbbase_8h_aed911e3974cf3a23a323d798cdc50621}{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-T\-A\-S\-K\-I\-N\-F\-O}~13
+\item 
+\#define \hyperlink{dbbase_8h_a2bd6cf12d4f631f21eea2b7fe1a59394}{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-E\-X\-N\-A\-T\-I\-V\-E\-R\-T\-U}~14
+\item 
+\#define \hyperlink{dbbase_8h_a76dca32c9108e44ce73937259d5e7dee}{M\-A\-X\-\_\-\-D\-B\-\_\-\-T\-Y\-P\-E}~15
+\item 
+\#define \hyperlink{dbbase_8h_a9ab465f58189825ead59fe8a79c2a7f6}{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-R\-T\-U\-T\-Y\-P\-E}~(\hyperlink{dbbase_8h_a76dca32c9108e44ce73937259d5e7dee}{M\-A\-X\-\_\-\-D\-B\-\_\-\-T\-Y\-P\-E})
+\item 
+\#define \hyperlink{dbbase_8h_abe648858953c8e5a22b1cd5802ce6b0f}{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-U\-S\-E\-D\-E\-V\-T\-Y\-P\-E}~(\hyperlink{dbbase_8h_a76dca32c9108e44ce73937259d5e7dee}{M\-A\-X\-\_\-\-D\-B\-\_\-\-T\-Y\-P\-E}+1)
+\item 
+\#define \hyperlink{dbbase_8h_a95e59c426d2f33d0653e61e86998c1a1}{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-H\-O\-S\-T}~0
+\begin{DoxyCompactList}\small\item\em 主机类型 \end{DoxyCompactList}\item 
+\#define \hyperlink{dbbase_8h_aed90f514e1e21d48002da1e555617aab}{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-W\-I\-T\-C\-H}~1
+\begin{DoxyCompactList}\small\item\em 智能开关类型 \end{DoxyCompactList}\item 
+\#define \hyperlink{dbbase_8h_aad9835fec88827746383cbfc49d11d98}{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-C\-E\-N\-E}~2
+\begin{DoxyCompactList}\small\item\em 情景面板类型 \end{DoxyCompactList}\item 
+\#define \hyperlink{dbbase_8h_a4dd9a3011fd8aedf02308903c9129cc7}{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-P\-L\-U\-G}~3
+\begin{DoxyCompactList}\small\item\em 智能插座类型 \end{DoxyCompactList}\item 
+\#define \hyperlink{dbbase_8h_aaa53b0895b2ab0fcf07391ac59c2a775}{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-C\-T\-R\-L\-B\-O\-X}~4
+\begin{DoxyCompactList}\small\item\em 继电器控制盒类型 \end{DoxyCompactList}\item 
+\#define \hyperlink{dbbase_8h_afa871f118a4976960003db5923b783b3}{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-R\-G\-B}~5
+\begin{DoxyCompactList}\small\item\em R\-G\-B灯 \end{DoxyCompactList}\item 
+\#define \hyperlink{dbbase_8h_a1a0d47652142cbb9c1bcb0cf80b47d92}{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-B\-T\-R\-E\-M\-O\-T\-E}~6
+\begin{DoxyCompactList}\small\item\em 蓝牙遥控器 \end{DoxyCompactList}\item 
+\#define \hyperlink{dbbase_8h_afdf7c2bf60db37561d4f8a78b75f849c}{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-I\-R\-T\-R\-A\-N\-S}~7
+\begin{DoxyCompactList}\small\item\em 红外转发器 \end{DoxyCompactList}\item 
+\#define \hyperlink{dbbase_8h_a9570babe61ff0e57b4599cb5b73c48fb}{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-C\-U\-R\-T\-A\-I\-N}~8
+\begin{DoxyCompactList}\small\item\em 窗帘控制器 \end{DoxyCompactList}\item 
+\#define \hyperlink{dbbase_8h_ad4d8ed4e32dd5fb1c51c108cca3a8554}{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-I\-R\-P\-R\-O\-B\-E}~9
+\begin{DoxyCompactList}\small\item\em 红外入侵探测器 \end{DoxyCompactList}\item 
+\#define \hyperlink{dbbase_8h_ac058536e995f3b3bee62f55f09b1c173}{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-D\-O\-O\-R\-C\-O\-N\-T\-A\-C\-T}~10
+\begin{DoxyCompactList}\small\item\em 智能门磁 \end{DoxyCompactList}\item 
+\#define \hyperlink{dbbase_8h_a2509d905cb6eac619dceb509307e73fe}{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-D\-O\-O\-R\-L\-O\-C\-K}~11
+\begin{DoxyCompactList}\small\item\em 智能门锁 \end{DoxyCompactList}\item 
+\#define \hyperlink{dbbase_8h_a7bd5a16f13b698e65ddb74512dbe3a66}{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-D\-O\-O\-R\-B\-E\-L\-L}~12
+\begin{DoxyCompactList}\small\item\em 智能门铃 \end{DoxyCompactList}\item 
+\#define \hyperlink{dbbase_8h_ad962222c561832b09a2ce2740238b4c4}{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-L\-I\-G\-H\-T\-D\-E\-T}~13
+\begin{DoxyCompactList}\small\item\em 光照探测器 \end{DoxyCompactList}\item 
+\#define \hyperlink{dbbase_8h_aabeed00c2ac99b59fd1cd6339863838f}{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-G\-A\-S\-D\-E\-T}~14
+\begin{DoxyCompactList}\small\item\em 可燃气探测器 \end{DoxyCompactList}\item 
+\#define \hyperlink{dbbase_8h_a93c307e01bad7e244af2477a33910ebc}{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-T\-P\-M\-H\-U\-M\-D\-E\-T}~15
+\begin{DoxyCompactList}\small\item\em 温湿度空气质量探测器 \end{DoxyCompactList}\item 
+\#define \hyperlink{dbbase_8h_a856db09b936bf3fac6b6076f4fe9e6c1}{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-D\-A\-M\-D\-E\-T}~16
+\begin{DoxyCompactList}\small\item\em 湿敏探测器 \end{DoxyCompactList}\item 
+\#define \hyperlink{dbbase_8h_ab9e97b016d165c0848d9e26dbb732bb5}{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-R\-O\-B\-T\-I\-C}~17
+\begin{DoxyCompactList}\small\item\em 机械手 \end{DoxyCompactList}\item 
+\#define \hyperlink{dbbase_8h_af2fd88a1eb8ff4c2bffbb73639b393d5}{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-B\-E\-D}~18
+\begin{DoxyCompactList}\small\item\em 智能床 \end{DoxyCompactList}\item 
+\#define \hyperlink{dbbase_8h_aceaf727eed5d28b335b91a7474e976ae}{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-U\-S\-E\-R\-I\-N\-F\-O}~0xf8
+\begin{DoxyCompactList}\small\item\em 用户信息 \end{DoxyCompactList}\item 
+\#define \hyperlink{dbbase_8h_abe151b74d26cdd9dd31923846454c9d0}{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-F\-L\-O\-O\-R\-I\-N\-F\-O}~0xf9
+\begin{DoxyCompactList}\small\item\em 楼层信息 \end{DoxyCompactList}\item 
+\#define \hyperlink{dbbase_8h_ac5684c1ee2f398b9f88b89cfcf746eca}{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-U\-S\-E\-D\-E\-V\-I\-C\-E}~0xfa
+\begin{DoxyCompactList}\small\item\em 应用设备，如用户的电视、空调、机机盒、摄像头 \end{DoxyCompactList}\item 
+\#define \hyperlink{dbbase_8h_ad45e0faaa50bbd77ad0f3ef05b8b8c5d}{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-E\-R\-V\-E\-R}~0xfb
+\item 
+\#define \hyperlink{dbbase_8h_acd85ffd783088af534e8a3f285f1a787}{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-T\-A\-S\-K\-I\-N\-F\-O}~0xfc
+\begin{DoxyCompactList}\small\item\em 任务信息，即存储的数据 \end{DoxyCompactList}\item 
+\#define \hyperlink{dbbase_8h_a5b85ab36fa49bdaa0e0aba8ef2c49e81}{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-C\-E\-N\-E\-I\-N\-F\-O}~0xfd
+\begin{DoxyCompactList}\small\item\em 情景信息，即存储的数据 \end{DoxyCompactList}\item 
+\#define \hyperlink{dbbase_8h_a7f4cd829adead6136dfbffd8d3beb9ca}{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-A\-P\-P}~0xfe
+\begin{DoxyCompactList}\small\item\em A\-P\-P应用程序 \end{DoxyCompactList}\item 
+\#define \hyperlink{dbbase_8h_a99813ca5e2064c3110d201d639c003df}{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-I\-N\-V\-A\-L\-I\-D}~0xff
+\begin{DoxyCompactList}\small\item\em 无效 \end{DoxyCompactList}\item 
+\#define \hyperlink{dbbase_8h_aaad7630137d627e54ea8940fe012c9b4}{M\-I\-N\-\_\-\-R\-T\-U\-\_\-\-T\-Y\-P\-E}~(\hyperlink{dbbase_8h_a95e59c426d2f33d0653e61e86998c1a1}{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-H\-O\-S\-T})
+\item 
+\#define \hyperlink{dbbase_8h_a65b4202b59b466eeb38de4e05ef6921f}{M\-A\-X\-\_\-\-R\-T\-U\-\_\-\-T\-Y\-P\-E}~((\hyperlink{dbbase_8h_af2fd88a1eb8ff4c2bffbb73639b393d5}{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-B\-E\-D})+1)
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{dbbase_8h_afec5109c9a49125c493619b015292bb0}{Rtustatus} \{ \hyperlink{dbbase_8h_afec5109c9a49125c493619b015292bb0aeb22bc22b91f98cc0904da95e17024bb}{R\-T\-U\-\_\-\-S\-T\-A\-T\-E\-\_\-\-N\-E\-W} = 1, 
+\hyperlink{dbbase_8h_afec5109c9a49125c493619b015292bb0a45cf1c625194b76ae788473dcdfd194f}{R\-T\-U\-\_\-\-S\-T\-A\-T\-E\-\_\-\-R\-E\-G}, 
+\hyperlink{dbbase_8h_afec5109c9a49125c493619b015292bb0a728528e69f50f43e0a6bd9465ff213f2}{R\-T\-U\-\_\-\-S\-T\-A\-T\-E\-\_\-\-V\-A\-L\-I\-D}, 
+\hyperlink{dbbase_8h_afec5109c9a49125c493619b015292bb0a40e6fb2c54de4e6e25c030ebf5aad4c4}{R\-T\-U\-\_\-\-S\-T\-A\-T\-E\-\_\-\-I\-N\-V\-A\-L\-I\-D}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{dbbase_8h_affefb171c935f2ae5832d0ca8091798f}{init\-\_\-mysql} (\hyperlink{structMysqlConInfo}{Mysql\-Con\-Info} $\ast$info)
+\begin{DoxyCompactList}\small\item\em init\-\_\-mysql 初始化mysql , 连接，指定数据库 \end{DoxyCompactList}\item 
+int \hyperlink{dbbase_8h_a7748ddce59655cc11534b75d5e0956d4}{find\-Hostname} (char $\ast$hostname)
+\begin{DoxyCompactList}\small\item\em find\-Hostname 查找对应的主机名 \end{DoxyCompactList}\item 
+\hyperlink{base_8h_a60cf7b3c038ce37a50796e8eaddf0b5f}{Uint32} \hyperlink{dbbase_8h_a645417f4347afad166d95e919bf778de}{Get\-Host\-Id\-By\-Name} (char $\ast$hostname, \hyperlink{base_8h_a60cf7b3c038ce37a50796e8eaddf0b5f}{Uint32} \&hostid)
+\begin{DoxyCompactList}\small\item\em Get\-Host\-Id\-By\-Name 根据主机名查找对应的\-I\-D. \end{DoxyCompactList}\item 
+int \hyperlink{dbbase_8h_a45ba5638ae09b4ccca4dbe1bdb6bf89a}{Get\-Host\-Count} ()
+\begin{DoxyCompactList}\small\item\em Get\-Host\-Count 拿到 连接上来的主机个数 \end{DoxyCompactList}\item 
+std\-::string \hyperlink{dbbase_8h_af89ddd8c208010e4477750f84849f9bf}{get\-\_\-table\-\_\-name} (\hyperlink{base_8h_af84840501dec18061d18a68c162a8fa2}{Uint8} type)
+\begin{DoxyCompactList}\small\item\em get\-\_\-table\-\_\-name 根据设备类型 拿到对应的表名 \end{DoxyCompactList}\item 
+int \hyperlink{dbbase_8h_a21f3b1ac4424fa0839c3182b0ab7cbd8}{insert\-\_\-db\-\_\-rtu} (\hyperlink{structRtuRegInfo}{Rtu\-Reg\-Info} \&rtuinfo)
+\begin{DoxyCompactList}\small\item\em insert\-\_\-db\-\_\-rtu 注册设备接口 ，将设备写入数据库 \end{DoxyCompactList}\item 
+int \hyperlink{dbbase_8h_a9acb52e4299badf813180da0f8214c37}{insert\-\_\-db\-\_\-host} (\hyperlink{structHostRegInfo}{Host\-Reg\-Info} \&hostinfo)
+\begin{DoxyCompactList}\small\item\em insert\-\_\-db\-\_\-host 主机注册接口 \end{DoxyCompactList}\item 
+int \hyperlink{dbbase_8h_ad9cd8d3ab8c7385eceb3280b5f910b2a}{insert\-\_\-db\-\_\-sceneinfo} (\hyperlink{structSceneInfo}{Scene\-Info} \&sceneinfo)
+\begin{DoxyCompactList}\small\item\em insert\-\_\-db\-\_\-sceneinfo 创建、修改情景 \end{DoxyCompactList}\item 
+int \hyperlink{dbbase_8h_a62123b0c0b89cfe644b8e040a4fe2a3b}{insert\-\_\-db\-\_\-apprtu} (\hyperlink{structAppRtuInfo}{App\-Rtu\-Info} \&rtuinfo)
+\begin{DoxyCompactList}\small\item\em insert\-\_\-db\-\_\-apprtu 添加，编辑 应用设备 \end{DoxyCompactList}\item 
+int \hyperlink{dbbase_8h_a0eb771b638f26a87a9cce0c7de472f0f}{insert\-\_\-db\-\_\-taskinfo} (\hyperlink{structTaskInfo}{Task\-Info} \&taskinfo)
+\begin{DoxyCompactList}\small\item\em insert\-\_\-db\-\_\-taskinfo 设置 编辑定时任务 \end{DoxyCompactList}\item 
+int \hyperlink{dbbase_8h_a83758c046728190fe1ac0a9eef34285b}{update\-\_\-db\-\_\-nativertu} (\hyperlink{structNativeRtuInfo}{Native\-Rtu\-Info} \&rtuinfo, \hyperlink{base_8h_af84840501dec18061d18a68c162a8fa2}{Uint8} mode)
+\begin{DoxyCompactList}\small\item\em update\-\_\-db\-\_\-nativertu 常规设备更新 \end{DoxyCompactList}\item 
+int \hyperlink{dbbase_8h_ae0e36aa1334e0b83d2e2edd95a89b5b2}{update\-\_\-db\-\_\-safetyrtu} (\hyperlink{structSafetyRtu}{Safety\-Rtu} \&rtuinfo)
+\begin{DoxyCompactList}\small\item\em update\-\_\-db\-\_\-safetyrtu 更新安防设备 \end{DoxyCompactList}\item 
+int \hyperlink{dbbase_8h_aedbae4394a0f4e1fc8f6eabee7e355c2}{update\-\_\-db\-\_\-sceneinfo} (\hyperlink{structSceneInfo}{Scene\-Info} \&rtuinfo)
+\begin{DoxyCompactList}\small\item\em update\-\_\-db\-\_\-sceneinfo 修改 情景 \end{DoxyCompactList}\item 
+int \hyperlink{dbbase_8h_a82757fe4298d8fdf297391a4e42e3293}{update\-\_\-db\-\_\-host} (\hyperlink{structHostRegInfo}{Host\-Reg\-Info} \&hostinfo)
+\begin{DoxyCompactList}\small\item\em update\-\_\-db\-\_\-host 更新主机信息表 \end{DoxyCompactList}\item 
+int \hyperlink{dbbase_8h_aae594d8934a37c3a973e31432cd76c96}{update\-\_\-db\-\_\-scenertu} (\hyperlink{structSceneRtu}{Scene\-Rtu} \&rtuinfo)
+\begin{DoxyCompactList}\small\item\em update\-\_\-db\-\_\-scenertu 更新情景面板 \end{DoxyCompactList}\item 
+int \hyperlink{dbbase_8h_a8b214bd5c7dbfef30ac417954cb0c5e2}{update\-\_\-db\-\_\-apprtu} (\hyperlink{structAppRtuInfo}{App\-Rtu\-Info} \&rtuinfo)
+\begin{DoxyCompactList}\small\item\em update\-\_\-db\-\_\-apprtu 修改应用设备 \end{DoxyCompactList}\item 
+int \hyperlink{dbbase_8h_a81cfc05e7763f268740f8a27f85b77de}{update\-\_\-db\-\_\-exnativertu} (\hyperlink{structExNativeRtu}{Ex\-Native\-Rtu} \&rtuinfo)
+\begin{DoxyCompactList}\small\item\em update\-\_\-db\-\_\-exnativertu 更新智能床 \end{DoxyCompactList}\item 
+int \hyperlink{dbbase_8h_a659d4acf9f3d7a1b013867717905c198}{update\-\_\-db\-\_\-taskinfo} (\hyperlink{structTaskInfo}{Task\-Info} \&taskinfo)
+\begin{DoxyCompactList}\small\item\em update\-\_\-db\-\_\-taskinfo 编辑定时任务 \end{DoxyCompactList}\item 
+int \hyperlink{dbbase_8h_a5f38e8abcbb787b6fed1c8e1dce1c7c2}{update\-\_\-db\-\_\-hostname} (\hyperlink{structHostMan}{Host\-Man} \&hostinfo)
+\begin{DoxyCompactList}\small\item\em update\-\_\-db\-\_\-hostname 用户管理 \end{DoxyCompactList}\item 
+int \hyperlink{dbbase_8h_ad42e211ca6c04241e68331f73c74113c}{update\-\_\-db\-\_\-rtuinfo} (\hyperlink{structRtuUpdate}{Rtu\-Update} \&hostinfo)
+\begin{DoxyCompactList}\small\item\em update\-\_\-db\-\_\-rtuinfo 用户设备信息编辑 \end{DoxyCompactList}\item 
+int \hyperlink{dbbase_8h_aa039ebdc57c1a8157a01c9a762f43bc6}{update\-\_\-db\-\_\-detectorrtu} (\hyperlink{structDetectorRtu}{Detector\-Rtu} \&rtuinfo, \hyperlink{base_8h_af84840501dec18061d18a68c162a8fa2}{Uint8} mode)
+\begin{DoxyCompactList}\small\item\em update\-\_\-db\-\_\-detectorrtu 更新传感器设备 \end{DoxyCompactList}\item 
+int \hyperlink{dbbase_8h_a35e1056e0f46576bda26dabc59ce0ded}{update\-\_\-db\-\_\-detectorbind} (\hyperlink{structDetectorBind}{Detector\-Bind} \&rtuinfo)
+\begin{DoxyCompactList}\small\item\em update\-\_\-db\-\_\-detectorbind 绑定联动接口 \end{DoxyCompactList}\item 
+int \hyperlink{dbbase_8h_afe8cc79a0b360aa2a371f266709451e8}{update\-\_\-db\-\_\-safetypwd} (\hyperlink{structSafetyPwdInfo}{Safety\-Pwd\-Info} \&rtuinfo)
+\begin{DoxyCompactList}\small\item\em update\-\_\-db\-\_\-safetypwd 门锁密码更新接口 包括新开锁密码添加，修改 管理员密码修改 \end{DoxyCompactList}\item 
+int \hyperlink{dbbase_8h_a334c4412fa09aab89d49cefdfd233b04}{select\-\_\-db\-\_\-hostinfo} (\hyperlink{structHostRegInfo}{Host\-Reg\-Info} $\ast$p\-Hostinfo, char $\ast$hostname)
+\begin{DoxyCompactList}\small\item\em select\-\_\-db\-\_\-hostinfo 根据主机名 查询主机信息 ，用于 A\-P\-P远程登陆 \end{DoxyCompactList}\item 
+int \hyperlink{dbbase_8h_adfa21954b5a414041dffb59dd549dcb8}{delete\-\_\-db\-\_\-rtu} (\hyperlink{structRtuRemoveInfo}{Rtu\-Remove\-Info} \&rtuinfo)
+\begin{DoxyCompactList}\small\item\em delete\-\_\-db\-\_\-rtu 删除设备 接口 不包括删除主机 \end{DoxyCompactList}\item 
+int \hyperlink{dbbase_8h_a91ce6d4931baf0cca718619888e1412d}{delete\-\_\-db\-\_\-host} (char $\ast$hostname)
+\begin{DoxyCompactList}\small\item\em delete\-\_\-db\-\_\-host 删除主机设备 \end{DoxyCompactList}\item 
+\hyperlink{base_8h_a60cf7b3c038ce37a50796e8eaddf0b5f}{Uint32} \hyperlink{dbbase_8h_aa1165b8a3c5a7d095576c678f94268f3}{Get\-Ip\-By\-Host\-Add} (\hyperlink{base_8h_a60cf7b3c038ce37a50796e8eaddf0b5f}{Uint32} hostadd, \hyperlink{base_8h_a60cf7b3c038ce37a50796e8eaddf0b5f}{Uint32} \&hostip)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const char \hyperlink{dbbase_8h_ae0812aa7c56834e9de7e2535d62701e6}{D\-B\-\_\-\-T\-A\-B\-L\-E\-\_\-\-N\-A\-M\-E\-L\-I\-S\-T} \mbox{[}$\,$\mbox{]}\mbox{[}32\mbox{]}
+\item 
+static \hyperlink{structDBTypeInfo}{D\-B\-Type\-Info} \hyperlink{dbbase_8h_ac2df31f33e94cc162663baba3e3a120a}{g\-Type\-Info\-List} \mbox{[}$\,$\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+mysql 数据库接口实现 \begin{DoxyAuthor}{Author}
+menqi -\/ \href{mailto:1083734876@qq.com}{\tt 1083734876@qq.\-com} 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2016-\/05-\/06 16\-:43 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+1.\-0 
+\end{DoxyVersion}
+\begin{DoxyParagraph}{Copyright (c)\-: menqi }
+
+\end{DoxyParagraph}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{dbbase_8h_a916a559281a114bcb4d1eab8037e3b83}{\index{dbbase.\-h@{dbbase.\-h}!D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-D\-E\-T\-E\-C\-T\-O\-R\-B\-I\-N\-D@{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-D\-E\-T\-E\-C\-T\-O\-R\-B\-I\-N\-D}}
+\index{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-D\-E\-T\-E\-C\-T\-O\-R\-B\-I\-N\-D@{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-D\-E\-T\-E\-C\-T\-O\-R\-B\-I\-N\-D}!dbbase.h@{dbbase.\-h}}
+\subsubsection[{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-D\-E\-T\-E\-C\-T\-O\-R\-B\-I\-N\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-D\-E\-T\-E\-C\-T\-O\-R\-B\-I\-N\-D~12}}\label{dbbase_8h_a916a559281a114bcb4d1eab8037e3b83}
+
+
+传感器设备联动 
+
+\hypertarget{dbbase_8h_a3fb36a0a73a2cfe354d3b92d685486fb}{\index{dbbase.\-h@{dbbase.\-h}!D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-D\-E\-T\-E\-C\-T\-O\-R\-R\-T\-U@{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-D\-E\-T\-E\-C\-T\-O\-R\-R\-T\-U}}
+\index{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-D\-E\-T\-E\-C\-T\-O\-R\-R\-T\-U@{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-D\-E\-T\-E\-C\-T\-O\-R\-R\-T\-U}!dbbase.h@{dbbase.\-h}}
+\subsubsection[{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-D\-E\-T\-E\-C\-T\-O\-R\-R\-T\-U}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-D\-E\-T\-E\-C\-T\-O\-R\-R\-T\-U~11}}\label{dbbase_8h_a3fb36a0a73a2cfe354d3b92d685486fb}
+
+
+传感器设备数据对象类型 
+
+\hypertarget{dbbase_8h_a2bd6cf12d4f631f21eea2b7fe1a59394}{\index{dbbase.\-h@{dbbase.\-h}!D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-E\-X\-N\-A\-T\-I\-V\-E\-R\-T\-U@{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-E\-X\-N\-A\-T\-I\-V\-E\-R\-T\-U}}
+\index{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-E\-X\-N\-A\-T\-I\-V\-E\-R\-T\-U@{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-E\-X\-N\-A\-T\-I\-V\-E\-R\-T\-U}!dbbase.h@{dbbase.\-h}}
+\subsubsection[{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-E\-X\-N\-A\-T\-I\-V\-E\-R\-T\-U}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-E\-X\-N\-A\-T\-I\-V\-E\-R\-T\-U~14}}\label{dbbase_8h_a2bd6cf12d4f631f21eea2b7fe1a59394}
+\hypertarget{dbbase_8h_a996a9eb45ccaa6031bb6c2756982574e}{\index{dbbase.\-h@{dbbase.\-h}!D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-H\-O\-S\-T\-I\-N\-F\-O@{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-H\-O\-S\-T\-I\-N\-F\-O}}
+\index{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-H\-O\-S\-T\-I\-N\-F\-O@{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-H\-O\-S\-T\-I\-N\-F\-O}!dbbase.h@{dbbase.\-h}}
+\subsubsection[{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-H\-O\-S\-T\-I\-N\-F\-O}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-H\-O\-S\-T\-I\-N\-F\-O~0}}\label{dbbase_8h_a996a9eb45ccaa6031bb6c2756982574e}
+
+
+主机信息 
+
+\hypertarget{dbbase_8h_a41cec6fbd71ae961f90e82426069de0d}{\index{dbbase.\-h@{dbbase.\-h}!D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-N\-A\-T\-I\-V\-E\-R\-T\-U@{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-N\-A\-T\-I\-V\-E\-R\-T\-U}}
+\index{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-N\-A\-T\-I\-V\-E\-R\-T\-U@{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-N\-A\-T\-I\-V\-E\-R\-T\-U}!dbbase.h@{dbbase.\-h}}
+\subsubsection[{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-N\-A\-T\-I\-V\-E\-R\-T\-U}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-N\-A\-T\-I\-V\-E\-R\-T\-U~1}}\label{dbbase_8h_a41cec6fbd71ae961f90e82426069de0d}
+
+
+常规设备数据对象类型，即对应设备类型中的智能开关、智能插座、继电器控制盒、\-R\-G\-B灯、窗帘控制器 
+
+\hypertarget{dbbase_8h_a9ab465f58189825ead59fe8a79c2a7f6}{\index{dbbase.\-h@{dbbase.\-h}!D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-R\-T\-U\-T\-Y\-P\-E@{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-R\-T\-U\-T\-Y\-P\-E}}
+\index{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-R\-T\-U\-T\-Y\-P\-E@{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-R\-T\-U\-T\-Y\-P\-E}!dbbase.h@{dbbase.\-h}}
+\subsubsection[{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-R\-T\-U\-T\-Y\-P\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-R\-T\-U\-T\-Y\-P\-E~({\bf M\-A\-X\-\_\-\-D\-B\-\_\-\-T\-Y\-P\-E})}}\label{dbbase_8h_a9ab465f58189825ead59fe8a79c2a7f6}
+\hypertarget{dbbase_8h_aa5fd110ec2d2154dd1551fd95e067656}{\index{dbbase.\-h@{dbbase.\-h}!D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-A\-F\-E\-T\-Y@{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-A\-F\-E\-T\-Y}}
+\index{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-A\-F\-E\-T\-Y@{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-A\-F\-E\-T\-Y}!dbbase.h@{dbbase.\-h}}
+\subsubsection[{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-A\-F\-E\-T\-Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-A\-F\-E\-T\-Y~6}}\label{dbbase_8h_aa5fd110ec2d2154dd1551fd95e067656}
+
+
+安防设备数据对象类型，即对应设备类型中的红外入侵探测器、智能门磁、智能门锁、智能门铃 
+
+\hypertarget{dbbase_8h_a61d59a6754031f39ebda58da8b952ba1}{\index{dbbase.\-h@{dbbase.\-h}!D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-A\-F\-E\-T\-Y\-\_\-\-P\-W\-D@{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-A\-F\-E\-T\-Y\-\_\-\-P\-W\-D}}
+\index{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-A\-F\-E\-T\-Y\-\_\-\-P\-W\-D@{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-A\-F\-E\-T\-Y\-\_\-\-P\-W\-D}!dbbase.h@{dbbase.\-h}}
+\subsubsection[{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-A\-F\-E\-T\-Y\-\_\-\-P\-W\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-A\-F\-E\-T\-Y\-\_\-\-P\-W\-D~7}}\label{dbbase_8h_a61d59a6754031f39ebda58da8b952ba1}
+
+
+安防设备数据的密码 
+
+\hypertarget{dbbase_8h_a5e6cbdcc4f0d7de1fea79c99558b360f}{\index{dbbase.\-h@{dbbase.\-h}!D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-A\-F\-E\-T\-Y\-\_\-\-R\-E\-M\-O\-V\-E@{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-A\-F\-E\-T\-Y\-\_\-\-R\-E\-M\-O\-V\-E}}
+\index{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-A\-F\-E\-T\-Y\-\_\-\-R\-E\-M\-O\-V\-E@{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-A\-F\-E\-T\-Y\-\_\-\-R\-E\-M\-O\-V\-E}!dbbase.h@{dbbase.\-h}}
+\subsubsection[{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-A\-F\-E\-T\-Y\-\_\-\-R\-E\-M\-O\-V\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-A\-F\-E\-T\-Y\-\_\-\-R\-E\-M\-O\-V\-E~9}}\label{dbbase_8h_a5e6cbdcc4f0d7de1fea79c99558b360f}
+
+
+安防设备数据的撤防联动 
+
+\hypertarget{dbbase_8h_aec430d5db9094084b6e15d22ed4819a5}{\index{dbbase.\-h@{dbbase.\-h}!D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-A\-F\-E\-T\-Y\-\_\-\-S\-E\-T@{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-A\-F\-E\-T\-Y\-\_\-\-S\-E\-T}}
+\index{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-A\-F\-E\-T\-Y\-\_\-\-S\-E\-T@{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-A\-F\-E\-T\-Y\-\_\-\-S\-E\-T}!dbbase.h@{dbbase.\-h}}
+\subsubsection[{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-A\-F\-E\-T\-Y\-\_\-\-S\-E\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-A\-F\-E\-T\-Y\-\_\-\-S\-E\-T~8}}\label{dbbase_8h_aec430d5db9094084b6e15d22ed4819a5}
+
+
+安防设备数据的设防联动 
+
+\hypertarget{dbbase_8h_a41a148f7a529e4db02e65558c4e8bd2a}{\index{dbbase.\-h@{dbbase.\-h}!D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-C\-E\-N\-E\-I\-N\-F\-O@{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-C\-E\-N\-E\-I\-N\-F\-O}}
+\index{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-C\-E\-N\-E\-I\-N\-F\-O@{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-C\-E\-N\-E\-I\-N\-F\-O}!dbbase.h@{dbbase.\-h}}
+\subsubsection[{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-C\-E\-N\-E\-I\-N\-F\-O}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-C\-E\-N\-E\-I\-N\-F\-O~3}}\label{dbbase_8h_a41a148f7a529e4db02e65558c4e8bd2a}
+
+
+情景信息数据对象类型，与设备类型无关 
+
+\hypertarget{dbbase_8h_a5f8a196b1bd807b23e6f2cfd4e19de85}{\index{dbbase.\-h@{dbbase.\-h}!D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-C\-E\-N\-E\-I\-N\-F\-O\-\_\-\-C\-O\-N@{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-C\-E\-N\-E\-I\-N\-F\-O\-\_\-\-C\-O\-N}}
+\index{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-C\-E\-N\-E\-I\-N\-F\-O\-\_\-\-C\-O\-N@{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-C\-E\-N\-E\-I\-N\-F\-O\-\_\-\-C\-O\-N}!dbbase.h@{dbbase.\-h}}
+\subsubsection[{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-C\-E\-N\-E\-I\-N\-F\-O\-\_\-\-C\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-C\-E\-N\-E\-I\-N\-F\-O\-\_\-\-C\-O\-N~10}}\label{dbbase_8h_a5f8a196b1bd807b23e6f2cfd4e19de85}
+
+
+情景信息续表 
+
+\hypertarget{dbbase_8h_ad4f12324caffd9b4f08873fab1e000ec}{\index{dbbase.\-h@{dbbase.\-h}!D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-C\-E\-N\-E\-R\-T\-U@{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-C\-E\-N\-E\-R\-T\-U}}
+\index{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-C\-E\-N\-E\-R\-T\-U@{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-C\-E\-N\-E\-R\-T\-U}!dbbase.h@{dbbase.\-h}}
+\subsubsection[{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-C\-E\-N\-E\-R\-T\-U}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-C\-E\-N\-E\-R\-T\-U~2}}\label{dbbase_8h_ad4f12324caffd9b4f08873fab1e000ec}
+
+
+情景面板数据对象类型，即对应设备类型中的情景面板 
+
+\hypertarget{dbbase_8h_aed911e3974cf3a23a323d798cdc50621}{\index{dbbase.\-h@{dbbase.\-h}!D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-T\-A\-S\-K\-I\-N\-F\-O@{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-T\-A\-S\-K\-I\-N\-F\-O}}
+\index{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-T\-A\-S\-K\-I\-N\-F\-O@{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-T\-A\-S\-K\-I\-N\-F\-O}!dbbase.h@{dbbase.\-h}}
+\subsubsection[{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-T\-A\-S\-K\-I\-N\-F\-O}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-T\-A\-S\-K\-I\-N\-F\-O~13}}\label{dbbase_8h_aed911e3974cf3a23a323d798cdc50621}
+\hypertarget{dbbase_8h_a7eb9f10805359d86e3bc2f3db4f637a0}{\index{dbbase.\-h@{dbbase.\-h}!D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-T\-R\-A\-N\-S\-P\-O\-N\-D@{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-T\-R\-A\-N\-S\-P\-O\-N\-D}}
+\index{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-T\-R\-A\-N\-S\-P\-O\-N\-D@{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-T\-R\-A\-N\-S\-P\-O\-N\-D}!dbbase.h@{dbbase.\-h}}
+\subsubsection[{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-T\-R\-A\-N\-S\-P\-O\-N\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-T\-R\-A\-N\-S\-P\-O\-N\-D~4}}\label{dbbase_8h_a7eb9f10805359d86e3bc2f3db4f637a0}
+
+
+转发设备数据对象类型，即对应设备类型中的蓝牙遥控器、红外转发器 
+
+\hypertarget{dbbase_8h_ae55710d69649f16efe243531ff2a81bf}{\index{dbbase.\-h@{dbbase.\-h}!D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-U\-S\-E\-D\-E\-V\-I\-C\-E@{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-U\-S\-E\-D\-E\-V\-I\-C\-E}}
+\index{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-U\-S\-E\-D\-E\-V\-I\-C\-E@{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-U\-S\-E\-D\-E\-V\-I\-C\-E}!dbbase.h@{dbbase.\-h}}
+\subsubsection[{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-U\-S\-E\-D\-E\-V\-I\-C\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-U\-S\-E\-D\-E\-V\-I\-C\-E~5}}\label{dbbase_8h_ae55710d69649f16efe243531ff2a81bf}
+
+
+应用设备对象类型，即对应设备类型中的应用设备 
+
+\hypertarget{dbbase_8h_abe648858953c8e5a22b1cd5802ce6b0f}{\index{dbbase.\-h@{dbbase.\-h}!D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-U\-S\-E\-D\-E\-V\-T\-Y\-P\-E@{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-U\-S\-E\-D\-E\-V\-T\-Y\-P\-E}}
+\index{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-U\-S\-E\-D\-E\-V\-T\-Y\-P\-E@{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-U\-S\-E\-D\-E\-V\-T\-Y\-P\-E}!dbbase.h@{dbbase.\-h}}
+\subsubsection[{D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-U\-S\-E\-D\-E\-V\-T\-Y\-P\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-B\-\_\-\-T\-Y\-P\-E\-\_\-\-U\-S\-E\-D\-E\-V\-T\-Y\-P\-E~({\bf M\-A\-X\-\_\-\-D\-B\-\_\-\-T\-Y\-P\-E}+1)}}\label{dbbase_8h_abe648858953c8e5a22b1cd5802ce6b0f}
+\hypertarget{dbbase_8h_a76dca32c9108e44ce73937259d5e7dee}{\index{dbbase.\-h@{dbbase.\-h}!M\-A\-X\-\_\-\-D\-B\-\_\-\-T\-Y\-P\-E@{M\-A\-X\-\_\-\-D\-B\-\_\-\-T\-Y\-P\-E}}
+\index{M\-A\-X\-\_\-\-D\-B\-\_\-\-T\-Y\-P\-E@{M\-A\-X\-\_\-\-D\-B\-\_\-\-T\-Y\-P\-E}!dbbase.h@{dbbase.\-h}}
+\subsubsection[{M\-A\-X\-\_\-\-D\-B\-\_\-\-T\-Y\-P\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-A\-X\-\_\-\-D\-B\-\_\-\-T\-Y\-P\-E~15}}\label{dbbase_8h_a76dca32c9108e44ce73937259d5e7dee}
+
+
+Referenced by delete\-\_\-db\-\_\-host().
+
+\hypertarget{dbbase_8h_afd709f201d7643c3909621f620ea648a}{\index{dbbase.\-h@{dbbase.\-h}!M\-A\-X\-\_\-\-N\-A\-M\-E\-\_\-\-L\-E\-N@{M\-A\-X\-\_\-\-N\-A\-M\-E\-\_\-\-L\-E\-N}}
+\index{M\-A\-X\-\_\-\-N\-A\-M\-E\-\_\-\-L\-E\-N@{M\-A\-X\-\_\-\-N\-A\-M\-E\-\_\-\-L\-E\-N}!dbbase.h@{dbbase.\-h}}
+\subsubsection[{M\-A\-X\-\_\-\-N\-A\-M\-E\-\_\-\-L\-E\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-A\-X\-\_\-\-N\-A\-M\-E\-\_\-\-L\-E\-N~32}}\label{dbbase_8h_afd709f201d7643c3909621f620ea648a}
+
+
+最大名称描述长度 
+
+\hypertarget{dbbase_8h_ae9169c3fda2dfecbb7a13e394a69e5be}{\index{dbbase.\-h@{dbbase.\-h}!M\-A\-X\-\_\-\-P\-A\-S\-S\-W\-O\-R\-D\-\_\-\-L\-E\-N@{M\-A\-X\-\_\-\-P\-A\-S\-S\-W\-O\-R\-D\-\_\-\-L\-E\-N}}
+\index{M\-A\-X\-\_\-\-P\-A\-S\-S\-W\-O\-R\-D\-\_\-\-L\-E\-N@{M\-A\-X\-\_\-\-P\-A\-S\-S\-W\-O\-R\-D\-\_\-\-L\-E\-N}!dbbase.h@{dbbase.\-h}}
+\subsubsection[{M\-A\-X\-\_\-\-P\-A\-S\-S\-W\-O\-R\-D\-\_\-\-L\-E\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-A\-X\-\_\-\-P\-A\-S\-S\-W\-O\-R\-D\-\_\-\-L\-E\-N~16}}\label{dbbase_8h_ae9169c3fda2dfecbb7a13e394a69e5be}
+
+
+用户密码长度 
+
+
+
+Referenced by update\-\_\-db\-\_\-hostname(), and update\-\_\-db\-\_\-safetypwd().
+
+\hypertarget{dbbase_8h_a65b4202b59b466eeb38de4e05ef6921f}{\index{dbbase.\-h@{dbbase.\-h}!M\-A\-X\-\_\-\-R\-T\-U\-\_\-\-T\-Y\-P\-E@{M\-A\-X\-\_\-\-R\-T\-U\-\_\-\-T\-Y\-P\-E}}
+\index{M\-A\-X\-\_\-\-R\-T\-U\-\_\-\-T\-Y\-P\-E@{M\-A\-X\-\_\-\-R\-T\-U\-\_\-\-T\-Y\-P\-E}!dbbase.h@{dbbase.\-h}}
+\subsubsection[{M\-A\-X\-\_\-\-R\-T\-U\-\_\-\-T\-Y\-P\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-A\-X\-\_\-\-R\-T\-U\-\_\-\-T\-Y\-P\-E~(({\bf R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-B\-E\-D})+1)}}\label{dbbase_8h_a65b4202b59b466eeb38de4e05ef6921f}
+\hypertarget{dbbase_8h_a06a9cf374e83dcac0620e5095f79234e}{\index{dbbase.\-h@{dbbase.\-h}!M\-A\-X\-\_\-\-S\-Q\-L\-N\-A\-M\-E\-\_\-\-L\-E\-N@{M\-A\-X\-\_\-\-S\-Q\-L\-N\-A\-M\-E\-\_\-\-L\-E\-N}}
+\index{M\-A\-X\-\_\-\-S\-Q\-L\-N\-A\-M\-E\-\_\-\-L\-E\-N@{M\-A\-X\-\_\-\-S\-Q\-L\-N\-A\-M\-E\-\_\-\-L\-E\-N}!dbbase.h@{dbbase.\-h}}
+\subsubsection[{M\-A\-X\-\_\-\-S\-Q\-L\-N\-A\-M\-E\-\_\-\-L\-E\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-A\-X\-\_\-\-S\-Q\-L\-N\-A\-M\-E\-\_\-\-L\-E\-N~256}}\label{dbbase_8h_a06a9cf374e83dcac0620e5095f79234e}
+
+
+数据库主机长度 
+
+\hypertarget{dbbase_8h_ae5cf418bda87e648ae461cfbca7e2f8e}{\index{dbbase.\-h@{dbbase.\-h}!M\-A\-X\-\_\-\-S\-Q\-L\-P\-A\-S\-S\-W\-D\-\_\-\-L\-E\-N@{M\-A\-X\-\_\-\-S\-Q\-L\-P\-A\-S\-S\-W\-D\-\_\-\-L\-E\-N}}
+\index{M\-A\-X\-\_\-\-S\-Q\-L\-P\-A\-S\-S\-W\-D\-\_\-\-L\-E\-N@{M\-A\-X\-\_\-\-S\-Q\-L\-P\-A\-S\-S\-W\-D\-\_\-\-L\-E\-N}!dbbase.h@{dbbase.\-h}}
+\subsubsection[{M\-A\-X\-\_\-\-S\-Q\-L\-P\-A\-S\-S\-W\-D\-\_\-\-L\-E\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-A\-X\-\_\-\-S\-Q\-L\-P\-A\-S\-S\-W\-D\-\_\-\-L\-E\-N~32}}\label{dbbase_8h_ae5cf418bda87e648ae461cfbca7e2f8e}
+
+
+数据库密码 
+
+\hypertarget{dbbase_8h_a998c6ce37817a02bf23a1a2c6fd15cb0}{\index{dbbase.\-h@{dbbase.\-h}!M\-A\-X\-\_\-\-S\-Q\-L\-U\-S\-E\-R\-N\-A\-M\-E\-\_\-\-L\-E\-N@{M\-A\-X\-\_\-\-S\-Q\-L\-U\-S\-E\-R\-N\-A\-M\-E\-\_\-\-L\-E\-N}}
+\index{M\-A\-X\-\_\-\-S\-Q\-L\-U\-S\-E\-R\-N\-A\-M\-E\-\_\-\-L\-E\-N@{M\-A\-X\-\_\-\-S\-Q\-L\-U\-S\-E\-R\-N\-A\-M\-E\-\_\-\-L\-E\-N}!dbbase.h@{dbbase.\-h}}
+\subsubsection[{M\-A\-X\-\_\-\-S\-Q\-L\-U\-S\-E\-R\-N\-A\-M\-E\-\_\-\-L\-E\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-A\-X\-\_\-\-S\-Q\-L\-U\-S\-E\-R\-N\-A\-M\-E\-\_\-\-L\-E\-N~16}}\label{dbbase_8h_a998c6ce37817a02bf23a1a2c6fd15cb0}
+
+
+数据库用户名长度 
+
+\hypertarget{dbbase_8h_a6c4647395896246d6710ba980c31666c}{\index{dbbase.\-h@{dbbase.\-h}!M\-A\-X\-\_\-\-U\-S\-E\-R\-N\-A\-M\-E\-\_\-\-L\-E\-N@{M\-A\-X\-\_\-\-U\-S\-E\-R\-N\-A\-M\-E\-\_\-\-L\-E\-N}}
+\index{M\-A\-X\-\_\-\-U\-S\-E\-R\-N\-A\-M\-E\-\_\-\-L\-E\-N@{M\-A\-X\-\_\-\-U\-S\-E\-R\-N\-A\-M\-E\-\_\-\-L\-E\-N}!dbbase.h@{dbbase.\-h}}
+\subsubsection[{M\-A\-X\-\_\-\-U\-S\-E\-R\-N\-A\-M\-E\-\_\-\-L\-E\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-A\-X\-\_\-\-U\-S\-E\-R\-N\-A\-M\-E\-\_\-\-L\-E\-N~32}}\label{dbbase_8h_a6c4647395896246d6710ba980c31666c}
+
+
+用户名长度 
+
+\hypertarget{dbbase_8h_a7a31b64ea7a37ca824e574b1ac483c4e}{\index{dbbase.\-h@{dbbase.\-h}!M\-I\-N\-\_\-\-P\-A\-T\-H\-\_\-\-L\-E\-N@{M\-I\-N\-\_\-\-P\-A\-T\-H\-\_\-\-L\-E\-N}}
+\index{M\-I\-N\-\_\-\-P\-A\-T\-H\-\_\-\-L\-E\-N@{M\-I\-N\-\_\-\-P\-A\-T\-H\-\_\-\-L\-E\-N}!dbbase.h@{dbbase.\-h}}
+\subsubsection[{M\-I\-N\-\_\-\-P\-A\-T\-H\-\_\-\-L\-E\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-I\-N\-\_\-\-P\-A\-T\-H\-\_\-\-L\-E\-N~32}}\label{dbbase_8h_a7a31b64ea7a37ca824e574b1ac483c4e}
+
+
+最小路径名长度 
+
+\hypertarget{dbbase_8h_aaad7630137d627e54ea8940fe012c9b4}{\index{dbbase.\-h@{dbbase.\-h}!M\-I\-N\-\_\-\-R\-T\-U\-\_\-\-T\-Y\-P\-E@{M\-I\-N\-\_\-\-R\-T\-U\-\_\-\-T\-Y\-P\-E}}
+\index{M\-I\-N\-\_\-\-R\-T\-U\-\_\-\-T\-Y\-P\-E@{M\-I\-N\-\_\-\-R\-T\-U\-\_\-\-T\-Y\-P\-E}!dbbase.h@{dbbase.\-h}}
+\subsubsection[{M\-I\-N\-\_\-\-R\-T\-U\-\_\-\-T\-Y\-P\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-I\-N\-\_\-\-R\-T\-U\-\_\-\-T\-Y\-P\-E~({\bf R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-H\-O\-S\-T})}}\label{dbbase_8h_aaad7630137d627e54ea8940fe012c9b4}
+\hypertarget{dbbase_8h_a7f4cd829adead6136dfbffd8d3beb9ca}{\index{dbbase.\-h@{dbbase.\-h}!R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-A\-P\-P@{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-A\-P\-P}}
+\index{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-A\-P\-P@{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-A\-P\-P}!dbbase.h@{dbbase.\-h}}
+\subsubsection[{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-A\-P\-P}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-A\-P\-P~0xfe}}\label{dbbase_8h_a7f4cd829adead6136dfbffd8d3beb9ca}
+
+
+A\-P\-P应用程序 
+
+\hypertarget{dbbase_8h_af2fd88a1eb8ff4c2bffbb73639b393d5}{\index{dbbase.\-h@{dbbase.\-h}!R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-B\-E\-D@{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-B\-E\-D}}
+\index{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-B\-E\-D@{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-B\-E\-D}!dbbase.h@{dbbase.\-h}}
+\subsubsection[{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-B\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-B\-E\-D~18}}\label{dbbase_8h_af2fd88a1eb8ff4c2bffbb73639b393d5}
+
+
+智能床 
+
+
+
+Referenced by update\-\_\-db\-\_\-exnativertu(), and update\-\_\-db\-\_\-rtuinfo().
+
+\hypertarget{dbbase_8h_a1a0d47652142cbb9c1bcb0cf80b47d92}{\index{dbbase.\-h@{dbbase.\-h}!R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-B\-T\-R\-E\-M\-O\-T\-E@{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-B\-T\-R\-E\-M\-O\-T\-E}}
+\index{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-B\-T\-R\-E\-M\-O\-T\-E@{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-B\-T\-R\-E\-M\-O\-T\-E}!dbbase.h@{dbbase.\-h}}
+\subsubsection[{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-B\-T\-R\-E\-M\-O\-T\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-B\-T\-R\-E\-M\-O\-T\-E~6}}\label{dbbase_8h_a1a0d47652142cbb9c1bcb0cf80b47d92}
+
+
+蓝牙遥控器 
+
+\hypertarget{dbbase_8h_aaa53b0895b2ab0fcf07391ac59c2a775}{\index{dbbase.\-h@{dbbase.\-h}!R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-C\-T\-R\-L\-B\-O\-X@{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-C\-T\-R\-L\-B\-O\-X}}
+\index{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-C\-T\-R\-L\-B\-O\-X@{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-C\-T\-R\-L\-B\-O\-X}!dbbase.h@{dbbase.\-h}}
+\subsubsection[{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-C\-T\-R\-L\-B\-O\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-C\-T\-R\-L\-B\-O\-X~4}}\label{dbbase_8h_aaa53b0895b2ab0fcf07391ac59c2a775}
+
+
+继电器控制盒类型 
+
+
+
+Referenced by Is\-Native\-Rtu().
+
+\hypertarget{dbbase_8h_a9570babe61ff0e57b4599cb5b73c48fb}{\index{dbbase.\-h@{dbbase.\-h}!R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-C\-U\-R\-T\-A\-I\-N@{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-C\-U\-R\-T\-A\-I\-N}}
+\index{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-C\-U\-R\-T\-A\-I\-N@{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-C\-U\-R\-T\-A\-I\-N}!dbbase.h@{dbbase.\-h}}
+\subsubsection[{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-C\-U\-R\-T\-A\-I\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-C\-U\-R\-T\-A\-I\-N~8}}\label{dbbase_8h_a9570babe61ff0e57b4599cb5b73c48fb}
+
+
+窗帘控制器 
+
+
+
+Referenced by Is\-Native\-Rtu().
+
+\hypertarget{dbbase_8h_a856db09b936bf3fac6b6076f4fe9e6c1}{\index{dbbase.\-h@{dbbase.\-h}!R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-D\-A\-M\-D\-E\-T@{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-D\-A\-M\-D\-E\-T}}
+\index{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-D\-A\-M\-D\-E\-T@{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-D\-A\-M\-D\-E\-T}!dbbase.h@{dbbase.\-h}}
+\subsubsection[{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-D\-A\-M\-D\-E\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-D\-A\-M\-D\-E\-T~16}}\label{dbbase_8h_a856db09b936bf3fac6b6076f4fe9e6c1}
+
+
+湿敏探测器 
+
+\hypertarget{dbbase_8h_a7bd5a16f13b698e65ddb74512dbe3a66}{\index{dbbase.\-h@{dbbase.\-h}!R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-D\-O\-O\-R\-B\-E\-L\-L@{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-D\-O\-O\-R\-B\-E\-L\-L}}
+\index{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-D\-O\-O\-R\-B\-E\-L\-L@{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-D\-O\-O\-R\-B\-E\-L\-L}!dbbase.h@{dbbase.\-h}}
+\subsubsection[{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-D\-O\-O\-R\-B\-E\-L\-L}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-D\-O\-O\-R\-B\-E\-L\-L~12}}\label{dbbase_8h_a7bd5a16f13b698e65ddb74512dbe3a66}
+
+
+智能门铃 
+
+
+
+Referenced by Is\-Safety\-Rtu().
+
+\hypertarget{dbbase_8h_ac058536e995f3b3bee62f55f09b1c173}{\index{dbbase.\-h@{dbbase.\-h}!R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-D\-O\-O\-R\-C\-O\-N\-T\-A\-C\-T@{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-D\-O\-O\-R\-C\-O\-N\-T\-A\-C\-T}}
+\index{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-D\-O\-O\-R\-C\-O\-N\-T\-A\-C\-T@{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-D\-O\-O\-R\-C\-O\-N\-T\-A\-C\-T}!dbbase.h@{dbbase.\-h}}
+\subsubsection[{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-D\-O\-O\-R\-C\-O\-N\-T\-A\-C\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-D\-O\-O\-R\-C\-O\-N\-T\-A\-C\-T~10}}\label{dbbase_8h_ac058536e995f3b3bee62f55f09b1c173}
+
+
+智能门磁 
+
+
+
+Referenced by Is\-Safety\-Rtu().
+
+\hypertarget{dbbase_8h_a2509d905cb6eac619dceb509307e73fe}{\index{dbbase.\-h@{dbbase.\-h}!R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-D\-O\-O\-R\-L\-O\-C\-K@{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-D\-O\-O\-R\-L\-O\-C\-K}}
+\index{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-D\-O\-O\-R\-L\-O\-C\-K@{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-D\-O\-O\-R\-L\-O\-C\-K}!dbbase.h@{dbbase.\-h}}
+\subsubsection[{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-D\-O\-O\-R\-L\-O\-C\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-D\-O\-O\-R\-L\-O\-C\-K~11}}\label{dbbase_8h_a2509d905cb6eac619dceb509307e73fe}
+
+
+智能门锁 
+
+
+
+Referenced by Is\-Safety\-Rtu().
+
+\hypertarget{dbbase_8h_abe151b74d26cdd9dd31923846454c9d0}{\index{dbbase.\-h@{dbbase.\-h}!R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-F\-L\-O\-O\-R\-I\-N\-F\-O@{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-F\-L\-O\-O\-R\-I\-N\-F\-O}}
+\index{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-F\-L\-O\-O\-R\-I\-N\-F\-O@{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-F\-L\-O\-O\-R\-I\-N\-F\-O}!dbbase.h@{dbbase.\-h}}
+\subsubsection[{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-F\-L\-O\-O\-R\-I\-N\-F\-O}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-F\-L\-O\-O\-R\-I\-N\-F\-O~0xf9}}\label{dbbase_8h_abe151b74d26cdd9dd31923846454c9d0}
+
+
+楼层信息 
+
+\hypertarget{dbbase_8h_aabeed00c2ac99b59fd1cd6339863838f}{\index{dbbase.\-h@{dbbase.\-h}!R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-G\-A\-S\-D\-E\-T@{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-G\-A\-S\-D\-E\-T}}
+\index{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-G\-A\-S\-D\-E\-T@{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-G\-A\-S\-D\-E\-T}!dbbase.h@{dbbase.\-h}}
+\subsubsection[{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-G\-A\-S\-D\-E\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-G\-A\-S\-D\-E\-T~14}}\label{dbbase_8h_aabeed00c2ac99b59fd1cd6339863838f}
+
+
+可燃气探测器 
+
+\hypertarget{dbbase_8h_a95e59c426d2f33d0653e61e86998c1a1}{\index{dbbase.\-h@{dbbase.\-h}!R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-H\-O\-S\-T@{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-H\-O\-S\-T}}
+\index{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-H\-O\-S\-T@{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-H\-O\-S\-T}!dbbase.h@{dbbase.\-h}}
+\subsubsection[{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-H\-O\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-H\-O\-S\-T~0}}\label{dbbase_8h_a95e59c426d2f33d0653e61e86998c1a1}
+
+
+主机类型 
+
+
+
+Referenced by update\-\_\-db\-\_\-host().
+
+\hypertarget{dbbase_8h_a99813ca5e2064c3110d201d639c003df}{\index{dbbase.\-h@{dbbase.\-h}!R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-I\-N\-V\-A\-L\-I\-D@{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-I\-N\-V\-A\-L\-I\-D}}
+\index{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-I\-N\-V\-A\-L\-I\-D@{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-I\-N\-V\-A\-L\-I\-D}!dbbase.h@{dbbase.\-h}}
+\subsubsection[{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-I\-N\-V\-A\-L\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-I\-N\-V\-A\-L\-I\-D~0xff}}\label{dbbase_8h_a99813ca5e2064c3110d201d639c003df}
+
+
+无效 
+
+\hypertarget{dbbase_8h_ad4d8ed4e32dd5fb1c51c108cca3a8554}{\index{dbbase.\-h@{dbbase.\-h}!R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-I\-R\-P\-R\-O\-B\-E@{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-I\-R\-P\-R\-O\-B\-E}}
+\index{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-I\-R\-P\-R\-O\-B\-E@{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-I\-R\-P\-R\-O\-B\-E}!dbbase.h@{dbbase.\-h}}
+\subsubsection[{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-I\-R\-P\-R\-O\-B\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-I\-R\-P\-R\-O\-B\-E~9}}\label{dbbase_8h_ad4d8ed4e32dd5fb1c51c108cca3a8554}
+
+
+红外入侵探测器 
+
+
+
+Referenced by Is\-Safety\-Rtu().
+
+\hypertarget{dbbase_8h_afdf7c2bf60db37561d4f8a78b75f849c}{\index{dbbase.\-h@{dbbase.\-h}!R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-I\-R\-T\-R\-A\-N\-S@{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-I\-R\-T\-R\-A\-N\-S}}
+\index{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-I\-R\-T\-R\-A\-N\-S@{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-I\-R\-T\-R\-A\-N\-S}!dbbase.h@{dbbase.\-h}}
+\subsubsection[{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-I\-R\-T\-R\-A\-N\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-I\-R\-T\-R\-A\-N\-S~7}}\label{dbbase_8h_afdf7c2bf60db37561d4f8a78b75f849c}
+
+
+红外转发器 
+
+\hypertarget{dbbase_8h_ad962222c561832b09a2ce2740238b4c4}{\index{dbbase.\-h@{dbbase.\-h}!R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-L\-I\-G\-H\-T\-D\-E\-T@{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-L\-I\-G\-H\-T\-D\-E\-T}}
+\index{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-L\-I\-G\-H\-T\-D\-E\-T@{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-L\-I\-G\-H\-T\-D\-E\-T}!dbbase.h@{dbbase.\-h}}
+\subsubsection[{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-L\-I\-G\-H\-T\-D\-E\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-L\-I\-G\-H\-T\-D\-E\-T~13}}\label{dbbase_8h_ad962222c561832b09a2ce2740238b4c4}
+
+
+光照探测器 
+
+\hypertarget{dbbase_8h_a4dd9a3011fd8aedf02308903c9129cc7}{\index{dbbase.\-h@{dbbase.\-h}!R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-P\-L\-U\-G@{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-P\-L\-U\-G}}
+\index{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-P\-L\-U\-G@{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-P\-L\-U\-G}!dbbase.h@{dbbase.\-h}}
+\subsubsection[{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-P\-L\-U\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-P\-L\-U\-G~3}}\label{dbbase_8h_a4dd9a3011fd8aedf02308903c9129cc7}
+
+
+智能插座类型 
+
+
+
+Referenced by Is\-Native\-Rtu().
+
+\hypertarget{dbbase_8h_afa871f118a4976960003db5923b783b3}{\index{dbbase.\-h@{dbbase.\-h}!R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-R\-G\-B@{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-R\-G\-B}}
+\index{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-R\-G\-B@{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-R\-G\-B}!dbbase.h@{dbbase.\-h}}
+\subsubsection[{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-R\-G\-B}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-R\-G\-B~5}}\label{dbbase_8h_afa871f118a4976960003db5923b783b3}
+
+
+R\-G\-B灯 
+
+
+
+Referenced by Is\-Native\-Rtu().
+
+\hypertarget{dbbase_8h_ab9e97b016d165c0848d9e26dbb732bb5}{\index{dbbase.\-h@{dbbase.\-h}!R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-R\-O\-B\-T\-I\-C@{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-R\-O\-B\-T\-I\-C}}
+\index{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-R\-O\-B\-T\-I\-C@{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-R\-O\-B\-T\-I\-C}!dbbase.h@{dbbase.\-h}}
+\subsubsection[{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-R\-O\-B\-T\-I\-C}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-R\-O\-B\-T\-I\-C~17}}\label{dbbase_8h_ab9e97b016d165c0848d9e26dbb732bb5}
+
+
+机械手 
+
+
+
+Referenced by Is\-Native\-Rtu().
+
+\hypertarget{dbbase_8h_aad9835fec88827746383cbfc49d11d98}{\index{dbbase.\-h@{dbbase.\-h}!R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-C\-E\-N\-E@{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-C\-E\-N\-E}}
+\index{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-C\-E\-N\-E@{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-C\-E\-N\-E}!dbbase.h@{dbbase.\-h}}
+\subsubsection[{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-C\-E\-N\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-C\-E\-N\-E~2}}\label{dbbase_8h_aad9835fec88827746383cbfc49d11d98}
+
+
+情景面板类型 
+
+\hypertarget{dbbase_8h_a5b85ab36fa49bdaa0e0aba8ef2c49e81}{\index{dbbase.\-h@{dbbase.\-h}!R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-C\-E\-N\-E\-I\-N\-F\-O@{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-C\-E\-N\-E\-I\-N\-F\-O}}
+\index{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-C\-E\-N\-E\-I\-N\-F\-O@{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-C\-E\-N\-E\-I\-N\-F\-O}!dbbase.h@{dbbase.\-h}}
+\subsubsection[{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-C\-E\-N\-E\-I\-N\-F\-O}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-C\-E\-N\-E\-I\-N\-F\-O~0xfd}}\label{dbbase_8h_a5b85ab36fa49bdaa0e0aba8ef2c49e81}
+
+
+情景信息，即存储的数据 
+
+
+
+Referenced by main(), and update\-\_\-db\-\_\-rtuinfo().
+
+\hypertarget{dbbase_8h_ad45e0faaa50bbd77ad0f3ef05b8b8c5d}{\index{dbbase.\-h@{dbbase.\-h}!R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-E\-R\-V\-E\-R@{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-E\-R\-V\-E\-R}}
+\index{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-E\-R\-V\-E\-R@{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-E\-R\-V\-E\-R}!dbbase.h@{dbbase.\-h}}
+\subsubsection[{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-E\-R\-V\-E\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-E\-R\-V\-E\-R~0xfb}}\label{dbbase_8h_ad45e0faaa50bbd77ad0f3ef05b8b8c5d}
+\hypertarget{dbbase_8h_aed90f514e1e21d48002da1e555617aab}{\index{dbbase.\-h@{dbbase.\-h}!R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-W\-I\-T\-C\-H@{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-W\-I\-T\-C\-H}}
+\index{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-W\-I\-T\-C\-H@{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-W\-I\-T\-C\-H}!dbbase.h@{dbbase.\-h}}
+\subsubsection[{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-W\-I\-T\-C\-H}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-W\-I\-T\-C\-H~1}}\label{dbbase_8h_aed90f514e1e21d48002da1e555617aab}
+
+
+智能开关类型 
+
+
+
+Referenced by Is\-Native\-Rtu().
+
+\hypertarget{dbbase_8h_acd85ffd783088af534e8a3f285f1a787}{\index{dbbase.\-h@{dbbase.\-h}!R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-T\-A\-S\-K\-I\-N\-F\-O@{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-T\-A\-S\-K\-I\-N\-F\-O}}
+\index{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-T\-A\-S\-K\-I\-N\-F\-O@{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-T\-A\-S\-K\-I\-N\-F\-O}!dbbase.h@{dbbase.\-h}}
+\subsubsection[{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-T\-A\-S\-K\-I\-N\-F\-O}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-T\-A\-S\-K\-I\-N\-F\-O~0xfc}}\label{dbbase_8h_acd85ffd783088af534e8a3f285f1a787}
+
+
+任务信息，即存储的数据 
+
+
+
+Referenced by update\-\_\-db\-\_\-rtuinfo().
+
+\hypertarget{dbbase_8h_a93c307e01bad7e244af2477a33910ebc}{\index{dbbase.\-h@{dbbase.\-h}!R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-T\-P\-M\-H\-U\-M\-D\-E\-T@{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-T\-P\-M\-H\-U\-M\-D\-E\-T}}
+\index{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-T\-P\-M\-H\-U\-M\-D\-E\-T@{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-T\-P\-M\-H\-U\-M\-D\-E\-T}!dbbase.h@{dbbase.\-h}}
+\subsubsection[{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-T\-P\-M\-H\-U\-M\-D\-E\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-T\-P\-M\-H\-U\-M\-D\-E\-T~15}}\label{dbbase_8h_a93c307e01bad7e244af2477a33910ebc}
+
+
+温湿度空气质量探测器 
+
+\hypertarget{dbbase_8h_ac5684c1ee2f398b9f88b89cfcf746eca}{\index{dbbase.\-h@{dbbase.\-h}!R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-U\-S\-E\-D\-E\-V\-I\-C\-E@{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-U\-S\-E\-D\-E\-V\-I\-C\-E}}
+\index{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-U\-S\-E\-D\-E\-V\-I\-C\-E@{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-U\-S\-E\-D\-E\-V\-I\-C\-E}!dbbase.h@{dbbase.\-h}}
+\subsubsection[{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-U\-S\-E\-D\-E\-V\-I\-C\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-U\-S\-E\-D\-E\-V\-I\-C\-E~0xfa}}\label{dbbase_8h_ac5684c1ee2f398b9f88b89cfcf746eca}
+
+
+应用设备，如用户的电视、空调、机机盒、摄像头 
+
+\hypertarget{dbbase_8h_aceaf727eed5d28b335b91a7474e976ae}{\index{dbbase.\-h@{dbbase.\-h}!R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-U\-S\-E\-R\-I\-N\-F\-O@{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-U\-S\-E\-R\-I\-N\-F\-O}}
+\index{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-U\-S\-E\-R\-I\-N\-F\-O@{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-U\-S\-E\-R\-I\-N\-F\-O}!dbbase.h@{dbbase.\-h}}
+\subsubsection[{R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-U\-S\-E\-R\-I\-N\-F\-O}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-U\-S\-E\-R\-I\-N\-F\-O~0xf8}}\label{dbbase_8h_aceaf727eed5d28b335b91a7474e976ae}
+
+
+用户信息 
+
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{dbbase_8h_afec5109c9a49125c493619b015292bb0}{\index{dbbase.\-h@{dbbase.\-h}!Rtustatus@{Rtustatus}}
+\index{Rtustatus@{Rtustatus}!dbbase.h@{dbbase.\-h}}
+\subsubsection[{Rtustatus}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Rtustatus}}}\label{dbbase_8h_afec5109c9a49125c493619b015292bb0}
+设备注册状态 \begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{R\-T\-U\-\_\-\-S\-T\-A\-T\-E\-\_\-\-N\-E\-W@{R\-T\-U\-\_\-\-S\-T\-A\-T\-E\-\_\-\-N\-E\-W}!dbbase.\-h@{dbbase.\-h}}\index{dbbase.\-h@{dbbase.\-h}!R\-T\-U\-\_\-\-S\-T\-A\-T\-E\-\_\-\-N\-E\-W@{R\-T\-U\-\_\-\-S\-T\-A\-T\-E\-\_\-\-N\-E\-W}}\item[{\em 
+\hypertarget{dbbase_8h_afec5109c9a49125c493619b015292bb0aeb22bc22b91f98cc0904da95e17024bb}{R\-T\-U\-\_\-\-S\-T\-A\-T\-E\-\_\-\-N\-E\-W}\label{dbbase_8h_afec5109c9a49125c493619b015292bb0aeb22bc22b91f98cc0904da95e17024bb}
+}]新加状态，如注册过程中刚找到还没有上送到\-A\-P\-P \index{R\-T\-U\-\_\-\-S\-T\-A\-T\-E\-\_\-\-R\-E\-G@{R\-T\-U\-\_\-\-S\-T\-A\-T\-E\-\_\-\-R\-E\-G}!dbbase.\-h@{dbbase.\-h}}\index{dbbase.\-h@{dbbase.\-h}!R\-T\-U\-\_\-\-S\-T\-A\-T\-E\-\_\-\-R\-E\-G@{R\-T\-U\-\_\-\-S\-T\-A\-T\-E\-\_\-\-R\-E\-G}}\item[{\em 
+\hypertarget{dbbase_8h_afec5109c9a49125c493619b015292bb0a45cf1c625194b76ae788473dcdfd194f}{R\-T\-U\-\_\-\-S\-T\-A\-T\-E\-\_\-\-R\-E\-G}\label{dbbase_8h_afec5109c9a49125c493619b015292bb0a45cf1c625194b76ae788473dcdfd194f}
+}]注册过程状态，即\-A\-P\-P已经知道该设备存在，但还没有允许设备注册到主机中的一种状态 \index{R\-T\-U\-\_\-\-S\-T\-A\-T\-E\-\_\-\-V\-A\-L\-I\-D@{R\-T\-U\-\_\-\-S\-T\-A\-T\-E\-\_\-\-V\-A\-L\-I\-D}!dbbase.\-h@{dbbase.\-h}}\index{dbbase.\-h@{dbbase.\-h}!R\-T\-U\-\_\-\-S\-T\-A\-T\-E\-\_\-\-V\-A\-L\-I\-D@{R\-T\-U\-\_\-\-S\-T\-A\-T\-E\-\_\-\-V\-A\-L\-I\-D}}\item[{\em 
+\hypertarget{dbbase_8h_afec5109c9a49125c493619b015292bb0a728528e69f50f43e0a6bd9465ff213f2}{R\-T\-U\-\_\-\-S\-T\-A\-T\-E\-\_\-\-V\-A\-L\-I\-D}\label{dbbase_8h_afec5109c9a49125c493619b015292bb0a728528e69f50f43e0a6bd9465ff213f2}
+}]有效状态，即已经允许注册到主机中， \index{R\-T\-U\-\_\-\-S\-T\-A\-T\-E\-\_\-\-I\-N\-V\-A\-L\-I\-D@{R\-T\-U\-\_\-\-S\-T\-A\-T\-E\-\_\-\-I\-N\-V\-A\-L\-I\-D}!dbbase.\-h@{dbbase.\-h}}\index{dbbase.\-h@{dbbase.\-h}!R\-T\-U\-\_\-\-S\-T\-A\-T\-E\-\_\-\-I\-N\-V\-A\-L\-I\-D@{R\-T\-U\-\_\-\-S\-T\-A\-T\-E\-\_\-\-I\-N\-V\-A\-L\-I\-D}}\item[{\em 
+\hypertarget{dbbase_8h_afec5109c9a49125c493619b015292bb0a40e6fb2c54de4e6e25c030ebf5aad4c4}{R\-T\-U\-\_\-\-S\-T\-A\-T\-E\-\_\-\-I\-N\-V\-A\-L\-I\-D}\label{dbbase_8h_afec5109c9a49125c493619b015292bb0a40e6fb2c54de4e6e25c030ebf5aad4c4}
+}]无效状态，如删除后的状态 \end{description}
+\end{Desc}
+
+
+
+\subsection{Function Documentation}
+\hypertarget{dbbase_8h_a91ce6d4931baf0cca718619888e1412d}{\index{dbbase.\-h@{dbbase.\-h}!delete\-\_\-db\-\_\-host@{delete\-\_\-db\-\_\-host}}
+\index{delete\-\_\-db\-\_\-host@{delete\-\_\-db\-\_\-host}!dbbase.h@{dbbase.\-h}}
+\subsubsection[{delete\-\_\-db\-\_\-host}]{\setlength{\rightskip}{0pt plus 5cm}int delete\-\_\-db\-\_\-host (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{hostname}
+\end{DoxyParamCaption}
+)}}\label{dbbase_8h_a91ce6d4931baf0cca718619888e1412d}
+
+
+delete\-\_\-db\-\_\-host 删除主机设备 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hostname} & 主机名 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+References check\-\_\-connect(), D\-B\-\_\-\-T\-A\-B\-L\-E\-\_\-\-N\-A\-M\-E\-L\-I\-S\-T, L\-O\-G\-\_\-\-D\-E\-B\-U\-G, L\-O\-G\-\_\-\-E\-R\-R\-O\-R, m\-\_\-mysqlfd, and M\-A\-X\-\_\-\-D\-B\-\_\-\-T\-Y\-P\-E.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=284pt]{dbbase_8h_a91ce6d4931baf0cca718619888e1412d_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{dbbase_8h_adfa21954b5a414041dffb59dd549dcb8}{\index{dbbase.\-h@{dbbase.\-h}!delete\-\_\-db\-\_\-rtu@{delete\-\_\-db\-\_\-rtu}}
+\index{delete\-\_\-db\-\_\-rtu@{delete\-\_\-db\-\_\-rtu}!dbbase.h@{dbbase.\-h}}
+\subsubsection[{delete\-\_\-db\-\_\-rtu}]{\setlength{\rightskip}{0pt plus 5cm}int delete\-\_\-db\-\_\-rtu (
+\begin{DoxyParamCaption}
+\item[{{\bf Rtu\-Remove\-Info} \&}]{rtuinfo}
+\end{DoxyParamCaption}
+)}}\label{dbbase_8h_adfa21954b5a414041dffb59dd549dcb8}
+
+
+delete\-\_\-db\-\_\-rtu 删除设备 接口 不包括删除主机 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rtuinfo} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/1 删除出错 0 删除成功 或者 没有删除项 
+\end{DoxyReturn}
+
+
+References check\-\_\-connect(), get\-\_\-table\-\_\-name(), Rtu\-Remove\-Info\-::hostadd, L\-O\-G\-\_\-\-D\-E\-B\-U\-G, L\-O\-G\-\_\-\-E\-R\-R\-O\-R, m\-\_\-mysqlfd, Rtu\-Remove\-Info\-::rtuadd, and Rtu\-Remove\-Info\-::rtutype.
+
+
+
+Referenced by main().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=278pt]{dbbase_8h_adfa21954b5a414041dffb59dd549dcb8_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{dbbase_8h_adfa21954b5a414041dffb59dd549dcb8_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{dbbase_8h_a7748ddce59655cc11534b75d5e0956d4}{\index{dbbase.\-h@{dbbase.\-h}!find\-Hostname@{find\-Hostname}}
+\index{find\-Hostname@{find\-Hostname}!dbbase.h@{dbbase.\-h}}
+\subsubsection[{find\-Hostname}]{\setlength{\rightskip}{0pt plus 5cm}int find\-Hostname (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{hostname}
+\end{DoxyParamCaption}
+)}}\label{dbbase_8h_a7748ddce59655cc11534b75d5e0956d4}
+
+
+find\-Hostname 查找对应的主机名 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hostname} & 主机名\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+返回值 -\/1 错误 0 没有找到对应的 $>$0 找到的主机个数 
+\end{DoxyReturn}
+
+
+References check\-\_\-connect(), L\-O\-G\-\_\-\-E\-R\-R\-O\-R, and m\-\_\-mysqlfd.
+
+
+
+Referenced by insert\-\_\-db\-\_\-host(), and update\-\_\-db\-\_\-host().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=278pt]{dbbase_8h_a7748ddce59655cc11534b75d5e0956d4_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=280pt]{dbbase_8h_a7748ddce59655cc11534b75d5e0956d4_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{dbbase_8h_af89ddd8c208010e4477750f84849f9bf}{\index{dbbase.\-h@{dbbase.\-h}!get\-\_\-table\-\_\-name@{get\-\_\-table\-\_\-name}}
+\index{get\-\_\-table\-\_\-name@{get\-\_\-table\-\_\-name}!dbbase.h@{dbbase.\-h}}
+\subsubsection[{get\-\_\-table\-\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string get\-\_\-table\-\_\-name (
+\begin{DoxyParamCaption}
+\item[{{\bf Uint8}}]{type}
+\end{DoxyParamCaption}
+)}}\label{dbbase_8h_af89ddd8c208010e4477750f84849f9bf}
+
+
+get\-\_\-table\-\_\-name 根据设备类型 拿到对应的表名 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & 设备类型 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+表名 为 string 类型 
+\end{DoxyReturn}
+
+
+References g\-Type\-Info\-List, and D\-B\-Type\-Info\-::tablename.
+
+
+
+Referenced by delete\-\_\-db\-\_\-rtu(), insert\-\_\-db\-\_\-rtu(), update\-\_\-db\-\_\-exnativertu(), update\-\_\-db\-\_\-host(), update\-\_\-db\-\_\-rtuinfo(), and update\-\_\-db\-\_\-safetyrtu().
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dbbase_8h_af89ddd8c208010e4477750f84849f9bf_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{dbbase_8h_a45ba5638ae09b4ccca4dbe1bdb6bf89a}{\index{dbbase.\-h@{dbbase.\-h}!Get\-Host\-Count@{Get\-Host\-Count}}
+\index{Get\-Host\-Count@{Get\-Host\-Count}!dbbase.h@{dbbase.\-h}}
+\subsubsection[{Get\-Host\-Count}]{\setlength{\rightskip}{0pt plus 5cm}int Get\-Host\-Count (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{dbbase_8h_a45ba5638ae09b4ccca4dbe1bdb6bf89a}
+
+
+Get\-Host\-Count 拿到 连接上来的主机个数 
+
+\begin{DoxyReturn}{Returns}
+主机个数 
+\end{DoxyReturn}
+
+
+References check\-\_\-connect(), L\-O\-G\-\_\-\-D\-E\-B\-U\-G, L\-O\-G\-\_\-\-E\-R\-R\-O\-R, and m\-\_\-mysqlfd.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=280pt]{dbbase_8h_a45ba5638ae09b4ccca4dbe1bdb6bf89a_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{dbbase_8h_a645417f4347afad166d95e919bf778de}{\index{dbbase.\-h@{dbbase.\-h}!Get\-Host\-Id\-By\-Name@{Get\-Host\-Id\-By\-Name}}
+\index{Get\-Host\-Id\-By\-Name@{Get\-Host\-Id\-By\-Name}!dbbase.h@{dbbase.\-h}}
+\subsubsection[{Get\-Host\-Id\-By\-Name}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Uint32} Get\-Host\-Id\-By\-Name (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{hostname, }
+\item[{{\bf Uint32} \&}]{hostid}
+\end{DoxyParamCaption}
+)}}\label{dbbase_8h_a645417f4347afad166d95e919bf778de}
+
+
+Get\-Host\-Id\-By\-Name 根据主机名查找对应的\-I\-D. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hostname} & 主机名 \\
+\hline
+{\em hostid} & 找到的hostadd放入该参数\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/1 查找错误 0 查找正确 
+\end{DoxyReturn}
+
+
+References check\-\_\-connect(), L\-O\-G\-\_\-\-D\-E\-B\-U\-G, L\-O\-G\-\_\-\-E\-R\-R\-O\-R, and m\-\_\-mysqlfd.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{dbbase_8h_a645417f4347afad166d95e919bf778de_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{dbbase_8h_aa1165b8a3c5a7d095576c678f94268f3}{\index{dbbase.\-h@{dbbase.\-h}!Get\-Ip\-By\-Host\-Add@{Get\-Ip\-By\-Host\-Add}}
+\index{Get\-Ip\-By\-Host\-Add@{Get\-Ip\-By\-Host\-Add}!dbbase.h@{dbbase.\-h}}
+\subsubsection[{Get\-Ip\-By\-Host\-Add}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Uint32} Get\-Ip\-By\-Host\-Add (
+\begin{DoxyParamCaption}
+\item[{{\bf Uint32}}]{hostadd, }
+\item[{{\bf Uint32} \&}]{hostip}
+\end{DoxyParamCaption}
+)}}\label{dbbase_8h_aa1165b8a3c5a7d095576c678f94268f3}
+根据主机地址获取 主机ip
+
+根据 hostadd 拿到 ip 
+
+References check\-\_\-connect(), L\-O\-G\-\_\-\-D\-E\-B\-U\-G, L\-O\-G\-\_\-\-E\-R\-R\-O\-R, and m\-\_\-mysqlfd.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=292pt]{dbbase_8h_aa1165b8a3c5a7d095576c678f94268f3_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{dbbase_8h_affefb171c935f2ae5832d0ca8091798f}{\index{dbbase.\-h@{dbbase.\-h}!init\-\_\-mysql@{init\-\_\-mysql}}
+\index{init\-\_\-mysql@{init\-\_\-mysql}!dbbase.h@{dbbase.\-h}}
+\subsubsection[{init\-\_\-mysql}]{\setlength{\rightskip}{0pt plus 5cm}int init\-\_\-mysql (
+\begin{DoxyParamCaption}
+\item[{{\bf Mysql\-Con\-Info} $\ast$}]{info}
+\end{DoxyParamCaption}
+)}}\label{dbbase_8h_affefb171c935f2ae5832d0ca8091798f}
+
+
+init\-\_\-mysql 初始化mysql , 连接，指定数据库 
+
+
+\begin{DoxyParams}{Parameters}
+{\em info} & 连接mysql时，mysql相关信息结构体\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 成功 -\/1 失败 
+\end{DoxyReturn}
+
+
+References Mysql\-Con\-Info\-::dbname, Mysql\-Con\-Info\-::hostname, m\-\_\-mysqlfd, Mysql\-Con\-Info\-::password, and Mysql\-Con\-Info\-::username.
+
+
+
+Referenced by main().
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=216pt]{dbbase_8h_affefb171c935f2ae5832d0ca8091798f_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{dbbase_8h_a62123b0c0b89cfe644b8e040a4fe2a3b}{\index{dbbase.\-h@{dbbase.\-h}!insert\-\_\-db\-\_\-apprtu@{insert\-\_\-db\-\_\-apprtu}}
+\index{insert\-\_\-db\-\_\-apprtu@{insert\-\_\-db\-\_\-apprtu}!dbbase.h@{dbbase.\-h}}
+\subsubsection[{insert\-\_\-db\-\_\-apprtu}]{\setlength{\rightskip}{0pt plus 5cm}int insert\-\_\-db\-\_\-apprtu (
+\begin{DoxyParamCaption}
+\item[{{\bf App\-Rtu\-Info} \&}]{rtuinfo}
+\end{DoxyParamCaption}
+)}}\label{dbbase_8h_a62123b0c0b89cfe644b8e040a4fe2a3b}
+
+
+insert\-\_\-db\-\_\-apprtu 添加，编辑 应用设备 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rtuinfo} & 应用设备结构体\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+References D\-B\-\_\-\-T\-A\-B\-L\-E\-\_\-\-N\-A\-M\-E\-L\-I\-S\-T, Dupicate\-Key\-Update\-Query(), App\-Rtu\-Info\-::hostadd, App\-Rtu\-Info\-::irrtuadd, L\-O\-G\-\_\-\-E\-R\-R\-O\-R, R\-T\-U\-\_\-\-S\-T\-A\-T\-E\-\_\-\-V\-A\-L\-I\-D, App\-Rtu\-Info\-::rtuadd, App\-Rtu\-Info\-::rtuname, App\-Rtu\-Info\-::rturegtime, and App\-Rtu\-Info\-::rtutype.
+
+
+
+Referenced by update\-\_\-db\-\_\-apprtu().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dbbase_8h_a62123b0c0b89cfe644b8e040a4fe2a3b_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{dbbase_8h_a62123b0c0b89cfe644b8e040a4fe2a3b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{dbbase_8h_a9acb52e4299badf813180da0f8214c37}{\index{dbbase.\-h@{dbbase.\-h}!insert\-\_\-db\-\_\-host@{insert\-\_\-db\-\_\-host}}
+\index{insert\-\_\-db\-\_\-host@{insert\-\_\-db\-\_\-host}!dbbase.h@{dbbase.\-h}}
+\subsubsection[{insert\-\_\-db\-\_\-host}]{\setlength{\rightskip}{0pt plus 5cm}int insert\-\_\-db\-\_\-host (
+\begin{DoxyParamCaption}
+\item[{{\bf Host\-Reg\-Info} \&}]{hostinfo}
+\end{DoxyParamCaption}
+)}}\label{dbbase_8h_a9acb52e4299badf813180da0f8214c37}
+
+
+insert\-\_\-db\-\_\-host 主机注册接口 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hostinfo} & 主机信息结构体\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/1 插入失败 0 插入成功 $>$0 主机名字已经存在 
+\end{DoxyReturn}
+
+
+References db\-\_\-insert\-\_\-query(), D\-B\-\_\-\-T\-A\-B\-L\-E\-\_\-\-N\-A\-M\-E\-L\-I\-S\-T, find\-Hostname(), Host\-Reg\-Info\-::hostadd, Host\-Reg\-Info\-::hostip, Host\-Reg\-Info\-::hostname, Host\-Reg\-Info\-::hostpwd, Host\-Reg\-Info\-::hostregtime, Host\-Reg\-Info\-::lastcomtime, L\-O\-G\-\_\-\-E\-R\-R\-O\-R, L\-O\-G\-\_\-\-P\-R\-I\-N\-T, and R\-T\-U\-\_\-\-S\-T\-A\-T\-E\-\_\-\-V\-A\-L\-I\-D.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dbbase_8h_a9acb52e4299badf813180da0f8214c37_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{dbbase_8h_a21f3b1ac4424fa0839c3182b0ab7cbd8}{\index{dbbase.\-h@{dbbase.\-h}!insert\-\_\-db\-\_\-rtu@{insert\-\_\-db\-\_\-rtu}}
+\index{insert\-\_\-db\-\_\-rtu@{insert\-\_\-db\-\_\-rtu}!dbbase.h@{dbbase.\-h}}
+\subsubsection[{insert\-\_\-db\-\_\-rtu}]{\setlength{\rightskip}{0pt plus 5cm}int insert\-\_\-db\-\_\-rtu (
+\begin{DoxyParamCaption}
+\item[{{\bf Rtu\-Reg\-Info} \&}]{rtuinfo}
+\end{DoxyParamCaption}
+)}}\label{dbbase_8h_a21f3b1ac4424fa0839c3182b0ab7cbd8}
+
+
+insert\-\_\-db\-\_\-rtu 注册设备接口 ，将设备写入数据库 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rtuinfo} & 插入设备结构体\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/1 插入失败 0 插入成功 
+\end{DoxyReturn}
+
+
+References db\-\_\-insert\-\_\-query(), D\-B\-\_\-\-T\-A\-B\-L\-E\-\_\-\-N\-A\-M\-E\-L\-I\-S\-T, find\-Rtuadd(), get\-\_\-table\-\_\-name(), Rtu\-Reg\-Info\-::hostadd, L\-O\-G\-\_\-\-E\-R\-R\-O\-R, m\-\_\-mysqlfd, Rtu\-Reg\-Info\-::rtuadd, Rtu\-Reg\-Info\-::rturegtime, Rtu\-Reg\-Info\-::rtustate, and Rtu\-Reg\-Info\-::rtutype.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dbbase_8h_a21f3b1ac4424fa0839c3182b0ab7cbd8_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{dbbase_8h_ad9cd8d3ab8c7385eceb3280b5f910b2a}{\index{dbbase.\-h@{dbbase.\-h}!insert\-\_\-db\-\_\-sceneinfo@{insert\-\_\-db\-\_\-sceneinfo}}
+\index{insert\-\_\-db\-\_\-sceneinfo@{insert\-\_\-db\-\_\-sceneinfo}!dbbase.h@{dbbase.\-h}}
+\subsubsection[{insert\-\_\-db\-\_\-sceneinfo}]{\setlength{\rightskip}{0pt plus 5cm}int insert\-\_\-db\-\_\-sceneinfo (
+\begin{DoxyParamCaption}
+\item[{{\bf Scene\-Info} \&}]{sceneinfo}
+\end{DoxyParamCaption}
+)}}\label{dbbase_8h_ad9cd8d3ab8c7385eceb3280b5f910b2a}
+
+
+insert\-\_\-db\-\_\-sceneinfo 创建、修改情景 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sceneinfo} & 情景信息结构体 绑定的设备信息需要malloc后传入\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+References Rtu\-Bind\-::add, D\-B\-\_\-\-T\-A\-B\-L\-E\-\_\-\-N\-A\-M\-E\-L\-I\-S\-T, Rtu\-Bind\-::delay, Dupicate\-Key\-Update\-Query(), Scene\-Info\-::hostadd, L\-O\-G\-\_\-\-E\-R\-R\-O\-R, Rtu\-Bind\-::oper, Scene\-Info\-::rtubind, Scene\-Info\-::rturegtime, Scene\-Info\-::sceneid, Scene\-Info\-::scenename, Scene\-Info\-::scenepicid, Scene\-Info\-::scenertunum, and Rtu\-Bind\-::type.
+
+
+
+Referenced by update\-\_\-db\-\_\-sceneinfo().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dbbase_8h_ad9cd8d3ab8c7385eceb3280b5f910b2a_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dbbase_8h_ad9cd8d3ab8c7385eceb3280b5f910b2a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{dbbase_8h_a0eb771b638f26a87a9cce0c7de472f0f}{\index{dbbase.\-h@{dbbase.\-h}!insert\-\_\-db\-\_\-taskinfo@{insert\-\_\-db\-\_\-taskinfo}}
+\index{insert\-\_\-db\-\_\-taskinfo@{insert\-\_\-db\-\_\-taskinfo}!dbbase.h@{dbbase.\-h}}
+\subsubsection[{insert\-\_\-db\-\_\-taskinfo}]{\setlength{\rightskip}{0pt plus 5cm}int insert\-\_\-db\-\_\-taskinfo (
+\begin{DoxyParamCaption}
+\item[{{\bf Task\-Info} \&}]{taskinfo}
+\end{DoxyParamCaption}
+)}}\label{dbbase_8h_a0eb771b638f26a87a9cce0c7de472f0f}
+
+
+insert\-\_\-db\-\_\-taskinfo 设置 编辑定时任务 
+
+
+\begin{DoxyParams}{Parameters}
+{\em taskinfo} & 任务信息 绑定的设备信息需要malloc后传入 \\
+\hline
+\end{DoxyParams}
+
+
+References Rtu\-Bind\-::add, D\-B\-\_\-\-T\-A\-B\-L\-E\-\_\-\-N\-A\-M\-E\-L\-I\-S\-T, Rtu\-Bind\-::delay, Dupicate\-Key\-Update\-Query(), Task\-Info\-::hostadd, L\-O\-G\-\_\-\-E\-R\-R\-O\-R, Rtu\-Bind\-::oper, Task\-Info\-::rtubind, Task\-Info\-::taskcycle, Task\-Info\-::taskid, Task\-Info\-::taskname, Task\-Info\-::taskpicid, Task\-Info\-::taskregtime, Task\-Info\-::taskrtunum, Task\-Info\-::taskstdtime, and Rtu\-Bind\-::type.
+
+
+
+Referenced by update\-\_\-db\-\_\-taskinfo().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dbbase_8h_a0eb771b638f26a87a9cce0c7de472f0f_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dbbase_8h_a0eb771b638f26a87a9cce0c7de472f0f_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{dbbase_8h_a334c4412fa09aab89d49cefdfd233b04}{\index{dbbase.\-h@{dbbase.\-h}!select\-\_\-db\-\_\-hostinfo@{select\-\_\-db\-\_\-hostinfo}}
+\index{select\-\_\-db\-\_\-hostinfo@{select\-\_\-db\-\_\-hostinfo}!dbbase.h@{dbbase.\-h}}
+\subsubsection[{select\-\_\-db\-\_\-hostinfo}]{\setlength{\rightskip}{0pt plus 5cm}int select\-\_\-db\-\_\-hostinfo (
+\begin{DoxyParamCaption}
+\item[{{\bf Host\-Reg\-Info} $\ast$}]{p\-Hostinfo, }
+\item[{char $\ast$}]{hostname}
+\end{DoxyParamCaption}
+)}}\label{dbbase_8h_a334c4412fa09aab89d49cefdfd233b04}
+
+
+select\-\_\-db\-\_\-hostinfo 根据主机名 查询主机信息 ，用于 A\-P\-P远程登陆 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\-Hostinfo} & \\
+\hline
+{\em hostname} & Host\-Add,Host\-Pwd,Host\-Ip,Host\-State,Last\-Com\-Time \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+返回值 -\/1 错误 0 正确 1 没有数据 
+\end{DoxyReturn}
+
+
+References db\-\_\-select\-\_\-query(), D\-B\-\_\-\-T\-A\-B\-L\-E\-\_\-\-N\-A\-M\-E\-L\-I\-S\-T, Host\-Reg\-Info\-::hostadd, Host\-Reg\-Info\-::hostip, Host\-Reg\-Info\-::hostpwd, Host\-Reg\-Info\-::hoststate, Host\-Reg\-Info\-::lastcomtime, L\-O\-G\-\_\-\-D\-E\-B\-U\-G, and L\-O\-G\-\_\-\-E\-R\-R\-O\-R.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dbbase_8h_a334c4412fa09aab89d49cefdfd233b04_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{dbbase_8h_a8b214bd5c7dbfef30ac417954cb0c5e2}{\index{dbbase.\-h@{dbbase.\-h}!update\-\_\-db\-\_\-apprtu@{update\-\_\-db\-\_\-apprtu}}
+\index{update\-\_\-db\-\_\-apprtu@{update\-\_\-db\-\_\-apprtu}!dbbase.h@{dbbase.\-h}}
+\subsubsection[{update\-\_\-db\-\_\-apprtu}]{\setlength{\rightskip}{0pt plus 5cm}int update\-\_\-db\-\_\-apprtu (
+\begin{DoxyParamCaption}
+\item[{{\bf App\-Rtu\-Info} \&}]{rtuinfo}
+\end{DoxyParamCaption}
+)}}\label{dbbase_8h_a8b214bd5c7dbfef30ac417954cb0c5e2}
+
+
+update\-\_\-db\-\_\-apprtu 修改应用设备 
+
+
+
+References insert\-\_\-db\-\_\-apprtu().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dbbase_8h_a8b214bd5c7dbfef30ac417954cb0c5e2_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{dbbase_8h_a35e1056e0f46576bda26dabc59ce0ded}{\index{dbbase.\-h@{dbbase.\-h}!update\-\_\-db\-\_\-detectorbind@{update\-\_\-db\-\_\-detectorbind}}
+\index{update\-\_\-db\-\_\-detectorbind@{update\-\_\-db\-\_\-detectorbind}!dbbase.h@{dbbase.\-h}}
+\subsubsection[{update\-\_\-db\-\_\-detectorbind}]{\setlength{\rightskip}{0pt plus 5cm}int update\-\_\-db\-\_\-detectorbind (
+\begin{DoxyParamCaption}
+\item[{{\bf Detector\-Bind} \&}]{rtuinfo}
+\end{DoxyParamCaption}
+)}}\label{dbbase_8h_a35e1056e0f46576bda26dabc59ce0ded}
+
+
+update\-\_\-db\-\_\-detectorbind 绑定联动接口 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rtuinfo} & 绑定的设备信息需要malloc后传入 \\
+\hline
+\end{DoxyParams}
+
+
+References Rtu\-Bind\-::add, Detector\-Bind\-::bind\-\_\-num, db\-\_\-update\-\_\-query(), Rtu\-Bind\-::delay, Detector\-Bind\-::hostadd, Detector\-Bind\-::level, Rtu\-Bind\-::oper, Detector\-Bind\-::rtuadd, Detector\-Bind\-::rtubind, and Rtu\-Bind\-::type.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dbbase_8h_a35e1056e0f46576bda26dabc59ce0ded_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{dbbase_8h_aa039ebdc57c1a8157a01c9a762f43bc6}{\index{dbbase.\-h@{dbbase.\-h}!update\-\_\-db\-\_\-detectorrtu@{update\-\_\-db\-\_\-detectorrtu}}
+\index{update\-\_\-db\-\_\-detectorrtu@{update\-\_\-db\-\_\-detectorrtu}!dbbase.h@{dbbase.\-h}}
+\subsubsection[{update\-\_\-db\-\_\-detectorrtu}]{\setlength{\rightskip}{0pt plus 5cm}int update\-\_\-db\-\_\-detectorrtu (
+\begin{DoxyParamCaption}
+\item[{{\bf Detector\-Rtu} \&}]{rtuinfo, }
+\item[{{\bf Uint8}}]{mode}
+\end{DoxyParamCaption}
+)}}\label{dbbase_8h_aa039ebdc57c1a8157a01c9a762f43bc6}
+
+
+update\-\_\-db\-\_\-detectorrtu 更新传感器设备 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rtuinfo} & \\
+\hline
+{\em mode} & 模式 0 更新 val 值 1 更新联动标志，阈值 更新val \-: 传入 val数组值 ,默认为0 更新联动标志： 传入 flag ,downval ,upval \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+References db\-\_\-update\-\_\-query(), Detector\-Rtu\-::detectorinfo, Detector\-Info\-::downval, Detector\-Info\-::flag, Rtu\-Reg\-Info\-::hostadd, L\-O\-G\-\_\-\-E\-R\-R\-O\-R, Rtu\-Reg\-Info\-::rtuadd, Detector\-Rtu\-::rtuinfo, Detector\-Info\-::upval, Detector\-Info\-::val, and Detector\-Rtu\-::valtype.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dbbase_8h_aa039ebdc57c1a8157a01c9a762f43bc6_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{dbbase_8h_a81cfc05e7763f268740f8a27f85b77de}{\index{dbbase.\-h@{dbbase.\-h}!update\-\_\-db\-\_\-exnativertu@{update\-\_\-db\-\_\-exnativertu}}
+\index{update\-\_\-db\-\_\-exnativertu@{update\-\_\-db\-\_\-exnativertu}!dbbase.h@{dbbase.\-h}}
+\subsubsection[{update\-\_\-db\-\_\-exnativertu}]{\setlength{\rightskip}{0pt plus 5cm}int update\-\_\-db\-\_\-exnativertu (
+\begin{DoxyParamCaption}
+\item[{{\bf Ex\-Native\-Rtu} \&}]{rtuinfo}
+\end{DoxyParamCaption}
+)}}\label{dbbase_8h_a81cfc05e7763f268740f8a27f85b77de}
+
+
+update\-\_\-db\-\_\-exnativertu 更新智能床 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rtuinfo} & 控制 ： relayinfo 数组 中val值传入 床头位置（1） 床尾位置（1） 床头振动（1） 床尾振动（1） 灯状态（1）：0x00表示关灯，0x01表示开灯 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+References db\-\_\-update\-\_\-query(), get\-\_\-table\-\_\-name(), Rtu\-Reg\-Info\-::hostadd, Ex\-Native\-Rtu\-::relayinfo, R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-B\-E\-D, Rtu\-Reg\-Info\-::rtuadd, Ex\-Native\-Rtu\-::rtuinfo, and Relay\-Info\-::val.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dbbase_8h_a81cfc05e7763f268740f8a27f85b77de_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{dbbase_8h_a82757fe4298d8fdf297391a4e42e3293}{\index{dbbase.\-h@{dbbase.\-h}!update\-\_\-db\-\_\-host@{update\-\_\-db\-\_\-host}}
+\index{update\-\_\-db\-\_\-host@{update\-\_\-db\-\_\-host}!dbbase.h@{dbbase.\-h}}
+\subsubsection[{update\-\_\-db\-\_\-host}]{\setlength{\rightskip}{0pt plus 5cm}int update\-\_\-db\-\_\-host (
+\begin{DoxyParamCaption}
+\item[{{\bf Host\-Reg\-Info} \&}]{hostinfo}
+\end{DoxyParamCaption}
+)}}\label{dbbase_8h_a82757fe4298d8fdf297391a4e42e3293}
+
+
+update\-\_\-db\-\_\-host 更新主机信息表 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hostinfo} & 更新信息： 传入 hostname ,hostip \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+References db\-\_\-update\-\_\-query(), find\-Hostname(), get\-\_\-sys\-\_\-time(), get\-\_\-table\-\_\-name(), Host\-Reg\-Info\-::hostip, Host\-Reg\-Info\-::hostname, L\-O\-G\-\_\-\-E\-R\-R\-O\-R, and R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-H\-O\-S\-T.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dbbase_8h_a82757fe4298d8fdf297391a4e42e3293_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{dbbase_8h_a5f38e8abcbb787b6fed1c8e1dce1c7c2}{\index{dbbase.\-h@{dbbase.\-h}!update\-\_\-db\-\_\-hostname@{update\-\_\-db\-\_\-hostname}}
+\index{update\-\_\-db\-\_\-hostname@{update\-\_\-db\-\_\-hostname}!dbbase.h@{dbbase.\-h}}
+\subsubsection[{update\-\_\-db\-\_\-hostname}]{\setlength{\rightskip}{0pt plus 5cm}int update\-\_\-db\-\_\-hostname (
+\begin{DoxyParamCaption}
+\item[{{\bf Host\-Man} \&}]{hostinfo}
+\end{DoxyParamCaption}
+)}}\label{dbbase_8h_a5f38e8abcbb787b6fed1c8e1dce1c7c2}
+
+
+update\-\_\-db\-\_\-hostname 用户管理 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hostinfo} & 更新信息： 传入 原 新 主机名 密码 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+References db\-\_\-select\-\_\-query(), db\-\_\-update\-\_\-query(), M\-A\-X\-\_\-\-P\-A\-S\-S\-W\-O\-R\-D\-\_\-\-L\-E\-N, Host\-Man\-::newname, Host\-Man\-::newpwd, Host\-Man\-::oldname, and Host\-Man\-::oldpwd.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dbbase_8h_a5f38e8abcbb787b6fed1c8e1dce1c7c2_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{dbbase_8h_a83758c046728190fe1ac0a9eef34285b}{\index{dbbase.\-h@{dbbase.\-h}!update\-\_\-db\-\_\-nativertu@{update\-\_\-db\-\_\-nativertu}}
+\index{update\-\_\-db\-\_\-nativertu@{update\-\_\-db\-\_\-nativertu}!dbbase.h@{dbbase.\-h}}
+\subsubsection[{update\-\_\-db\-\_\-nativertu}]{\setlength{\rightskip}{0pt plus 5cm}int update\-\_\-db\-\_\-nativertu (
+\begin{DoxyParamCaption}
+\item[{{\bf Native\-Rtu\-Info} \&}]{rtuinfo, }
+\item[{{\bf Uint8}}]{mode}
+\end{DoxyParamCaption}
+)}}\label{dbbase_8h_a83758c046728190fe1ac0a9eef34285b}
+
+
+update\-\_\-db\-\_\-nativertu 常规设备更新 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rtuinfo} & \\
+\hline
+{\em mode} & 模式 0 控制 1 绑定负载 控制 ： 传入 \hyperlink{structRelayInfo}{Relay\-Info} 数组中 val 绑定负载： 传入 bind\-\_\-num , \hyperlink{structRelayInfo}{Relay\-Info} 数组中 id,type,name\mbox{[}\mbox{]} ,path\mbox{[}\mbox{]} 设备头信息 \hyperlink{structRtuRegInfo}{Rtu\-Reg\-Info} 中的hostadd,rtuadd 必须传入 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 更新成功 -\/1 更新失败 
+\end{DoxyReturn}
+
+
+References Native\-Rtu\-Info\-::bind\-\_\-num, db\-\_\-update\-\_\-query(), Rtu\-Reg\-Info\-::hostadd, Relay\-Info\-::id, L\-O\-G\-\_\-\-D\-E\-B\-U\-G, L\-O\-G\-\_\-\-E\-R\-R\-O\-R, Relay\-Info\-::name, Relay\-Info\-::path, Native\-Rtu\-Info\-::relayinfo, Rtu\-Reg\-Info\-::rtuadd, Native\-Rtu\-Info\-::rtuinfo, Relay\-Info\-::type, and Relay\-Info\-::val.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dbbase_8h_a83758c046728190fe1ac0a9eef34285b_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{dbbase_8h_ad42e211ca6c04241e68331f73c74113c}{\index{dbbase.\-h@{dbbase.\-h}!update\-\_\-db\-\_\-rtuinfo@{update\-\_\-db\-\_\-rtuinfo}}
+\index{update\-\_\-db\-\_\-rtuinfo@{update\-\_\-db\-\_\-rtuinfo}!dbbase.h@{dbbase.\-h}}
+\subsubsection[{update\-\_\-db\-\_\-rtuinfo}]{\setlength{\rightskip}{0pt plus 5cm}int update\-\_\-db\-\_\-rtuinfo (
+\begin{DoxyParamCaption}
+\item[{{\bf Rtu\-Update} \&}]{hostinfo}
+\end{DoxyParamCaption}
+)}}\label{dbbase_8h_ad42e211ca6c04241e68331f73c74113c}
+
+
+update\-\_\-db\-\_\-rtuinfo 用户设备信息编辑 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hostinfo} & 该结构体所有字段必须传入 更新 设备名称和路径 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+References db\-\_\-update\-\_\-query(), get\-\_\-table\-\_\-name(), Rtu\-Update\-::hostadd, Is\-Native\-Rtu(), Rtu\-Update\-::opertype, R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-B\-E\-D, R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-C\-E\-N\-E\-I\-N\-F\-O, R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-T\-A\-S\-K\-I\-N\-F\-O, Rtu\-Update\-::rtuadd, Rtu\-Update\-::rtuname, Rtu\-Update\-::rtupath, and Rtu\-Update\-::rtutype.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dbbase_8h_ad42e211ca6c04241e68331f73c74113c_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{dbbase_8h_afe8cc79a0b360aa2a371f266709451e8}{\index{dbbase.\-h@{dbbase.\-h}!update\-\_\-db\-\_\-safetypwd@{update\-\_\-db\-\_\-safetypwd}}
+\index{update\-\_\-db\-\_\-safetypwd@{update\-\_\-db\-\_\-safetypwd}!dbbase.h@{dbbase.\-h}}
+\subsubsection[{update\-\_\-db\-\_\-safetypwd}]{\setlength{\rightskip}{0pt plus 5cm}int update\-\_\-db\-\_\-safetypwd (
+\begin{DoxyParamCaption}
+\item[{{\bf Safety\-Pwd\-Info} \&}]{rtuinfo}
+\end{DoxyParamCaption}
+)}}\label{dbbase_8h_afe8cc79a0b360aa2a371f266709451e8}
+
+
+update\-\_\-db\-\_\-safetypwd 门锁密码更新接口 包括新开锁密码添加，修改 管理员密码修改 
+
+
+
+References db\-\_\-select\-\_\-query(), db\-\_\-update\-\_\-query(), Safety\-Pwd\-Info\-::hostadd, Safety\-Pwd\-Info\-::id, L\-O\-G\-\_\-\-E\-R\-R\-O\-R, M\-A\-X\-\_\-\-P\-A\-S\-S\-W\-O\-R\-D\-\_\-\-L\-E\-N, Safety\-Pwd\-Info\-::newpwd, Safety\-Pwd\-Info\-::oldpwd, and Safety\-Pwd\-Info\-::rtuadd.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dbbase_8h_afe8cc79a0b360aa2a371f266709451e8_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{dbbase_8h_ae0e36aa1334e0b83d2e2edd95a89b5b2}{\index{dbbase.\-h@{dbbase.\-h}!update\-\_\-db\-\_\-safetyrtu@{update\-\_\-db\-\_\-safetyrtu}}
+\index{update\-\_\-db\-\_\-safetyrtu@{update\-\_\-db\-\_\-safetyrtu}!dbbase.h@{dbbase.\-h}}
+\subsubsection[{update\-\_\-db\-\_\-safetyrtu}]{\setlength{\rightskip}{0pt plus 5cm}int update\-\_\-db\-\_\-safetyrtu (
+\begin{DoxyParamCaption}
+\item[{{\bf Safety\-Rtu} \&}]{rtuinfo}
+\end{DoxyParamCaption}
+)}}\label{dbbase_8h_ae0e36aa1334e0b83d2e2edd95a89b5b2}
+
+
+update\-\_\-db\-\_\-safetyrtu 更新安防设备 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rtuinfo} & 控制： 传入 布防状态 ， 动作状态 hostadd ,rtuadd 必须 传入 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+References db\-\_\-update\-\_\-query(), get\-\_\-table\-\_\-name(), Rtu\-Reg\-Info\-::hostadd, Safety\-Rtu\-::rtuactstate, Rtu\-Reg\-Info\-::rtuadd, Safety\-Rtu\-::rtuinfo, Safety\-Rtu\-::rtuplace, and Rtu\-Reg\-Info\-::rtutype.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dbbase_8h_ae0e36aa1334e0b83d2e2edd95a89b5b2_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{dbbase_8h_aedbae4394a0f4e1fc8f6eabee7e355c2}{\index{dbbase.\-h@{dbbase.\-h}!update\-\_\-db\-\_\-sceneinfo@{update\-\_\-db\-\_\-sceneinfo}}
+\index{update\-\_\-db\-\_\-sceneinfo@{update\-\_\-db\-\_\-sceneinfo}!dbbase.h@{dbbase.\-h}}
+\subsubsection[{update\-\_\-db\-\_\-sceneinfo}]{\setlength{\rightskip}{0pt plus 5cm}int update\-\_\-db\-\_\-sceneinfo (
+\begin{DoxyParamCaption}
+\item[{{\bf Scene\-Info} \&}]{rtuinfo}
+\end{DoxyParamCaption}
+)}}\label{dbbase_8h_aedbae4394a0f4e1fc8f6eabee7e355c2}
+
+
+update\-\_\-db\-\_\-sceneinfo 修改 情景 
+
+
+
+References insert\-\_\-db\-\_\-sceneinfo().
+
+
+
+Referenced by main().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dbbase_8h_aedbae4394a0f4e1fc8f6eabee7e355c2_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{dbbase_8h_aedbae4394a0f4e1fc8f6eabee7e355c2_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{dbbase_8h_aae594d8934a37c3a973e31432cd76c96}{\index{dbbase.\-h@{dbbase.\-h}!update\-\_\-db\-\_\-scenertu@{update\-\_\-db\-\_\-scenertu}}
+\index{update\-\_\-db\-\_\-scenertu@{update\-\_\-db\-\_\-scenertu}!dbbase.h@{dbbase.\-h}}
+\subsubsection[{update\-\_\-db\-\_\-scenertu}]{\setlength{\rightskip}{0pt plus 5cm}int update\-\_\-db\-\_\-scenertu (
+\begin{DoxyParamCaption}
+\item[{{\bf Scene\-Rtu} \&}]{rtuinfo}
+\end{DoxyParamCaption}
+)}}\label{dbbase_8h_aae594d8934a37c3a973e31432cd76c96}
+
+
+update\-\_\-db\-\_\-scenertu 更新情景面板 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rtuinfo} & 修改绑定： bind\-\_\-num , 每个button的信息 ，包括id ,type,add,oper \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+References Scene\-Bind\-::add, Scene\-Rtu\-::bind\-\_\-num, db\-\_\-update\-\_\-query(), Rtu\-Reg\-Info\-::hostadd, Scene\-Bind\-::id, Scene\-Bind\-::oper, Rtu\-Reg\-Info\-::rtuadd, Scene\-Rtu\-::rtuinfo, Scene\-Rtu\-::scene\-\_\-bind, and Scene\-Bind\-::type.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dbbase_8h_aae594d8934a37c3a973e31432cd76c96_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{dbbase_8h_a659d4acf9f3d7a1b013867717905c198}{\index{dbbase.\-h@{dbbase.\-h}!update\-\_\-db\-\_\-taskinfo@{update\-\_\-db\-\_\-taskinfo}}
+\index{update\-\_\-db\-\_\-taskinfo@{update\-\_\-db\-\_\-taskinfo}!dbbase.h@{dbbase.\-h}}
+\subsubsection[{update\-\_\-db\-\_\-taskinfo}]{\setlength{\rightskip}{0pt plus 5cm}int update\-\_\-db\-\_\-taskinfo (
+\begin{DoxyParamCaption}
+\item[{{\bf Task\-Info} \&}]{taskinfo}
+\end{DoxyParamCaption}
+)}}\label{dbbase_8h_a659d4acf9f3d7a1b013867717905c198}
+
+
+update\-\_\-db\-\_\-taskinfo 编辑定时任务 
+
+
+
+References insert\-\_\-db\-\_\-taskinfo().
+
+
+
+Referenced by main().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dbbase_8h_a659d4acf9f3d7a1b013867717905c198_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=256pt]{dbbase_8h_a659d4acf9f3d7a1b013867717905c198_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{dbbase_8h_ae0812aa7c56834e9de7e2535d62701e6}{\index{dbbase.\-h@{dbbase.\-h}!D\-B\-\_\-\-T\-A\-B\-L\-E\-\_\-\-N\-A\-M\-E\-L\-I\-S\-T@{D\-B\-\_\-\-T\-A\-B\-L\-E\-\_\-\-N\-A\-M\-E\-L\-I\-S\-T}}
+\index{D\-B\-\_\-\-T\-A\-B\-L\-E\-\_\-\-N\-A\-M\-E\-L\-I\-S\-T@{D\-B\-\_\-\-T\-A\-B\-L\-E\-\_\-\-N\-A\-M\-E\-L\-I\-S\-T}!dbbase.h@{dbbase.\-h}}
+\subsubsection[{D\-B\-\_\-\-T\-A\-B\-L\-E\-\_\-\-N\-A\-M\-E\-L\-I\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}const char D\-B\-\_\-\-T\-A\-B\-L\-E\-\_\-\-N\-A\-M\-E\-L\-I\-S\-T\mbox{[}$\,$\mbox{]}\mbox{[}32\mbox{]}}}\label{dbbase_8h_ae0812aa7c56834e9de7e2535d62701e6}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= 
+\{
+    \textcolor{stringliteral}{"HostInfo"},
+    \textcolor{stringliteral}{"NativeRtu"},
+    \textcolor{stringliteral}{"SceneRtu"},
+    \textcolor{stringliteral}{"SceneInfo"},
+    \textcolor{stringliteral}{"TransponRtu"},
+    \textcolor{stringliteral}{"AppRtu"},
+    \textcolor{stringliteral}{"SafetyRtu"},
+    \textcolor{stringliteral}{"SafetyPwdInfo"},
+    \textcolor{stringliteral}{"SafetySetBind"},
+    \textcolor{stringliteral}{"SafetyRemoveBind"},
+    \textcolor{stringliteral}{"SceneInfoContinued"},
+    \textcolor{stringliteral}{"DetectorRtu"},
+    \textcolor{stringliteral}{"DetectorBind"},
+    \textcolor{stringliteral}{"TaskInfo"},
+    \textcolor{stringliteral}{"ExNativeRtu"},
+    
+    \textcolor{stringliteral}{"RtuTypeInfo"},
+    \textcolor{stringliteral}{"UseDevTypeInfo"},
+    
+\}
+\end{DoxyCode}
+
+
+Referenced by delete\-\_\-db\-\_\-host(), insert\-\_\-db\-\_\-apprtu(), insert\-\_\-db\-\_\-host(), insert\-\_\-db\-\_\-rtu(), insert\-\_\-db\-\_\-sceneinfo(), insert\-\_\-db\-\_\-taskinfo(), and select\-\_\-db\-\_\-hostinfo().
+
+\hypertarget{dbbase_8h_ac2df31f33e94cc162663baba3e3a120a}{\index{dbbase.\-h@{dbbase.\-h}!g\-Type\-Info\-List@{g\-Type\-Info\-List}}
+\index{g\-Type\-Info\-List@{g\-Type\-Info\-List}!dbbase.h@{dbbase.\-h}}
+\subsubsection[{g\-Type\-Info\-List}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\-B\-Type\-Info} g\-Type\-Info\-List\mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}}\label{dbbase_8h_ac2df31f33e94cc162663baba3e3a120a}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=\{
+    \{0,\textcolor{stringliteral}{"HostInfo"}\},                  
+    \{1,\textcolor{stringliteral}{"NativeRtu"}\},                 
+    \{2,\textcolor{stringliteral}{"SceneRtu"}\},                  
+    \{3,\textcolor{stringliteral}{"NativeRtu"}\},                 
+    \{4,\textcolor{stringliteral}{"NativeRtu"}\},                 
+    \{5,\textcolor{stringliteral}{"NativeRtu"}\},                 
+    \{6,\textcolor{stringliteral}{"TransponRtu"}\},               
+    \{7,\textcolor{stringliteral}{"TransponRtu"}\},               
+    \{8,\textcolor{stringliteral}{"NativeRtu"}\},                 
+    \{9,\textcolor{stringliteral}{"SafetyRtu"}\},                 
+    \{10,\textcolor{stringliteral}{"SafetyRtu"}\},                
+    \{11,\textcolor{stringliteral}{"SafetyRtu"}\},                
+    \{12,\textcolor{stringliteral}{"SafetyRtu"}\},                
+    \{13,\textcolor{stringliteral}{"DetectorRtu"}\},              
+    \{14,\textcolor{stringliteral}{"DetectorRtu"}\},              
+    \{15,\textcolor{stringliteral}{"DetectorRtu"}\},              
+    \{16,\textcolor{stringliteral}{"DetectorRtu"}\},              
+    \{17,\textcolor{stringliteral}{"NativeRtu"}\},                
+    \{18,\textcolor{stringliteral}{"ExNativeRtu"}\},              
+
+    \{0xfa,\textcolor{stringliteral}{"AppRtu"}\},                 
+    \{0xfc,\textcolor{stringliteral}{"TaskInfo"}\},
+    \{0xfd,\textcolor{stringliteral}{"SceneInfo"}\},              
+    
+\}
+\end{DoxyCode}
+数据表数组 
+
+Referenced by get\-\_\-table\-\_\-name().
+

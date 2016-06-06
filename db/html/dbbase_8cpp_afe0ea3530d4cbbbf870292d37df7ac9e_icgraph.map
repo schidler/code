@@ -1,0 +1,5 @@
+<map id="insert_mysql" name="insert_mysql">
+<area shape="rect" id="node3" href="$dbbase_8cpp.html#ae3ea82d0883ed39d63abe2f2e5cde42f" title="db_insert_query 数据库插入" alt="" coords="149,32,264,61"/>
+<area shape="rect" id="node5" href="$dbbase_8h.html#a9acb52e4299badf813180da0f8214c37" title="insert_db_host 主机注册接口" alt="" coords="312,5,419,35"/>
+<area shape="rect" id="node7" href="$dbbase_8h.html#a21f3b1ac4424fa0839c3182b0ab7cbd8" title="insert_db_rtu 注册设备接口 ，将设备写入数据库" alt="" coords="317,59,413,88"/>
+</map>

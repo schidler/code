@@ -1,0 +1,235 @@
+\hypertarget{base_8h}{\section{base.\-h File Reference}
+\label{base_8h}\index{base.\-h@{base.\-h}}
+}
+
+
+常见类型，调试开关定义 @  
+
+
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+Include dependency graph for base.\-h\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=192pt]{base_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=212pt]{base_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{base_8h_ac8bab6bccfa5a1766f88032f6b8485f1}{L\-O\-G\-\_\-\-E\-R\-R\-O\-R}(format, args...)
+\item 
+\#define \hyperlink{base_8h_aa7558f9398d2befa813c73e131e8bdcf}{L\-O\-G\-\_\-\-P\-R\-I\-N\-T}(format, args...)
+\item 
+\#define \hyperlink{base_8h_a432138093c53d7580af9ec5c5dca387f}{E\-N\-A\-B\-L\-E\-\_\-\-D\-E\-B\-U\-G}
+\item 
+\#define \hyperlink{base_8h_a1f953b078595aed0c003eda86c62bde2}{L\-O\-G\-\_\-\-D\-E\-B\-U\-G}(format, args...)
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef char \hyperlink{base_8h_a3832cc814f0e7129add9a1cf7201c7ca}{Int8}
+\item 
+typedef signed short \hyperlink{base_8h_a5708a0dfbf256454e50a033ce7cceb8b}{Int16}
+\item 
+typedef int \hyperlink{base_8h_adf1ef98b7070177c7c709b0b82276a07}{Int32}
+\item 
+typedef long \hyperlink{base_8h_a087291516e13bb56547918e3832026b5}{Int64}
+\item 
+typedef unsigned char \hyperlink{base_8h_af84840501dec18061d18a68c162a8fa2}{Uint8}
+\item 
+typedef unsigned short \hyperlink{base_8h_ae9f2e1f80fbd243687a04febbf590e13}{Uint16}
+\item 
+typedef unsigned int \hyperlink{base_8h_a60cf7b3c038ce37a50796e8eaddf0b5f}{Uint32}
+\item 
+typedef unsigned long \hyperlink{base_8h_a687eb0325075867ce19e6e27eeac4e2e}{Uint64}
+\item 
+typedef float \hyperlink{base_8h_a87d38f886e617ced2698fc55afa07637}{Float32}
+\item 
+typedef double \hyperlink{base_8h_a3f1431cb9f76da10f59246d1d743dc2c}{Float64}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static unsigned \hyperlink{base_8h_a651442fd84e46cd7637e76ccf59a3f4e}{get\-\_\-current\-\_\-time} (void)
+\item 
+static void \hyperlink{base_8h_ab8a6e9d8a4bea9ec5f6583cd2a8af735}{get\-\_\-sys\-\_\-time} (char $\ast$strtime)
+\item 
+static void \hyperlink{base_8h_a47e5e257a7e7173ffda21017ecd22367}{start\-\_\-time} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+常见类型，调试开关定义 @ 
+
+\subsection{Macro Definition Documentation}
+\hypertarget{base_8h_a432138093c53d7580af9ec5c5dca387f}{\index{base.\-h@{base.\-h}!E\-N\-A\-B\-L\-E\-\_\-\-D\-E\-B\-U\-G@{E\-N\-A\-B\-L\-E\-\_\-\-D\-E\-B\-U\-G}}
+\index{E\-N\-A\-B\-L\-E\-\_\-\-D\-E\-B\-U\-G@{E\-N\-A\-B\-L\-E\-\_\-\-D\-E\-B\-U\-G}!base.h@{base.\-h}}
+\subsubsection[{E\-N\-A\-B\-L\-E\-\_\-\-D\-E\-B\-U\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-N\-A\-B\-L\-E\-\_\-\-D\-E\-B\-U\-G}}\label{base_8h_a432138093c53d7580af9ec5c5dca387f}
+调试开关 \hypertarget{base_8h_a1f953b078595aed0c003eda86c62bde2}{\index{base.\-h@{base.\-h}!L\-O\-G\-\_\-\-D\-E\-B\-U\-G@{L\-O\-G\-\_\-\-D\-E\-B\-U\-G}}
+\index{L\-O\-G\-\_\-\-D\-E\-B\-U\-G@{L\-O\-G\-\_\-\-D\-E\-B\-U\-G}!base.h@{base.\-h}}
+\subsubsection[{L\-O\-G\-\_\-\-D\-E\-B\-U\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-O\-G\-\_\-\-D\-E\-B\-U\-G(
+\begin{DoxyParamCaption}
+\item[{}]{format, }
+\item[{}]{args...}
+\end{DoxyParamCaption}
+)}}\label{base_8h_a1f953b078595aed0c003eda86c62bde2}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do} \{ \(\backslash\)
+    fprintf(stdout, \textcolor{stringliteral}{"Debug: "}format, ##args);   \(\backslash\)
+    fflush(stdout);   \(\backslash\)
+\} \textcolor{keywordflow}{while} (0)
+\end{DoxyCode}
+调试输出 
+
+Referenced by db\-\_\-insert\-\_\-query(), db\-\_\-select\-\_\-query(), db\-\_\-update\-\_\-query(), delete\-\_\-db\-\_\-host(), delete\-\_\-db\-\_\-rtu(), Dupicate\-Key\-Update\-Query(), Get\-Host\-Count(), Get\-Host\-Id\-By\-Name(), Get\-Ip\-By\-Host\-Add(), select\-\_\-db\-\_\-hostinfo(), select\-\_\-query(), start\-\_\-time(), and update\-\_\-db\-\_\-nativertu().
+
+\hypertarget{base_8h_ac8bab6bccfa5a1766f88032f6b8485f1}{\index{base.\-h@{base.\-h}!L\-O\-G\-\_\-\-E\-R\-R\-O\-R@{L\-O\-G\-\_\-\-E\-R\-R\-O\-R}}
+\index{L\-O\-G\-\_\-\-E\-R\-R\-O\-R@{L\-O\-G\-\_\-\-E\-R\-R\-O\-R}!base.h@{base.\-h}}
+\subsubsection[{L\-O\-G\-\_\-\-E\-R\-R\-O\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-O\-G\-\_\-\-E\-R\-R\-O\-R(
+\begin{DoxyParamCaption}
+\item[{}]{format, }
+\item[{}]{args...}
+\end{DoxyParamCaption}
+)}}\label{base_8h_ac8bab6bccfa5a1766f88032f6b8485f1}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do} \{ \(\backslash\)
+    fprintf(stdout, \textcolor{stringliteral}{"ERROR %s, %d, "}format, \_\_FILE\_\_, \_\_LINE\_\_, ##args);   \(\backslash\)
+    fflush(stdout);   \(\backslash\)
+\} \textcolor{keywordflow}{while} (0)
+\end{DoxyCode}
+错误输出 
+
+Referenced by db\-\_\-insert\-\_\-query(), db\-\_\-select\-\_\-query(), delete\-\_\-db\-\_\-host(), delete\-\_\-db\-\_\-rtu(), find\-Hostname(), find\-Rtuadd(), Get\-Host\-Count(), Get\-Host\-Id\-By\-Name(), Get\-Ip\-By\-Host\-Add(), insert\-\_\-db\-\_\-apprtu(), insert\-\_\-db\-\_\-host(), insert\-\_\-db\-\_\-rtu(), insert\-\_\-db\-\_\-sceneinfo(), insert\-\_\-db\-\_\-taskinfo(), insert\-\_\-mysql(), select\-\_\-db\-\_\-hostinfo(), select\-\_\-query(), update\-\_\-db\-\_\-detectorrtu(), update\-\_\-db\-\_\-host(), update\-\_\-db\-\_\-nativertu(), and update\-\_\-db\-\_\-safetypwd().
+
+\hypertarget{base_8h_aa7558f9398d2befa813c73e131e8bdcf}{\index{base.\-h@{base.\-h}!L\-O\-G\-\_\-\-P\-R\-I\-N\-T@{L\-O\-G\-\_\-\-P\-R\-I\-N\-T}}
+\index{L\-O\-G\-\_\-\-P\-R\-I\-N\-T@{L\-O\-G\-\_\-\-P\-R\-I\-N\-T}!base.h@{base.\-h}}
+\subsubsection[{L\-O\-G\-\_\-\-P\-R\-I\-N\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-O\-G\-\_\-\-P\-R\-I\-N\-T(
+\begin{DoxyParamCaption}
+\item[{}]{format, }
+\item[{}]{args...}
+\end{DoxyParamCaption}
+)}}\label{base_8h_aa7558f9398d2befa813c73e131e8bdcf}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do} \{ \(\backslash\)
+    fprintf(stdout, \textcolor{stringliteral}{"Info: "}format, ##args);   \(\backslash\)
+    fflush(stdout);   \(\backslash\)
+\} \textcolor{keywordflow}{while} (0)
+\end{DoxyCode}
+打印输出 
+
+Referenced by insert\-\_\-db\-\_\-host(), and start\-\_\-time().
+
+
+
+\subsection{Typedef Documentation}
+\hypertarget{base_8h_a87d38f886e617ced2698fc55afa07637}{\index{base.\-h@{base.\-h}!Float32@{Float32}}
+\index{Float32@{Float32}!base.h@{base.\-h}}
+\subsubsection[{Float32}]{\setlength{\rightskip}{0pt plus 5cm}typedef float {\bf Float32}}}\label{base_8h_a87d38f886e617ced2698fc55afa07637}
+\hypertarget{base_8h_a3f1431cb9f76da10f59246d1d743dc2c}{\index{base.\-h@{base.\-h}!Float64@{Float64}}
+\index{Float64@{Float64}!base.h@{base.\-h}}
+\subsubsection[{Float64}]{\setlength{\rightskip}{0pt plus 5cm}typedef double {\bf Float64}}}\label{base_8h_a3f1431cb9f76da10f59246d1d743dc2c}
+\hypertarget{base_8h_a5708a0dfbf256454e50a033ce7cceb8b}{\index{base.\-h@{base.\-h}!Int16@{Int16}}
+\index{Int16@{Int16}!base.h@{base.\-h}}
+\subsubsection[{Int16}]{\setlength{\rightskip}{0pt plus 5cm}typedef signed short {\bf Int16}}}\label{base_8h_a5708a0dfbf256454e50a033ce7cceb8b}
+S\-I\-G\-N\-E\-D 16-\/bit data type \hypertarget{base_8h_adf1ef98b7070177c7c709b0b82276a07}{\index{base.\-h@{base.\-h}!Int32@{Int32}}
+\index{Int32@{Int32}!base.h@{base.\-h}}
+\subsubsection[{Int32}]{\setlength{\rightskip}{0pt plus 5cm}typedef int {\bf Int32}}}\label{base_8h_adf1ef98b7070177c7c709b0b82276a07}
+S\-I\-G\-N\-E\-D 32-\/bit data type \hypertarget{base_8h_a087291516e13bb56547918e3832026b5}{\index{base.\-h@{base.\-h}!Int64@{Int64}}
+\index{Int64@{Int64}!base.h@{base.\-h}}
+\subsubsection[{Int64}]{\setlength{\rightskip}{0pt plus 5cm}typedef long {\bf Int64}}}\label{base_8h_a087291516e13bb56547918e3832026b5}
+S\-I\-G\-N\-E\-D 64-\/bit data type \hypertarget{base_8h_a3832cc814f0e7129add9a1cf7201c7ca}{\index{base.\-h@{base.\-h}!Int8@{Int8}}
+\index{Int8@{Int8}!base.h@{base.\-h}}
+\subsubsection[{Int8}]{\setlength{\rightskip}{0pt plus 5cm}typedef char {\bf Int8}}}\label{base_8h_a3832cc814f0e7129add9a1cf7201c7ca}
+S\-I\-G\-N\-E\-D 8-\/bit data type \hypertarget{base_8h_ae9f2e1f80fbd243687a04febbf590e13}{\index{base.\-h@{base.\-h}!Uint16@{Uint16}}
+\index{Uint16@{Uint16}!base.h@{base.\-h}}
+\subsubsection[{Uint16}]{\setlength{\rightskip}{0pt plus 5cm}typedef unsigned short {\bf Uint16}}}\label{base_8h_ae9f2e1f80fbd243687a04febbf590e13}
+U\-N\-S\-I\-G\-N\-E\-D 16-\/bit data type \hypertarget{base_8h_a60cf7b3c038ce37a50796e8eaddf0b5f}{\index{base.\-h@{base.\-h}!Uint32@{Uint32}}
+\index{Uint32@{Uint32}!base.h@{base.\-h}}
+\subsubsection[{Uint32}]{\setlength{\rightskip}{0pt plus 5cm}typedef unsigned int {\bf Uint32}}}\label{base_8h_a60cf7b3c038ce37a50796e8eaddf0b5f}
+U\-N\-S\-I\-G\-N\-E\-D 32-\/bit data type \hypertarget{base_8h_a687eb0325075867ce19e6e27eeac4e2e}{\index{base.\-h@{base.\-h}!Uint64@{Uint64}}
+\index{Uint64@{Uint64}!base.h@{base.\-h}}
+\subsubsection[{Uint64}]{\setlength{\rightskip}{0pt plus 5cm}typedef unsigned long {\bf Uint64}}}\label{base_8h_a687eb0325075867ce19e6e27eeac4e2e}
+U\-N\-S\-I\-G\-N\-E\-D 64-\/bit data type \hypertarget{base_8h_af84840501dec18061d18a68c162a8fa2}{\index{base.\-h@{base.\-h}!Uint8@{Uint8}}
+\index{Uint8@{Uint8}!base.h@{base.\-h}}
+\subsubsection[{Uint8}]{\setlength{\rightskip}{0pt plus 5cm}typedef unsigned char {\bf Uint8}}}\label{base_8h_af84840501dec18061d18a68c162a8fa2}
+U\-N\-S\-I\-G\-N\-E\-D 8-\/bit data type 
+
+\subsection{Function Documentation}
+\hypertarget{base_8h_a651442fd84e46cd7637e76ccf59a3f4e}{\index{base.\-h@{base.\-h}!get\-\_\-current\-\_\-time@{get\-\_\-current\-\_\-time}}
+\index{get\-\_\-current\-\_\-time@{get\-\_\-current\-\_\-time}!base.h@{base.\-h}}
+\subsubsection[{get\-\_\-current\-\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}static unsigned get\-\_\-current\-\_\-time (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{base_8h_a651442fd84e46cd7637e76ccf59a3f4e}
+得到当前时间 以s为单位 
+
+Referenced by start\-\_\-time().
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=266pt]{base_8h_a651442fd84e46cd7637e76ccf59a3f4e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{base_8h_ab8a6e9d8a4bea9ec5f6583cd2a8af735}{\index{base.\-h@{base.\-h}!get\-\_\-sys\-\_\-time@{get\-\_\-sys\-\_\-time}}
+\index{get\-\_\-sys\-\_\-time@{get\-\_\-sys\-\_\-time}!base.h@{base.\-h}}
+\subsubsection[{get\-\_\-sys\-\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}static void get\-\_\-sys\-\_\-time (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{strtime}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{base_8h_ab8a6e9d8a4bea9ec5f6583cd2a8af735}
+得到系统时间 
+
+Referenced by main(), and update\-\_\-db\-\_\-host().
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=278pt]{base_8h_ab8a6e9d8a4bea9ec5f6583cd2a8af735_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{base_8h_a47e5e257a7e7173ffda21017ecd22367}{\index{base.\-h@{base.\-h}!start\-\_\-time@{start\-\_\-time}}
+\index{start\-\_\-time@{start\-\_\-time}!base.h@{base.\-h}}
+\subsubsection[{start\-\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}static void start\-\_\-time (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{base_8h_a47e5e257a7e7173ffda21017ecd22367}
+打印当前时间 
+
+References get\-\_\-current\-\_\-time(), L\-O\-G\-\_\-\-D\-E\-B\-U\-G, and L\-O\-G\-\_\-\-P\-R\-I\-N\-T.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=266pt]{base_8h_a47e5e257a7e7173ffda21017ecd22367_cgraph}
+\end{center}
+\end{figure}
+
+

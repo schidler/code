@@ -1,0 +1,9 @@
+<map id="get_table_name" name="get_table_name">
+<area shape="rect" id="node3" href="$dbbase_8h.html#adfa21954b5a414041dffb59dd549dcb8" title="delete_db_rtu 删除设备 接口 不包括删除主机" alt="" coords="196,5,295,35"/>
+<area shape="rect" id="node7" href="$dbbase_8h.html#a21f3b1ac4424fa0839c3182b0ab7cbd8" title="insert_db_rtu 注册设备接口 ，将设备写入数据库" alt="" coords="197,59,293,88"/>
+<area shape="rect" id="node9" href="$dbbase_8h.html#a81cfc05e7763f268740f8a27f85b77de" title="update_db_exnativertu 更新智能床" alt="" coords="169,112,321,141"/>
+<area shape="rect" id="node11" href="$dbbase_8h.html#a82757fe4298d8fdf297391a4e42e3293" title="update_db_host 更新主机信息表" alt="" coords="188,165,303,195"/>
+<area shape="rect" id="node13" href="$dbbase_8h.html#ad42e211ca6c04241e68331f73c74113c" title="update_db_rtuinfo 用户设备信息编辑" alt="" coords="183,219,308,248"/>
+<area shape="rect" id="node15" href="$dbbase_8h.html#ae0e36aa1334e0b83d2e2edd95a89b5b2" title="update_db_safetyrtu 更新安防设备" alt="" coords="176,272,315,301"/>
+<area shape="rect" id="node5" href="$sql_8cpp.html#abf9e6b7e6f15df4b525a2e7705ba3089" title="main" alt="" coords="371,5,421,35"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="DetectorRtu" name="DetectorRtu">
+<area shape="rect" id="node2" href="$structRtuRegInfo.html" title="RtuRegInfo" alt="" coords="5,5,93,35"/>
+<area shape="rect" id="node4" href="$structDetectorInfo.html" title="DetectorInfo" alt="" coords="117,5,211,35"/>
+</map>

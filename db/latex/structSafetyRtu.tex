@@ -1,0 +1,69 @@
+\hypertarget{structSafetyRtu}{\section{Safety\-Rtu Struct Reference}
+\label{structSafetyRtu}\index{Safety\-Rtu@{Safety\-Rtu}}
+}
+
+
+{\ttfamily \#include $<$dbbase.\-h$>$}
+
+
+
+Collaboration diagram for Safety\-Rtu\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=146pt]{structSafetyRtu__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structRtuRegInfo}{Rtu\-Reg\-Info} \hyperlink{structSafetyRtu_a961d9d1c9a8c9082f6cd8bcc8b3292a4}{rtuinfo}
+\begin{DoxyCompactList}\small\item\em 设备头信息 \end{DoxyCompactList}\item 
+\hyperlink{base_8h_ae9f2e1f80fbd243687a04febbf590e13}{Uint16} \hyperlink{structSafetyRtu_aa857a3b46e71c67a4d9c7bb83e34ffc0}{rtuplace}
+\begin{DoxyCompactList}\small\item\em 设备布防状态 0x00：撤防，0x01布防，0xff表示未知 \end{DoxyCompactList}\item 
+\hyperlink{base_8h_ae9f2e1f80fbd243687a04febbf590e13}{Uint16} \hyperlink{structSafetyRtu_a43fd8e2a562fea9a6ea5a7fe57fec7af}{rtuactstate}
+\begin{DoxyCompactList}\small\item\em 设备动作状态 0x00：门磁合上、红外探测无入侵、门铃无意义，0x01：门磁分开、红外探测有入侵、门铃无意义； \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+安防设备结构体 
+
+\subsection{Field Documentation}
+\hypertarget{structSafetyRtu_a43fd8e2a562fea9a6ea5a7fe57fec7af}{\index{Safety\-Rtu@{Safety\-Rtu}!rtuactstate@{rtuactstate}}
+\index{rtuactstate@{rtuactstate}!SafetyRtu@{Safety\-Rtu}}
+\subsubsection[{rtuactstate}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Uint16} Safety\-Rtu\-::rtuactstate}}\label{structSafetyRtu_a43fd8e2a562fea9a6ea5a7fe57fec7af}
+
+
+设备动作状态 0x00：门磁合上、红外探测无入侵、门铃无意义，0x01：门磁分开、红外探测有入侵、门铃无意义； 
+
+
+
+Referenced by update\-\_\-db\-\_\-safetyrtu().
+
+\hypertarget{structSafetyRtu_a961d9d1c9a8c9082f6cd8bcc8b3292a4}{\index{Safety\-Rtu@{Safety\-Rtu}!rtuinfo@{rtuinfo}}
+\index{rtuinfo@{rtuinfo}!SafetyRtu@{Safety\-Rtu}}
+\subsubsection[{rtuinfo}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Rtu\-Reg\-Info} Safety\-Rtu\-::rtuinfo}}\label{structSafetyRtu_a961d9d1c9a8c9082f6cd8bcc8b3292a4}
+
+
+设备头信息 
+
+
+
+Referenced by update\-\_\-db\-\_\-safetyrtu().
+
+\hypertarget{structSafetyRtu_aa857a3b46e71c67a4d9c7bb83e34ffc0}{\index{Safety\-Rtu@{Safety\-Rtu}!rtuplace@{rtuplace}}
+\index{rtuplace@{rtuplace}!SafetyRtu@{Safety\-Rtu}}
+\subsubsection[{rtuplace}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Uint16} Safety\-Rtu\-::rtuplace}}\label{structSafetyRtu_aa857a3b46e71c67a4d9c7bb83e34ffc0}
+
+
+设备布防状态 0x00：撤防，0x01布防，0xff表示未知 
+
+
+
+Referenced by update\-\_\-db\-\_\-safetyrtu().
+
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{dbbase_8h}{dbbase.\-h}\end{DoxyCompactItemize}

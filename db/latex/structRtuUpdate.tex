@@ -1,0 +1,99 @@
+\hypertarget{structRtuUpdate}{\section{Rtu\-Update Struct Reference}
+\label{structRtuUpdate}\index{Rtu\-Update@{Rtu\-Update}}
+}
+
+
+{\ttfamily \#include $<$dbbase.\-h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{base_8h_a60cf7b3c038ce37a50796e8eaddf0b5f}{Uint32} \hyperlink{structRtuUpdate_afd4ba90eecfa8e68b0d0acd6f287b7e8}{hostadd}
+\begin{DoxyCompactList}\small\item\em 主机地址 \end{DoxyCompactList}\item 
+\hyperlink{base_8h_a60cf7b3c038ce37a50796e8eaddf0b5f}{Uint32} \hyperlink{structRtuUpdate_ac51fcd3ef3155b62e54803717d3c86d9}{rtuadd}
+\begin{DoxyCompactList}\small\item\em 设备地址 \end{DoxyCompactList}\item 
+\hyperlink{base_8h_af84840501dec18061d18a68c162a8fa2}{Uint8} \hyperlink{structRtuUpdate_a6306c766261ee5d3a1ddf6e3fd950c86}{rtutype}
+\begin{DoxyCompactList}\small\item\em 设备类型 \end{DoxyCompactList}\item 
+\hyperlink{base_8h_af84840501dec18061d18a68c162a8fa2}{Uint8} \hyperlink{structRtuUpdate_ad0145b3406a72cf9cc8182f864ba35c6}{opertype}
+\begin{DoxyCompactList}\small\item\em 描述类型 0x00-\/0x03表示继电器序号，即修改绑定的负载的名称和安装位置 0xff表示修改设备或情景的名称和安装位置 \end{DoxyCompactList}\item 
+char \hyperlink{structRtuUpdate_a2aa61860c8ea0790ffe6f3e2982757a9}{rtuname} \mbox{[}32\mbox{]}
+\begin{DoxyCompactList}\small\item\em 设备名称 \end{DoxyCompactList}\item 
+char \hyperlink{structRtuUpdate_a4ff110213c266f79e9ce2fd0fd60c0f1}{rtupath} \mbox{[}32\mbox{]}
+\begin{DoxyCompactList}\small\item\em 设备路径 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+用户设备更新 更新设备，和路径 
+
+\subsection{Field Documentation}
+\hypertarget{structRtuUpdate_afd4ba90eecfa8e68b0d0acd6f287b7e8}{\index{Rtu\-Update@{Rtu\-Update}!hostadd@{hostadd}}
+\index{hostadd@{hostadd}!RtuUpdate@{Rtu\-Update}}
+\subsubsection[{hostadd}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Uint32} Rtu\-Update\-::hostadd}}\label{structRtuUpdate_afd4ba90eecfa8e68b0d0acd6f287b7e8}
+
+
+主机地址 
+
+
+
+Referenced by update\-\_\-db\-\_\-rtuinfo().
+
+\hypertarget{structRtuUpdate_ad0145b3406a72cf9cc8182f864ba35c6}{\index{Rtu\-Update@{Rtu\-Update}!opertype@{opertype}}
+\index{opertype@{opertype}!RtuUpdate@{Rtu\-Update}}
+\subsubsection[{opertype}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Uint8} Rtu\-Update\-::opertype}}\label{structRtuUpdate_ad0145b3406a72cf9cc8182f864ba35c6}
+
+
+描述类型 0x00-\/0x03表示继电器序号，即修改绑定的负载的名称和安装位置 0xff表示修改设备或情景的名称和安装位置 
+
+
+
+Referenced by update\-\_\-db\-\_\-rtuinfo().
+
+\hypertarget{structRtuUpdate_ac51fcd3ef3155b62e54803717d3c86d9}{\index{Rtu\-Update@{Rtu\-Update}!rtuadd@{rtuadd}}
+\index{rtuadd@{rtuadd}!RtuUpdate@{Rtu\-Update}}
+\subsubsection[{rtuadd}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Uint32} Rtu\-Update\-::rtuadd}}\label{structRtuUpdate_ac51fcd3ef3155b62e54803717d3c86d9}
+
+
+设备地址 
+
+
+
+Referenced by update\-\_\-db\-\_\-rtuinfo().
+
+\hypertarget{structRtuUpdate_a2aa61860c8ea0790ffe6f3e2982757a9}{\index{Rtu\-Update@{Rtu\-Update}!rtuname@{rtuname}}
+\index{rtuname@{rtuname}!RtuUpdate@{Rtu\-Update}}
+\subsubsection[{rtuname}]{\setlength{\rightskip}{0pt plus 5cm}char Rtu\-Update\-::rtuname\mbox{[}32\mbox{]}}}\label{structRtuUpdate_a2aa61860c8ea0790ffe6f3e2982757a9}
+
+
+设备名称 
+
+
+
+Referenced by update\-\_\-db\-\_\-rtuinfo().
+
+\hypertarget{structRtuUpdate_a4ff110213c266f79e9ce2fd0fd60c0f1}{\index{Rtu\-Update@{Rtu\-Update}!rtupath@{rtupath}}
+\index{rtupath@{rtupath}!RtuUpdate@{Rtu\-Update}}
+\subsubsection[{rtupath}]{\setlength{\rightskip}{0pt plus 5cm}char Rtu\-Update\-::rtupath\mbox{[}32\mbox{]}}}\label{structRtuUpdate_a4ff110213c266f79e9ce2fd0fd60c0f1}
+
+
+设备路径 
+
+
+
+Referenced by update\-\_\-db\-\_\-rtuinfo().
+
+\hypertarget{structRtuUpdate_a6306c766261ee5d3a1ddf6e3fd950c86}{\index{Rtu\-Update@{Rtu\-Update}!rtutype@{rtutype}}
+\index{rtutype@{rtutype}!RtuUpdate@{Rtu\-Update}}
+\subsubsection[{rtutype}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Uint8} Rtu\-Update\-::rtutype}}\label{structRtuUpdate_a6306c766261ee5d3a1ddf6e3fd950c86}
+
+
+设备类型 
+
+
+
+Referenced by update\-\_\-db\-\_\-rtuinfo().
+
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{dbbase_8h}{dbbase.\-h}\end{DoxyCompactItemize}

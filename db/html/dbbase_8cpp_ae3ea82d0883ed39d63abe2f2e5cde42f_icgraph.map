@@ -1,0 +1,4 @@
+<map id="db_insert_query" name="db_insert_query">
+<area shape="rect" id="node3" href="$dbbase_8h.html#a9acb52e4299badf813180da0f8214c37" title="insert_db_host 主机注册接口" alt="" coords="168,5,275,35"/>
+<area shape="rect" id="node5" href="$dbbase_8h.html#a21f3b1ac4424fa0839c3182b0ab7cbd8" title="insert_db_rtu 注册设备接口 ，将设备写入数据库" alt="" coords="173,59,269,88"/>
+</map>

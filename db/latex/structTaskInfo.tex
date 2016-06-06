@@ -1,0 +1,147 @@
+\hypertarget{structTaskInfo}{\section{Task\-Info Struct Reference}
+\label{structTaskInfo}\index{Task\-Info@{Task\-Info}}
+}
+
+
+{\ttfamily \#include $<$dbbase.\-h$>$}
+
+
+
+Collaboration diagram for Task\-Info\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=140pt]{structTaskInfo__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{base_8h_a60cf7b3c038ce37a50796e8eaddf0b5f}{Uint32} \hyperlink{structTaskInfo_a633cb279d0c214d3eba9da3d26f5a020}{hostadd}
+\begin{DoxyCompactList}\small\item\em 主机地址 \end{DoxyCompactList}\item 
+\hyperlink{base_8h_a60cf7b3c038ce37a50796e8eaddf0b5f}{Uint32} \hyperlink{structTaskInfo_a27224eae1effa0e80bc2fa52dde59692}{taskid}
+\begin{DoxyCompactList}\small\item\em 任务id \end{DoxyCompactList}\item 
+char \hyperlink{structTaskInfo_a93bbd541a14b0eb3be4d81df457f53c0}{taskname} \mbox{[}32\mbox{]}
+\begin{DoxyCompactList}\small\item\em 任务名称 \end{DoxyCompactList}\item 
+\hyperlink{base_8h_a60cf7b3c038ce37a50796e8eaddf0b5f}{Uint32} \hyperlink{structTaskInfo_ab853cd6598db69ad460ab8ae9efa49b6}{taskpicid}
+\begin{DoxyCompactList}\small\item\em 任务图标 id \end{DoxyCompactList}\item 
+char \hyperlink{structTaskInfo_af4123b5a228c33d071e00474447e3a7b}{taskregtime} \mbox{[}30\mbox{]}
+\begin{DoxyCompactList}\small\item\em 任务注册时间 \end{DoxyCompactList}\item 
+\hyperlink{base_8h_ae9f2e1f80fbd243687a04febbf590e13}{Uint16} \hyperlink{structTaskInfo_a585a387b5d639defa31bb8511d0c3b48}{taskcycle}
+\begin{DoxyCompactList}\small\item\em 任务循环 标志 \end{DoxyCompactList}\item 
+\hyperlink{base_8h_ae9f2e1f80fbd243687a04febbf590e13}{Uint16} \hyperlink{structTaskInfo_a82ca17b1ed9c9059cf624032fd25a15d}{taskstdtime} \mbox{[}3\mbox{]}
+\begin{DoxyCompactList}\small\item\em 任务执行时间 hour \-: min \-: sec \end{DoxyCompactList}\item 
+\hyperlink{base_8h_a60cf7b3c038ce37a50796e8eaddf0b5f}{Uint32} \hyperlink{structTaskInfo_a0bfa1e0ae661b9841bd77b14b8002c2a}{taskrtunum}
+\begin{DoxyCompactList}\small\item\em 绑定设备个数 \end{DoxyCompactList}\item 
+\hyperlink{structRtuBind}{Rtu\-Bind} $\ast$ \hyperlink{structTaskInfo_abcd620f1a510696638104149f8c06e2c}{rtubind}
+\begin{DoxyCompactList}\small\item\em 绑定的设备信息 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+定时任务结构体 
+
+\subsection{Field Documentation}
+\hypertarget{structTaskInfo_a633cb279d0c214d3eba9da3d26f5a020}{\index{Task\-Info@{Task\-Info}!hostadd@{hostadd}}
+\index{hostadd@{hostadd}!TaskInfo@{Task\-Info}}
+\subsubsection[{hostadd}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Uint32} Task\-Info\-::hostadd}}\label{structTaskInfo_a633cb279d0c214d3eba9da3d26f5a020}
+
+
+主机地址 
+
+
+
+Referenced by insert\-\_\-db\-\_\-taskinfo(), and main().
+
+\hypertarget{structTaskInfo_abcd620f1a510696638104149f8c06e2c}{\index{Task\-Info@{Task\-Info}!rtubind@{rtubind}}
+\index{rtubind@{rtubind}!TaskInfo@{Task\-Info}}
+\subsubsection[{rtubind}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Rtu\-Bind}$\ast$ Task\-Info\-::rtubind}}\label{structTaskInfo_abcd620f1a510696638104149f8c06e2c}
+
+
+绑定的设备信息 
+
+
+
+Referenced by insert\-\_\-db\-\_\-taskinfo(), and main().
+
+\hypertarget{structTaskInfo_a585a387b5d639defa31bb8511d0c3b48}{\index{Task\-Info@{Task\-Info}!taskcycle@{taskcycle}}
+\index{taskcycle@{taskcycle}!TaskInfo@{Task\-Info}}
+\subsubsection[{taskcycle}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Uint16} Task\-Info\-::taskcycle}}\label{structTaskInfo_a585a387b5d639defa31bb8511d0c3b48}
+
+
+任务循环 标志 
+
+
+
+Referenced by insert\-\_\-db\-\_\-taskinfo().
+
+\hypertarget{structTaskInfo_a27224eae1effa0e80bc2fa52dde59692}{\index{Task\-Info@{Task\-Info}!taskid@{taskid}}
+\index{taskid@{taskid}!TaskInfo@{Task\-Info}}
+\subsubsection[{taskid}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Uint32} Task\-Info\-::taskid}}\label{structTaskInfo_a27224eae1effa0e80bc2fa52dde59692}
+
+
+任务id 
+
+
+
+Referenced by insert\-\_\-db\-\_\-taskinfo(), and main().
+
+\hypertarget{structTaskInfo_a93bbd541a14b0eb3be4d81df457f53c0}{\index{Task\-Info@{Task\-Info}!taskname@{taskname}}
+\index{taskname@{taskname}!TaskInfo@{Task\-Info}}
+\subsubsection[{taskname}]{\setlength{\rightskip}{0pt plus 5cm}char Task\-Info\-::taskname\mbox{[}32\mbox{]}}}\label{structTaskInfo_a93bbd541a14b0eb3be4d81df457f53c0}
+
+
+任务名称 
+
+
+
+Referenced by insert\-\_\-db\-\_\-taskinfo(), and main().
+
+\hypertarget{structTaskInfo_ab853cd6598db69ad460ab8ae9efa49b6}{\index{Task\-Info@{Task\-Info}!taskpicid@{taskpicid}}
+\index{taskpicid@{taskpicid}!TaskInfo@{Task\-Info}}
+\subsubsection[{taskpicid}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Uint32} Task\-Info\-::taskpicid}}\label{structTaskInfo_ab853cd6598db69ad460ab8ae9efa49b6}
+
+
+任务图标 id 
+
+
+
+Referenced by insert\-\_\-db\-\_\-taskinfo().
+
+\hypertarget{structTaskInfo_af4123b5a228c33d071e00474447e3a7b}{\index{Task\-Info@{Task\-Info}!taskregtime@{taskregtime}}
+\index{taskregtime@{taskregtime}!TaskInfo@{Task\-Info}}
+\subsubsection[{taskregtime}]{\setlength{\rightskip}{0pt plus 5cm}char Task\-Info\-::taskregtime\mbox{[}30\mbox{]}}}\label{structTaskInfo_af4123b5a228c33d071e00474447e3a7b}
+
+
+任务注册时间 
+
+
+
+Referenced by insert\-\_\-db\-\_\-taskinfo(), and main().
+
+\hypertarget{structTaskInfo_a0bfa1e0ae661b9841bd77b14b8002c2a}{\index{Task\-Info@{Task\-Info}!taskrtunum@{taskrtunum}}
+\index{taskrtunum@{taskrtunum}!TaskInfo@{Task\-Info}}
+\subsubsection[{taskrtunum}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Uint32} Task\-Info\-::taskrtunum}}\label{structTaskInfo_a0bfa1e0ae661b9841bd77b14b8002c2a}
+
+
+绑定设备个数 
+
+
+
+Referenced by insert\-\_\-db\-\_\-taskinfo(), and main().
+
+\hypertarget{structTaskInfo_a82ca17b1ed9c9059cf624032fd25a15d}{\index{Task\-Info@{Task\-Info}!taskstdtime@{taskstdtime}}
+\index{taskstdtime@{taskstdtime}!TaskInfo@{Task\-Info}}
+\subsubsection[{taskstdtime}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Uint16} Task\-Info\-::taskstdtime\mbox{[}3\mbox{]}}}\label{structTaskInfo_a82ca17b1ed9c9059cf624032fd25a15d}
+
+
+任务执行时间 hour \-: min \-: sec 
+
+
+
+Referenced by insert\-\_\-db\-\_\-taskinfo().
+
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{dbbase_8h}{dbbase.\-h}\end{DoxyCompactItemize}

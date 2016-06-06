@@ -1,0 +1,116 @@
+\hypertarget{sql_8cpp}{\section{sql.\-cpp File Reference}
+\label{sql_8cpp}\index{sql.\-cpp@{sql.\-cpp}}
+}
+
+
+测试文件  
+
+
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$sstream$>$}\\*
+{\ttfamily \#include \char`\"{}dbbase.\-h\char`\"{}}\\*
+Include dependency graph for sql.\-cpp\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sql_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{base_8h_ae9f2e1f80fbd243687a04febbf590e13}{Uint16} \hyperlink{sql_8cpp_a4110658ffefabaa29de3c451cdbd2a3c}{L\-H\-Char\-To\-Uint16} (const \hyperlink{base_8h_af84840501dec18061d18a68c162a8fa2}{Uint8} $\ast$buf)
+\item 
+\hyperlink{base_8h_a60cf7b3c038ce37a50796e8eaddf0b5f}{Uint32} \hyperlink{sql_8cpp_a9f28715957631720b60c9b7a776ddae4}{L\-H\-Char\-To\-Uint32} (const \hyperlink{base_8h_af84840501dec18061d18a68c162a8fa2}{Uint8} $\ast$buf)
+\item 
+int \hyperlink{sql_8cpp_abf9e6b7e6f15df4b525a2e7705ba3089}{main} (int argc, char const $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structMysqlConInfo}{Mysql\-Con\-Info} \hyperlink{sql_8cpp_ad049d19955f574c676a6a1849e9003b6}{sql\-\_\-coninfo} =\{\char`\"{}localhost\char`\"{},\char`\"{}root\char`\"{},\char`\"{}123456\char`\"{},\char`\"{}test\char`\"{}\}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+测试文件 
+
+\subsection{Function Documentation}
+\hypertarget{sql_8cpp_a4110658ffefabaa29de3c451cdbd2a3c}{\index{sql.\-cpp@{sql.\-cpp}!L\-H\-Char\-To\-Uint16@{L\-H\-Char\-To\-Uint16}}
+\index{L\-H\-Char\-To\-Uint16@{L\-H\-Char\-To\-Uint16}!sql.cpp@{sql.\-cpp}}
+\subsubsection[{L\-H\-Char\-To\-Uint16}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Uint16} L\-H\-Char\-To\-Uint16 (
+\begin{DoxyParamCaption}
+\item[{const {\bf Uint8} $\ast$}]{buf}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{sql_8cpp_a4110658ffefabaa29de3c451cdbd2a3c}
+将 低高字节转换为 16 位 无符号整型 
+
+Referenced by L\-H\-Char\-To\-Uint32().
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=296pt]{sql_8cpp_a4110658ffefabaa29de3c451cdbd2a3c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{sql_8cpp_a9f28715957631720b60c9b7a776ddae4}{\index{sql.\-cpp@{sql.\-cpp}!L\-H\-Char\-To\-Uint32@{L\-H\-Char\-To\-Uint32}}
+\index{L\-H\-Char\-To\-Uint32@{L\-H\-Char\-To\-Uint32}!sql.cpp@{sql.\-cpp}}
+\subsubsection[{L\-H\-Char\-To\-Uint32}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Uint32} L\-H\-Char\-To\-Uint32 (
+\begin{DoxyParamCaption}
+\item[{const {\bf Uint8} $\ast$}]{buf}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{sql_8cpp_a9f28715957631720b60c9b7a776ddae4}
+将 字节顺序为低高字节集转换为32位无符号整型 
+
+References L\-H\-Char\-To\-Uint16().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=296pt]{sql_8cpp_a9f28715957631720b60c9b7a776ddae4_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{sql_8cpp_abf9e6b7e6f15df4b525a2e7705ba3089}{\index{sql.\-cpp@{sql.\-cpp}!main@{main}}
+\index{main@{main}!sql.cpp@{sql.\-cpp}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char const $\ast$}]{argv\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{sql_8cpp_abf9e6b7e6f15df4b525a2e7705ba3089}
+
+
+References Rtu\-Bind\-::add, Rtu\-Bind\-::delay, delete\-\_\-db\-\_\-rtu(), get\-\_\-sys\-\_\-time(), Task\-Info\-::hostadd, Scene\-Info\-::hostadd, init\-\_\-mysql(), Rtu\-Bind\-::oper, R\-T\-U\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-C\-E\-N\-E\-I\-N\-F\-O, Task\-Info\-::rtubind, Scene\-Info\-::rtubind, Scene\-Info\-::rturegtime, Scene\-Info\-::sceneid, Scene\-Info\-::scenename, Scene\-Info\-::scenepicid, Scene\-Info\-::scenertunum, sql\-\_\-coninfo, Task\-Info\-::taskid, Task\-Info\-::taskname, Task\-Info\-::taskregtime, Task\-Info\-::taskrtunum, Rtu\-Bind\-::type, update\-\_\-db\-\_\-sceneinfo(), and update\-\_\-db\-\_\-taskinfo().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sql_8cpp_abf9e6b7e6f15df4b525a2e7705ba3089_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{sql_8cpp_ad049d19955f574c676a6a1849e9003b6}{\index{sql.\-cpp@{sql.\-cpp}!sql\-\_\-coninfo@{sql\-\_\-coninfo}}
+\index{sql\-\_\-coninfo@{sql\-\_\-coninfo}!sql.cpp@{sql.\-cpp}}
+\subsubsection[{sql\-\_\-coninfo}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Mysql\-Con\-Info} sql\-\_\-coninfo =\{\char`\"{}localhost\char`\"{},\char`\"{}root\char`\"{},\char`\"{}123456\char`\"{},\char`\"{}test\char`\"{}\}}}\label{sql_8cpp_ad049d19955f574c676a6a1849e9003b6}
+
+
+Referenced by main().
+

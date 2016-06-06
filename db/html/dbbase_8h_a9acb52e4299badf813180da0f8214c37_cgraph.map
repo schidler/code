@@ -1,0 +1,6 @@
+<map id="insert_db_host" name="insert_db_host">
+<area shape="rect" id="node3" href="$dbbase_8cpp.html#ae3ea82d0883ed39d63abe2f2e5cde42f" title="db_insert_query 数据库插入" alt="" coords="160,59,275,88"/>
+<area shape="rect" id="node9" href="$dbbase_8cpp.html#a7748ddce59655cc11534b75d5e0956d4" title="findHostname 查找对应的主机名" alt="" coords="167,5,268,35"/>
+<area shape="rect" id="node5" href="$dbbase_8cpp.html#a45f3ac6076b939b77778a8d8a2aebde6" title="check_connect 检查连接" alt="" coords="324,5,433,35"/>
+<area shape="rect" id="node7" href="$dbbase_8cpp.html#afe0ea3530d4cbbbf870292d37df7ac9e" title="insert_mysql 数据库基本插入操作" alt="" coords="331,59,427,88"/>
+</map>

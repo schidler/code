@@ -1,0 +1,34 @@
+<map id="check_connect" name="check_connect">
+<area shape="rect" id="node3" href="$dbbase_8cpp.html#ae3ea82d0883ed39d63abe2f2e5cde42f" title="db_insert_query 数据库插入" alt="" coords="196,59,311,88"/>
+<area shape="rect" id="node9" href="$dbbase_8cpp.html#a09e73ba1c0460f0f548fffa8f8aa8ebb" title="db_update_query 更新查询" alt="" coords="193,379,313,408"/>
+<area shape="rect" id="node31" href="$dbbase_8h.html#a91ce6d4931baf0cca718619888e1412d" title="delete_db_host 删除主机设备" alt="" coords="199,640,308,669"/>
+<area shape="rect" id="node33" href="$dbbase_8h.html#adfa21954b5a414041dffb59dd549dcb8" title="delete_db_rtu 删除设备 接口 不包括删除主机" alt="" coords="623,692,721,721"/>
+<area shape="rect" id="node37" href="$dbbase_8cpp.html#ac9d1db67754ebd6ac53cd4ce185a22cd" title="DupicateKeyUpdateQuery 更新、插入查询：存在则更新不存在则插入" alt="" coords="167,744,340,773"/>
+<area shape="rect" id="node53" href="$dbbase_8h.html#a7748ddce59655cc11534b75d5e0956d4" title="findHostname 查找对应的主机名" alt="" coords="203,112,304,141"/>
+<area shape="rect" id="node57" href="$dbbase_8cpp.html#aec7bbc2b50281d325bd7e99661ef5c60" title="findRtuadd" alt="" coords="211,5,296,35"/>
+<area shape="rect" id="node60" href="$dbbase_8h.html#a45ba5638ae09b4ccca4dbe1bdb6bf89a" title="GetHostCount 拿到 连接上来的主机个数" alt="" coords="200,797,307,827"/>
+<area shape="rect" id="node62" href="$dbbase_8h.html#a645417f4347afad166d95e919bf778de" title="GetHostIdByName 根据主机名查找对应的ID." alt="" coords="187,851,320,880"/>
+<area shape="rect" id="node64" href="$dbbase_8h.html#aa1165b8a3c5a7d095576c678f94268f3" title="GetIpByHostAdd" alt="" coords="193,904,313,933"/>
+<area shape="rect" id="node66" href="$dbbase_8cpp.html#acdefe48f4a7a750062898c54c5ecd356" title="select_query 查找操作" alt="" coords="205,587,301,616"/>
+<area shape="rect" id="node5" href="$dbbase_8h.html#a21f3b1ac4424fa0839c3182b0ab7cbd8" title="insert_db_rtu 注册设备接口 ，将设备写入数据库" alt="" coords="421,5,517,35"/>
+<area shape="rect" id="node7" href="$dbbase_8h.html#a9acb52e4299badf813180da0f8214c37" title="insert_db_host 主机注册接口" alt="" coords="416,59,523,88"/>
+<area shape="rect" id="node11" href="$dbbase_8h.html#a83758c046728190fe1ac0a9eef34285b" title="update_db_nativertu 常规设备更新" alt="" coords="400,379,539,408"/>
+<area shape="rect" id="node13" href="$dbbase_8h.html#ae0e36aa1334e0b83d2e2edd95a89b5b2" title="update_db_safetyrtu 更新安防设备" alt="" coords="400,432,539,461"/>
+<area shape="rect" id="node15" href="$dbbase_8h.html#a82757fe4298d8fdf297391a4e42e3293" title="update_db_host 更新主机信息表" alt="" coords="412,112,527,141"/>
+<area shape="rect" id="node17" href="$dbbase_8h.html#a5f38e8abcbb787b6fed1c8e1dce1c7c2" title="update_db_hostname 用户管理" alt="" coords="599,585,745,615"/>
+<area shape="rect" id="node19" href="$dbbase_8h.html#ad42e211ca6c04241e68331f73c74113c" title="update_db_rtuinfo 用户设备信息编辑" alt="" coords="407,165,532,195"/>
+<area shape="rect" id="node21" href="$dbbase_8h.html#aae594d8934a37c3a973e31432cd76c96" title="update_db_scenertu 更新情景面板" alt="" coords="400,219,539,248"/>
+<area shape="rect" id="node23" href="$dbbase_8h.html#a81cfc05e7763f268740f8a27f85b77de" title="update_db_exnativertu 更新智能床" alt="" coords="393,272,545,301"/>
+<area shape="rect" id="node25" href="$dbbase_8h.html#aa039ebdc57c1a8157a01c9a762f43bc6" title="update_db_detectorrtu 更新传感器设备" alt="" coords="395,325,544,355"/>
+<area shape="rect" id="node27" href="$dbbase_8h.html#a35e1056e0f46576bda26dabc59ce0ded" title="update_db_detectorbind 绑定联动接口" alt="" coords="389,536,549,565"/>
+<area shape="rect" id="node29" href="$dbbase_8h.html#afe8cc79a0b360aa2a371f266709451e8" title="update_db_safetypwd 门锁密码更新接口 包括新开锁密码添加，修改 管理员密码修改" alt="" coords="597,508,747,537"/>
+<area shape="rect" id="node35" href="$sql_8cpp.html#abf9e6b7e6f15df4b525a2e7705ba3089" title="main" alt="" coords="795,745,845,775"/>
+<area shape="rect" id="node39" href="$dbbase_8h.html#ad9cd8d3ab8c7385eceb3280b5f910b2a" title="insert_db_sceneinfo 创建、修改情景" alt="" coords="400,745,539,775"/>
+<area shape="rect" id="node44" href="$dbbase_8h.html#a62123b0c0b89cfe644b8e040a4fe2a3b" title="insert_db_apprtu 添加，编辑 应用设备" alt="" coords="411,799,528,828"/>
+<area shape="rect" id="node48" href="$dbbase_8h.html#a0eb771b638f26a87a9cce0c7de472f0f" title="insert_db_taskinfo 设置 编辑定时任务" alt="" coords="405,852,533,881"/>
+<area shape="rect" id="node41" href="$dbbase_8h.html#aedbae4394a0f4e1fc8f6eabee7e355c2" title="update_db_sceneinfo 修改 情景" alt="" coords="600,745,744,775"/>
+<area shape="rect" id="node46" href="$dbbase_8h.html#a8b214bd5c7dbfef30ac417954cb0c5e2" title="update_db_apprtu 修改应用设备" alt="" coords="609,799,735,828"/>
+<area shape="rect" id="node50" href="$dbbase_8h.html#a659d4acf9f3d7a1b013867717905c198" title="update_db_taskinfo 编辑定时任务" alt="" coords="605,852,739,881"/>
+<area shape="rect" id="node68" href="$dbbase_8cpp.html#a7f355040a91d1275a6ac9a9490025717" title="db_select_query 查找操作" alt="" coords="411,640,528,669"/>
+<area shape="rect" id="node72" href="$dbbase_8h.html#a334c4412fa09aab89d49cefdfd233b04" title="select_db_hostinfo 根据主机名 查询主机信息 ，用于 APP远程登陆" alt="" coords="607,639,737,668"/>
+</map>

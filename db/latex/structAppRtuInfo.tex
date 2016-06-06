@@ -1,0 +1,117 @@
+\hypertarget{structAppRtuInfo}{\section{App\-Rtu\-Info Struct Reference}
+\label{structAppRtuInfo}\index{App\-Rtu\-Info@{App\-Rtu\-Info}}
+}
+
+
+{\ttfamily \#include $<$dbbase.\-h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{base_8h_a60cf7b3c038ce37a50796e8eaddf0b5f}{Uint32} \hyperlink{structAppRtuInfo_a15bdb2e241557f3f7326f35e1599568a}{hostadd}
+\begin{DoxyCompactList}\small\item\em 主机地址 \end{DoxyCompactList}\item 
+\hyperlink{base_8h_a60cf7b3c038ce37a50796e8eaddf0b5f}{Uint32} \hyperlink{structAppRtuInfo_acbf93c9e6fd07ac0a29f9596d9e59225}{rtuadd}
+\begin{DoxyCompactList}\small\item\em 设备地址 \end{DoxyCompactList}\item 
+\hyperlink{base_8h_a60cf7b3c038ce37a50796e8eaddf0b5f}{Uint32} \hyperlink{structAppRtuInfo_ac1276ea402781dd4b37db5a8e42cc4ed}{rtutype}
+\begin{DoxyCompactList}\small\item\em 设备类型 \end{DoxyCompactList}\item 
+char \hyperlink{structAppRtuInfo_af67db23fe4859da9266c4de6e0ae0a0f}{rturegtime} \mbox{[}30\mbox{]}
+\begin{DoxyCompactList}\small\item\em 注册时间 \end{DoxyCompactList}\item 
+char \hyperlink{structAppRtuInfo_a55eac142ebeb6bb83b34eb6aaf075991}{rtuname} \mbox{[}32\mbox{]}
+\begin{DoxyCompactList}\small\item\em 设备名称 \end{DoxyCompactList}\item 
+\hyperlink{base_8h_a60cf7b3c038ce37a50796e8eaddf0b5f}{Uint32} \hyperlink{structAppRtuInfo_a8b72cfd3f9a68f1350484b373da647ab}{irrtuadd}
+\begin{DoxyCompactList}\small\item\em 绑定的红外转发器地址 \end{DoxyCompactList}\item 
+\hyperlink{base_8h_a60cf7b3c038ce37a50796e8eaddf0b5f}{Uint32} \hyperlink{structAppRtuInfo_a079a986dc0f08810d6f97c1a0b5c4bb3}{irlearn}
+\begin{DoxyCompactList}\small\item\em 红外学习标志 \end{DoxyCompactList}\item 
+\hyperlink{dbbase_8h_afec5109c9a49125c493619b015292bb0}{Rtustatus} \hyperlink{structAppRtuInfo_a4b7f6869eb4bdbe622f2cc6050d31e1f}{rtustate}
+\begin{DoxyCompactList}\small\item\em 注册状态 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+添加编辑应用设备 
+
+\subsection{Field Documentation}
+\hypertarget{structAppRtuInfo_a15bdb2e241557f3f7326f35e1599568a}{\index{App\-Rtu\-Info@{App\-Rtu\-Info}!hostadd@{hostadd}}
+\index{hostadd@{hostadd}!AppRtuInfo@{App\-Rtu\-Info}}
+\subsubsection[{hostadd}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Uint32} App\-Rtu\-Info\-::hostadd}}\label{structAppRtuInfo_a15bdb2e241557f3f7326f35e1599568a}
+
+
+主机地址 
+
+
+
+Referenced by insert\-\_\-db\-\_\-apprtu().
+
+\hypertarget{structAppRtuInfo_a079a986dc0f08810d6f97c1a0b5c4bb3}{\index{App\-Rtu\-Info@{App\-Rtu\-Info}!irlearn@{irlearn}}
+\index{irlearn@{irlearn}!AppRtuInfo@{App\-Rtu\-Info}}
+\subsubsection[{irlearn}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Uint32} App\-Rtu\-Info\-::irlearn}}\label{structAppRtuInfo_a079a986dc0f08810d6f97c1a0b5c4bb3}
+
+
+红外学习标志 
+
+\hypertarget{structAppRtuInfo_a8b72cfd3f9a68f1350484b373da647ab}{\index{App\-Rtu\-Info@{App\-Rtu\-Info}!irrtuadd@{irrtuadd}}
+\index{irrtuadd@{irrtuadd}!AppRtuInfo@{App\-Rtu\-Info}}
+\subsubsection[{irrtuadd}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Uint32} App\-Rtu\-Info\-::irrtuadd}}\label{structAppRtuInfo_a8b72cfd3f9a68f1350484b373da647ab}
+
+
+绑定的红外转发器地址 
+
+
+
+Referenced by insert\-\_\-db\-\_\-apprtu().
+
+\hypertarget{structAppRtuInfo_acbf93c9e6fd07ac0a29f9596d9e59225}{\index{App\-Rtu\-Info@{App\-Rtu\-Info}!rtuadd@{rtuadd}}
+\index{rtuadd@{rtuadd}!AppRtuInfo@{App\-Rtu\-Info}}
+\subsubsection[{rtuadd}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Uint32} App\-Rtu\-Info\-::rtuadd}}\label{structAppRtuInfo_acbf93c9e6fd07ac0a29f9596d9e59225}
+
+
+设备地址 
+
+
+
+Referenced by insert\-\_\-db\-\_\-apprtu().
+
+\hypertarget{structAppRtuInfo_a55eac142ebeb6bb83b34eb6aaf075991}{\index{App\-Rtu\-Info@{App\-Rtu\-Info}!rtuname@{rtuname}}
+\index{rtuname@{rtuname}!AppRtuInfo@{App\-Rtu\-Info}}
+\subsubsection[{rtuname}]{\setlength{\rightskip}{0pt plus 5cm}char App\-Rtu\-Info\-::rtuname\mbox{[}32\mbox{]}}}\label{structAppRtuInfo_a55eac142ebeb6bb83b34eb6aaf075991}
+
+
+设备名称 
+
+
+
+Referenced by insert\-\_\-db\-\_\-apprtu().
+
+\hypertarget{structAppRtuInfo_af67db23fe4859da9266c4de6e0ae0a0f}{\index{App\-Rtu\-Info@{App\-Rtu\-Info}!rturegtime@{rturegtime}}
+\index{rturegtime@{rturegtime}!AppRtuInfo@{App\-Rtu\-Info}}
+\subsubsection[{rturegtime}]{\setlength{\rightskip}{0pt plus 5cm}char App\-Rtu\-Info\-::rturegtime\mbox{[}30\mbox{]}}}\label{structAppRtuInfo_af67db23fe4859da9266c4de6e0ae0a0f}
+
+
+注册时间 
+
+
+
+Referenced by insert\-\_\-db\-\_\-apprtu().
+
+\hypertarget{structAppRtuInfo_a4b7f6869eb4bdbe622f2cc6050d31e1f}{\index{App\-Rtu\-Info@{App\-Rtu\-Info}!rtustate@{rtustate}}
+\index{rtustate@{rtustate}!AppRtuInfo@{App\-Rtu\-Info}}
+\subsubsection[{rtustate}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Rtustatus} App\-Rtu\-Info\-::rtustate}}\label{structAppRtuInfo_a4b7f6869eb4bdbe622f2cc6050d31e1f}
+
+
+注册状态 
+
+\hypertarget{structAppRtuInfo_ac1276ea402781dd4b37db5a8e42cc4ed}{\index{App\-Rtu\-Info@{App\-Rtu\-Info}!rtutype@{rtutype}}
+\index{rtutype@{rtutype}!AppRtuInfo@{App\-Rtu\-Info}}
+\subsubsection[{rtutype}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Uint32} App\-Rtu\-Info\-::rtutype}}\label{structAppRtuInfo_ac1276ea402781dd4b37db5a8e42cc4ed}
+
+
+设备类型 
+
+
+
+Referenced by insert\-\_\-db\-\_\-apprtu().
+
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{dbbase_8h}{dbbase.\-h}\end{DoxyCompactItemize}

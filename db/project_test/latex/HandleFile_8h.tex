@@ -1,0 +1,156 @@
+\hypertarget{HandleFile_8h}{\section{Handle\-File.\-h File Reference}
+\label{HandleFile_8h}\index{Handle\-File.\-h@{Handle\-File.\-h}}
+}
+{\ttfamily \#include \char`\"{}Common\-Type.\-h\char`\"{}}\\*
+Include dependency graph for Handle\-File.\-h\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=166pt]{HandleFile_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=248pt]{HandleFile_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{CommonType_8h_a36cb3b01d81ffd844bbbfb54003e06ec}{U\-I\-N\-T} \hyperlink{HandleFile_8h_a8741717ea9029d93b7addf8158ebad0c}{Read\-File} (\hyperlink{CommonType_8h_a36cb3b01d81ffd844bbbfb54003e06ec}{U\-I\-N\-T} file\-Name\-Len, \hyperlink{CommonType_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$file\-Name, \hyperlink{CommonType_8h_a36cb3b01d81ffd844bbbfb54003e06ec}{U\-I\-N\-T} data\-Len, \hyperlink{CommonType_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$file\-Data)
+\begin{DoxyCompactList}\small\item\em 操作文件 \end{DoxyCompactList}\item 
+\hyperlink{CommonType_8h_a36cb3b01d81ffd844bbbfb54003e06ec}{U\-I\-N\-T} \hyperlink{HandleFile_8h_afede9fe93381c9a702a420e90eb553a6}{Write\-File} (\hyperlink{CommonType_8h_a36cb3b01d81ffd844bbbfb54003e06ec}{U\-I\-N\-T} file\-Name\-Len, \hyperlink{CommonType_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$file\-Name, \hyperlink{CommonType_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$file\-Data)
+\item 
+\hyperlink{CommonType_8h_a36cb3b01d81ffd844bbbfb54003e06ec}{U\-I\-N\-T} \hyperlink{HandleFile_8h_a8b6ef3269dda1e36066846707cc4166e}{Erase\-File} (\hyperlink{CommonType_8h_a36cb3b01d81ffd844bbbfb54003e06ec}{U\-I\-N\-T} file\-Name\-Len, \hyperlink{CommonType_8h_a4ae1dab0fb4b072a66584546209e7d58}{B\-Y\-T\-E} $\ast$file\-Name)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{HandleFile_8h_a8b6ef3269dda1e36066846707cc4166e}{\index{Handle\-File.\-h@{Handle\-File.\-h}!Erase\-File@{Erase\-File}}
+\index{Erase\-File@{Erase\-File}!HandleFile.h@{Handle\-File.\-h}}
+\subsubsection[{Erase\-File}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-I\-N\-T} Erase\-File (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-I\-N\-T}}]{file\-Name\-Len, }
+\item[{{\bf B\-Y\-T\-E} $\ast$}]{file\-Name}
+\end{DoxyParamCaption}
+)}}\label{HandleFile_8h_a8b6ef3269dda1e36066846707cc4166e}
+擦除文件 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em file\-Name\-Len} & 文件名长度 \\
+\hline
+\mbox{\tt in}  & {\em file\-Name} & 文件名 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0，执行成功，非0，失败，详见 \hyperlink{RetCode_8h}{Ret\-Code.\-h} 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+
+\end{DoxySeeAlso}
+\begin{DoxyNote}{Note}
+
+\end{DoxyNote}
+
+
+References S\-U\-C\-C\-E\-S\-S.
+
+\hypertarget{HandleFile_8h_a8741717ea9029d93b7addf8158ebad0c}{\index{Handle\-File.\-h@{Handle\-File.\-h}!Read\-File@{Read\-File}}
+\index{Read\-File@{Read\-File}!HandleFile.h@{Handle\-File.\-h}}
+\subsubsection[{Read\-File}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-I\-N\-T} Read\-File (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-I\-N\-T}}]{file\-Name\-Len, }
+\item[{{\bf B\-Y\-T\-E} $\ast$}]{file\-Name, }
+\item[{{\bf U\-I\-N\-T}}]{data\-Len, }
+\item[{{\bf B\-Y\-T\-E} $\ast$}]{file\-Data}
+\end{DoxyParamCaption}
+)}}\label{HandleFile_8h_a8741717ea9029d93b7addf8158ebad0c}
+
+
+操作文件 
+
+le \hyperlink{HandleFile_8h}{Handle\-File.\-h}
+
+所有涉及文件操作 \begin{DoxyAuthor}{Author}
+Vincent 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2015-\/5-\/24 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+A001 
+\end{DoxyVersion}
+\begin{DoxyParagraph}{Copyright (c)\-: Vincent }
+
+\end{DoxyParagraph}
+读取文件 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em file\-Name\-Len} & 文件名长度 \\
+\hline
+\mbox{\tt in}  & {\em file\-Name} & 文件名 \\
+\hline
+\mbox{\tt in}  & {\em data\-Len} & 数据长度 \\
+\hline
+\mbox{\tt out}  & {\em file\-Data} & 输出数据 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0，执行成功，非0，失败，详见 \hyperlink{RetCode_8h}{Ret\-Code.\-h} 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+
+\end{DoxySeeAlso}
+\begin{DoxyNote}{Note}
+
+\end{DoxyNote}
+
+
+References S\-U\-C\-C\-E\-S\-S.
+
+
+
+Referenced by Handle\-Data().
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=314pt]{HandleFile_8h_a8741717ea9029d93b7addf8158ebad0c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{HandleFile_8h_afede9fe93381c9a702a420e90eb553a6}{\index{Handle\-File.\-h@{Handle\-File.\-h}!Write\-File@{Write\-File}}
+\index{Write\-File@{Write\-File}!HandleFile.h@{Handle\-File.\-h}}
+\subsubsection[{Write\-File}]{\setlength{\rightskip}{0pt plus 5cm}{\bf U\-I\-N\-T} Write\-File (
+\begin{DoxyParamCaption}
+\item[{{\bf U\-I\-N\-T}}]{file\-Name\-Len, }
+\item[{{\bf B\-Y\-T\-E} $\ast$}]{file\-Name, }
+\item[{{\bf B\-Y\-T\-E} $\ast$}]{file\-Data}
+\end{DoxyParamCaption}
+)}}\label{HandleFile_8h_afede9fe93381c9a702a420e90eb553a6}
+写入文件 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em file\-Name\-Len} & 文件名长度 \\
+\hline
+\mbox{\tt in}  & {\em file\-Name} & 文件名 \\
+\hline
+\mbox{\tt out}  & {\em file\-Data} & 输出数据 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0，执行成功，非0，失败，详见 \hyperlink{RetCode_8h}{Ret\-Code.\-h} 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+
+\end{DoxySeeAlso}
+\begin{DoxyNote}{Note}
+
+\end{DoxyNote}
+
+
+References S\-U\-C\-C\-E\-S\-S.
+

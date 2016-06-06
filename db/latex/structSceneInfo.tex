@@ -1,0 +1,121 @@
+\hypertarget{structSceneInfo}{\section{Scene\-Info Struct Reference}
+\label{structSceneInfo}\index{Scene\-Info@{Scene\-Info}}
+}
+
+
+{\ttfamily \#include $<$dbbase.\-h$>$}
+
+
+
+Collaboration diagram for Scene\-Info\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=143pt]{structSceneInfo__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{base_8h_a60cf7b3c038ce37a50796e8eaddf0b5f}{Uint32} \hyperlink{structSceneInfo_a71c350f2eecece851424fb6d41f3d0e1}{hostadd}
+\begin{DoxyCompactList}\small\item\em 主机地址 \end{DoxyCompactList}\item 
+\hyperlink{base_8h_a60cf7b3c038ce37a50796e8eaddf0b5f}{Uint32} \hyperlink{structSceneInfo_a647950844b5a2503b7c79171273eddbc}{sceneid}
+\begin{DoxyCompactList}\small\item\em 情景\-I\-D \end{DoxyCompactList}\item 
+\hyperlink{base_8h_a60cf7b3c038ce37a50796e8eaddf0b5f}{Uint32} \hyperlink{structSceneInfo_affa07c03b993f4fee2824da9bf11da25}{scenepicid}
+\begin{DoxyCompactList}\small\item\em 情景图标\-I\-D \end{DoxyCompactList}\item 
+char \hyperlink{structSceneInfo_a802bb02389ef76cdb6c30676eb65148b}{scenename} \mbox{[}32\mbox{]}
+\begin{DoxyCompactList}\small\item\em 情景名字 \end{DoxyCompactList}\item 
+char \hyperlink{structSceneInfo_ac27ed61e7e699160d08904fb2abfdb95}{rturegtime} \mbox{[}30\mbox{]}
+\begin{DoxyCompactList}\small\item\em 注册时间 \end{DoxyCompactList}\item 
+short \hyperlink{structSceneInfo_afebc902163663be26075199ba2c97d5d}{scenertunum}
+\begin{DoxyCompactList}\small\item\em 情景设定的设备数 \end{DoxyCompactList}\item 
+\hyperlink{structRtuBind}{Rtu\-Bind} $\ast$ \hyperlink{structSceneInfo_a04797a4b852763ec79262575bb8d3f67}{rtubind}
+\begin{DoxyCompactList}\small\item\em 绑定的操作信息 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+创建修改情景 
+
+\subsection{Field Documentation}
+\hypertarget{structSceneInfo_a71c350f2eecece851424fb6d41f3d0e1}{\index{Scene\-Info@{Scene\-Info}!hostadd@{hostadd}}
+\index{hostadd@{hostadd}!SceneInfo@{Scene\-Info}}
+\subsubsection[{hostadd}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Uint32} Scene\-Info\-::hostadd}}\label{structSceneInfo_a71c350f2eecece851424fb6d41f3d0e1}
+
+
+主机地址 
+
+
+
+Referenced by insert\-\_\-db\-\_\-sceneinfo(), and main().
+
+\hypertarget{structSceneInfo_a04797a4b852763ec79262575bb8d3f67}{\index{Scene\-Info@{Scene\-Info}!rtubind@{rtubind}}
+\index{rtubind@{rtubind}!SceneInfo@{Scene\-Info}}
+\subsubsection[{rtubind}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Rtu\-Bind}$\ast$ Scene\-Info\-::rtubind}}\label{structSceneInfo_a04797a4b852763ec79262575bb8d3f67}
+
+
+绑定的操作信息 
+
+
+
+Referenced by insert\-\_\-db\-\_\-sceneinfo(), and main().
+
+\hypertarget{structSceneInfo_ac27ed61e7e699160d08904fb2abfdb95}{\index{Scene\-Info@{Scene\-Info}!rturegtime@{rturegtime}}
+\index{rturegtime@{rturegtime}!SceneInfo@{Scene\-Info}}
+\subsubsection[{rturegtime}]{\setlength{\rightskip}{0pt plus 5cm}char Scene\-Info\-::rturegtime\mbox{[}30\mbox{]}}}\label{structSceneInfo_ac27ed61e7e699160d08904fb2abfdb95}
+
+
+注册时间 
+
+
+
+Referenced by insert\-\_\-db\-\_\-sceneinfo(), and main().
+
+\hypertarget{structSceneInfo_a647950844b5a2503b7c79171273eddbc}{\index{Scene\-Info@{Scene\-Info}!sceneid@{sceneid}}
+\index{sceneid@{sceneid}!SceneInfo@{Scene\-Info}}
+\subsubsection[{sceneid}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Uint32} Scene\-Info\-::sceneid}}\label{structSceneInfo_a647950844b5a2503b7c79171273eddbc}
+
+
+情景\-I\-D 
+
+
+
+Referenced by insert\-\_\-db\-\_\-sceneinfo(), and main().
+
+\hypertarget{structSceneInfo_a802bb02389ef76cdb6c30676eb65148b}{\index{Scene\-Info@{Scene\-Info}!scenename@{scenename}}
+\index{scenename@{scenename}!SceneInfo@{Scene\-Info}}
+\subsubsection[{scenename}]{\setlength{\rightskip}{0pt plus 5cm}char Scene\-Info\-::scenename\mbox{[}32\mbox{]}}}\label{structSceneInfo_a802bb02389ef76cdb6c30676eb65148b}
+
+
+情景名字 
+
+
+
+Referenced by insert\-\_\-db\-\_\-sceneinfo(), and main().
+
+\hypertarget{structSceneInfo_affa07c03b993f4fee2824da9bf11da25}{\index{Scene\-Info@{Scene\-Info}!scenepicid@{scenepicid}}
+\index{scenepicid@{scenepicid}!SceneInfo@{Scene\-Info}}
+\subsubsection[{scenepicid}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Uint32} Scene\-Info\-::scenepicid}}\label{structSceneInfo_affa07c03b993f4fee2824da9bf11da25}
+
+
+情景图标\-I\-D 
+
+
+
+Referenced by insert\-\_\-db\-\_\-sceneinfo(), and main().
+
+\hypertarget{structSceneInfo_afebc902163663be26075199ba2c97d5d}{\index{Scene\-Info@{Scene\-Info}!scenertunum@{scenertunum}}
+\index{scenertunum@{scenertunum}!SceneInfo@{Scene\-Info}}
+\subsubsection[{scenertunum}]{\setlength{\rightskip}{0pt plus 5cm}short Scene\-Info\-::scenertunum}}\label{structSceneInfo_afebc902163663be26075199ba2c97d5d}
+
+
+情景设定的设备数 
+
+
+
+Referenced by insert\-\_\-db\-\_\-sceneinfo(), and main().
+
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{dbbase_8h}{dbbase.\-h}\end{DoxyCompactItemize}

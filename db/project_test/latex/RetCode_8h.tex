@@ -1,0 +1,78 @@
+\hypertarget{RetCode_8h}{\section{Ret\-Code.\-h File Reference}
+\label{RetCode_8h}\index{Ret\-Code.\-h@{Ret\-Code.\-h}}
+}
+
+
+错误码返回值  
+
+
+This graph shows which files directly or indirectly include this file\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=150pt]{RetCode_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{Indent}{\bf 执行状态}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{RetCode_8h_aa90cac659d18e8ef6294c7ae337f6b58}{S\-U\-C\-C\-E\-S\-S}~0x00000000
+\begin{DoxyCompactList}\small\item\em 执行成功 \end{DoxyCompactList}\item 
+\#define \hyperlink{RetCode_8h_ac839a0b40c756c94bffbfe49eeea544e}{E\-R\-R\-\_\-\-P\-A\-R\-A\-\_\-\-L\-E\-N}~0x00000001
+\begin{DoxyCompactList}\small\item\em 长度错误 \end{DoxyCompactList}\item 
+\#define \hyperlink{RetCode_8h_ad155c5be2130bc4bff24dc31096fe605}{E\-R\-R\-\_\-\-N\-U\-L\-L\-\_\-\-P\-O\-I\-N\-T}~0x00000002
+\begin{DoxyCompactList}\small\item\em 空指针错误 \end{DoxyCompactList}\item 
+\#define \hyperlink{RetCode_8h_ad822bcd976fd01d6c1d126994b24d9f2}{E\-R\-R\-\_\-\-P\-A\-R\-A\-\_\-\-T\-Y\-P\-E}~0x00000003
+\begin{DoxyCompactList}\small\item\em 参数类型错误 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{Detailed Description}
+错误码返回值 \begin{DoxyAuthor}{Author}
+Vincent 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2015-\/5-\/24 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+A001 
+\end{DoxyVersion}
+\begin{DoxyParagraph}{Copyright (c)\-: Vincent }
+
+\end{DoxyParagraph}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{RetCode_8h_ad155c5be2130bc4bff24dc31096fe605}{\index{Ret\-Code.\-h@{Ret\-Code.\-h}!E\-R\-R\-\_\-\-N\-U\-L\-L\-\_\-\-P\-O\-I\-N\-T@{E\-R\-R\-\_\-\-N\-U\-L\-L\-\_\-\-P\-O\-I\-N\-T}}
+\index{E\-R\-R\-\_\-\-N\-U\-L\-L\-\_\-\-P\-O\-I\-N\-T@{E\-R\-R\-\_\-\-N\-U\-L\-L\-\_\-\-P\-O\-I\-N\-T}!RetCode.h@{Ret\-Code.\-h}}
+\subsubsection[{E\-R\-R\-\_\-\-N\-U\-L\-L\-\_\-\-P\-O\-I\-N\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-R\-R\-\_\-\-N\-U\-L\-L\-\_\-\-P\-O\-I\-N\-T~0x00000002}}\label{RetCode_8h_ad155c5be2130bc4bff24dc31096fe605}
+
+
+空指针错误 
+
+\hypertarget{RetCode_8h_ac839a0b40c756c94bffbfe49eeea544e}{\index{Ret\-Code.\-h@{Ret\-Code.\-h}!E\-R\-R\-\_\-\-P\-A\-R\-A\-\_\-\-L\-E\-N@{E\-R\-R\-\_\-\-P\-A\-R\-A\-\_\-\-L\-E\-N}}
+\index{E\-R\-R\-\_\-\-P\-A\-R\-A\-\_\-\-L\-E\-N@{E\-R\-R\-\_\-\-P\-A\-R\-A\-\_\-\-L\-E\-N}!RetCode.h@{Ret\-Code.\-h}}
+\subsubsection[{E\-R\-R\-\_\-\-P\-A\-R\-A\-\_\-\-L\-E\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-R\-R\-\_\-\-P\-A\-R\-A\-\_\-\-L\-E\-N~0x00000001}}\label{RetCode_8h_ac839a0b40c756c94bffbfe49eeea544e}
+
+
+长度错误 
+
+\hypertarget{RetCode_8h_ad822bcd976fd01d6c1d126994b24d9f2}{\index{Ret\-Code.\-h@{Ret\-Code.\-h}!E\-R\-R\-\_\-\-P\-A\-R\-A\-\_\-\-T\-Y\-P\-E@{E\-R\-R\-\_\-\-P\-A\-R\-A\-\_\-\-T\-Y\-P\-E}}
+\index{E\-R\-R\-\_\-\-P\-A\-R\-A\-\_\-\-T\-Y\-P\-E@{E\-R\-R\-\_\-\-P\-A\-R\-A\-\_\-\-T\-Y\-P\-E}!RetCode.h@{Ret\-Code.\-h}}
+\subsubsection[{E\-R\-R\-\_\-\-P\-A\-R\-A\-\_\-\-T\-Y\-P\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-R\-R\-\_\-\-P\-A\-R\-A\-\_\-\-T\-Y\-P\-E~0x00000003}}\label{RetCode_8h_ad822bcd976fd01d6c1d126994b24d9f2}
+
+
+参数类型错误 
+
+\hypertarget{RetCode_8h_aa90cac659d18e8ef6294c7ae337f6b58}{\index{Ret\-Code.\-h@{Ret\-Code.\-h}!S\-U\-C\-C\-E\-S\-S@{S\-U\-C\-C\-E\-S\-S}}
+\index{S\-U\-C\-C\-E\-S\-S@{S\-U\-C\-C\-E\-S\-S}!RetCode.h@{Ret\-Code.\-h}}
+\subsubsection[{S\-U\-C\-C\-E\-S\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-U\-C\-C\-E\-S\-S~0x00000000}}\label{RetCode_8h_aa90cac659d18e8ef6294c7ae337f6b58}
+
+
+执行成功 
+
+
+
+Referenced by Erase\-File(), Read\-File(), and Write\-File().
+

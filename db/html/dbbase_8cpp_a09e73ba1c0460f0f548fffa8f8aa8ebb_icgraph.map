@@ -1,0 +1,12 @@
+<map id="db_update_query" name="db_update_query">
+<area shape="rect" id="node3" href="$dbbase_8h.html#a35e1056e0f46576bda26dabc59ce0ded" title="update_db_detectorbind 绑定联动接口" alt="" coords="176,5,336,35"/>
+<area shape="rect" id="node5" href="$dbbase_8h.html#aa039ebdc57c1a8157a01c9a762f43bc6" title="update_db_detectorrtu 更新传感器设备" alt="" coords="181,59,331,88"/>
+<area shape="rect" id="node7" href="$dbbase_8h.html#a81cfc05e7763f268740f8a27f85b77de" title="update_db_exnativertu 更新智能床" alt="" coords="180,112,332,141"/>
+<area shape="rect" id="node9" href="$dbbase_8h.html#a82757fe4298d8fdf297391a4e42e3293" title="update_db_host 更新主机信息表" alt="" coords="199,165,313,195"/>
+<area shape="rect" id="node11" href="$dbbase_8h.html#a5f38e8abcbb787b6fed1c8e1dce1c7c2" title="update_db_hostname 用户管理" alt="" coords="183,219,329,248"/>
+<area shape="rect" id="node13" href="$dbbase_8h.html#a83758c046728190fe1ac0a9eef34285b" title="update_db_nativertu 常规设备更新" alt="" coords="187,272,325,301"/>
+<area shape="rect" id="node15" href="$dbbase_8h.html#ad42e211ca6c04241e68331f73c74113c" title="update_db_rtuinfo 用户设备信息编辑" alt="" coords="193,325,319,355"/>
+<area shape="rect" id="node17" href="$dbbase_8h.html#afe8cc79a0b360aa2a371f266709451e8" title="update_db_safetypwd 门锁密码更新接口 包括新开锁密码添加，修改 管理员密码修改" alt="" coords="181,379,331,408"/>
+<area shape="rect" id="node19" href="$dbbase_8h.html#ae0e36aa1334e0b83d2e2edd95a89b5b2" title="update_db_safetyrtu 更新安防设备" alt="" coords="187,432,325,461"/>
+<area shape="rect" id="node21" href="$dbbase_8h.html#aae594d8934a37c3a973e31432cd76c96" title="update_db_scenertu 更新情景面板" alt="" coords="187,485,325,515"/>
+</map>

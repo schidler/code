@@ -1,0 +1,112 @@
+\hypertarget{structHostRegInfo}{\section{Host\-Reg\-Info Struct Reference}
+\label{structHostRegInfo}\index{Host\-Reg\-Info@{Host\-Reg\-Info}}
+}
+
+
+{\ttfamily \#include $<$dbbase.\-h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+char \hyperlink{structHostRegInfo_abaad6f194144e79d59f3f50e7eb078af}{hostname} \mbox{[}\hyperlink{dbbase_8h_a6c4647395896246d6710ba980c31666c}{M\-A\-X\-\_\-\-U\-S\-E\-R\-N\-A\-M\-E\-\_\-\-L\-E\-N}\mbox{]}
+\begin{DoxyCompactList}\small\item\em 主机名 \end{DoxyCompactList}\item 
+\hyperlink{base_8h_a60cf7b3c038ce37a50796e8eaddf0b5f}{Uint32} \hyperlink{structHostRegInfo_a3b304abdc867e6ac1d510ccec832e844}{hostadd}
+\begin{DoxyCompactList}\small\item\em 主机地址 \end{DoxyCompactList}\item 
+char \hyperlink{structHostRegInfo_a19bb5479f6700b3eafb505d4cb16bf11}{hostpwd} \mbox{[}\hyperlink{dbbase_8h_ae9169c3fda2dfecbb7a13e394a69e5be}{M\-A\-X\-\_\-\-P\-A\-S\-S\-W\-O\-R\-D\-\_\-\-L\-E\-N}\mbox{]}
+\begin{DoxyCompactList}\small\item\em 主机密码 \end{DoxyCompactList}\item 
+char \hyperlink{structHostRegInfo_aae80f759cd5835a9b695f2707a1b60e4}{hostregtime} \mbox{[}30\mbox{]}
+\begin{DoxyCompactList}\small\item\em 注册时间 \end{DoxyCompactList}\item 
+\hyperlink{dbbase_8h_afec5109c9a49125c493619b015292bb0}{Rtustatus} \hyperlink{structHostRegInfo_a6f478e420e2736db1408a6dcd4927e8f}{hoststate}
+\begin{DoxyCompactList}\small\item\em 注册状态 \end{DoxyCompactList}\item 
+\hyperlink{base_8h_a60cf7b3c038ce37a50796e8eaddf0b5f}{Uint32} \hyperlink{structHostRegInfo_ac2a4fc92c30a444b52fca1fd0589a027}{hostip}
+\begin{DoxyCompactList}\small\item\em 主机 ip ： bytes\mbox{[}3\-:2\-:1\-:0\mbox{]} \end{DoxyCompactList}\item 
+char \hyperlink{structHostRegInfo_a20b46c33f6aed2a9d4e11ae3f2ec2cee}{lastcomtime} \mbox{[}30\mbox{]}
+\begin{DoxyCompactList}\small\item\em void$\ast$ \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+主机注册结构体 
+
+\subsection{Field Documentation}
+\hypertarget{structHostRegInfo_a3b304abdc867e6ac1d510ccec832e844}{\index{Host\-Reg\-Info@{Host\-Reg\-Info}!hostadd@{hostadd}}
+\index{hostadd@{hostadd}!HostRegInfo@{Host\-Reg\-Info}}
+\subsubsection[{hostadd}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Uint32} Host\-Reg\-Info\-::hostadd}}\label{structHostRegInfo_a3b304abdc867e6ac1d510ccec832e844}
+
+
+主机地址 
+
+
+
+Referenced by insert\-\_\-db\-\_\-host(), and select\-\_\-db\-\_\-hostinfo().
+
+\hypertarget{structHostRegInfo_ac2a4fc92c30a444b52fca1fd0589a027}{\index{Host\-Reg\-Info@{Host\-Reg\-Info}!hostip@{hostip}}
+\index{hostip@{hostip}!HostRegInfo@{Host\-Reg\-Info}}
+\subsubsection[{hostip}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Uint32} Host\-Reg\-Info\-::hostip}}\label{structHostRegInfo_ac2a4fc92c30a444b52fca1fd0589a027}
+
+
+主机 ip ： bytes\mbox{[}3\-:2\-:1\-:0\mbox{]} 
+
+
+
+Referenced by insert\-\_\-db\-\_\-host(), select\-\_\-db\-\_\-hostinfo(), and update\-\_\-db\-\_\-host().
+
+\hypertarget{structHostRegInfo_abaad6f194144e79d59f3f50e7eb078af}{\index{Host\-Reg\-Info@{Host\-Reg\-Info}!hostname@{hostname}}
+\index{hostname@{hostname}!HostRegInfo@{Host\-Reg\-Info}}
+\subsubsection[{hostname}]{\setlength{\rightskip}{0pt plus 5cm}char Host\-Reg\-Info\-::hostname\mbox{[}{\bf M\-A\-X\-\_\-\-U\-S\-E\-R\-N\-A\-M\-E\-\_\-\-L\-E\-N}\mbox{]}}}\label{structHostRegInfo_abaad6f194144e79d59f3f50e7eb078af}
+
+
+主机名 
+
+
+
+Referenced by insert\-\_\-db\-\_\-host(), and update\-\_\-db\-\_\-host().
+
+\hypertarget{structHostRegInfo_a19bb5479f6700b3eafb505d4cb16bf11}{\index{Host\-Reg\-Info@{Host\-Reg\-Info}!hostpwd@{hostpwd}}
+\index{hostpwd@{hostpwd}!HostRegInfo@{Host\-Reg\-Info}}
+\subsubsection[{hostpwd}]{\setlength{\rightskip}{0pt plus 5cm}char Host\-Reg\-Info\-::hostpwd\mbox{[}{\bf M\-A\-X\-\_\-\-P\-A\-S\-S\-W\-O\-R\-D\-\_\-\-L\-E\-N}\mbox{]}}}\label{structHostRegInfo_a19bb5479f6700b3eafb505d4cb16bf11}
+
+
+主机密码 
+
+
+
+Referenced by insert\-\_\-db\-\_\-host(), and select\-\_\-db\-\_\-hostinfo().
+
+\hypertarget{structHostRegInfo_aae80f759cd5835a9b695f2707a1b60e4}{\index{Host\-Reg\-Info@{Host\-Reg\-Info}!hostregtime@{hostregtime}}
+\index{hostregtime@{hostregtime}!HostRegInfo@{Host\-Reg\-Info}}
+\subsubsection[{hostregtime}]{\setlength{\rightskip}{0pt plus 5cm}char Host\-Reg\-Info\-::hostregtime\mbox{[}30\mbox{]}}}\label{structHostRegInfo_aae80f759cd5835a9b695f2707a1b60e4}
+
+
+注册时间 
+
+
+
+Referenced by insert\-\_\-db\-\_\-host().
+
+\hypertarget{structHostRegInfo_a6f478e420e2736db1408a6dcd4927e8f}{\index{Host\-Reg\-Info@{Host\-Reg\-Info}!hoststate@{hoststate}}
+\index{hoststate@{hoststate}!HostRegInfo@{Host\-Reg\-Info}}
+\subsubsection[{hoststate}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Rtustatus} Host\-Reg\-Info\-::hoststate}}\label{structHostRegInfo_a6f478e420e2736db1408a6dcd4927e8f}
+
+
+注册状态 
+
+
+
+Referenced by select\-\_\-db\-\_\-hostinfo().
+
+\hypertarget{structHostRegInfo_a20b46c33f6aed2a9d4e11ae3f2ec2cee}{\index{Host\-Reg\-Info@{Host\-Reg\-Info}!lastcomtime@{lastcomtime}}
+\index{lastcomtime@{lastcomtime}!HostRegInfo@{Host\-Reg\-Info}}
+\subsubsection[{lastcomtime}]{\setlength{\rightskip}{0pt plus 5cm}char Host\-Reg\-Info\-::lastcomtime\mbox{[}30\mbox{]}}}\label{structHostRegInfo_a20b46c33f6aed2a9d4e11ae3f2ec2cee}
+
+
+void$\ast$ 
+
+最近通信时间 
+
+Referenced by insert\-\_\-db\-\_\-host(), and select\-\_\-db\-\_\-hostinfo().
+
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{dbbase_8h}{dbbase.\-h}\end{DoxyCompactItemize}
